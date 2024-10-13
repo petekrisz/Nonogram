@@ -1,0 +1,83 @@
+﻿<Window x:Class="nonogram.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:nonogram.MVVM.ViewModel"
+        xmlns:local="clr-namespace:nonogram"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+    
+    
+    
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
+    
+    
+    
+    
+    
+    <Border Background="#1A0D00" CornerRadius="25">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="130"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="SideBar" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="160"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="350"/>
+                </Grid.RowDefinitions>
+
+                <ContentControl Grid.ColumnSpan="2" Margin="4,10,10,10">
+                    <StackPanel Orientation="Vertical">
+                        <RadioButton Content="New Image" Foreground="#998000" FontSize="20" Height="44" Margin="0,4,60,0" Style="{StaticResource MenuButton}"/>
+                        <RadioButton Content="Buy Help" Foreground="#998000" FontSize="20" Height="44" Margin="0,0,60,0" Style="{StaticResource MenuButton}"/>
+                        <RadioButton Content="Exit" Foreground="#998000" FontSize="20" Height="44" Margin="0,0,60,4" Style="{StaticResource MenuButton}"/>
+                    </StackPanel>
+                </ContentControl>
+            </Grid>
+
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2" >
+                <TextBlock Text="NONO&#x0a;GRAM" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#998000" FontSize="38"  Margin="20,17,0,0" FontFamily="/Fonts/#Kabala" FontWeight="ExtraBold" TextWrapping="Wrap"/>
+                <Image x:Name="logo" Source="/Images/logo.png" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="5,18,0,10"/>
+            </StackPanel>
+
+            <!--<TextBox Grid.Column="1" Width="500" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Style="{StaticResource InputTextBox}"/>-->
+            <ContentControl x:Name="SearchBox" Grid.Row="0" Grid.Column="1" Margin="10" Content="{Binding CurrentViewTitle}"/>
+
+            <Border BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="142" Height="140" Margin="0,10,1013,0" Grid.Row="1" Grid.ColumnSpan="2">
+                <Border.Background>
+                    <ImageBrush x:Name="avatar" ImageSource="/Images/woman.png" Stretch="None"/>
+                </Border.Background>
+                <Border.Clip>
+                    <EllipseGeometry Center="70,70" RadiusX="70" RadiusY="70"/>
+                </Border.Clip>
+            </Border>
+
+            <ScrollViewer Grid.Row="1" Grid.Column="1" Margin="25" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                <ScrollViewer.Resources>
+                    <Style TargetType="ScrollBar" BasedOn="{StaticResource CustomScrollBar}" />
+                </ScrollViewer.Resources>
+                <ContentControl Content="{Binding CurrentViewMain}"/>
+            </ScrollViewer>
+            
+        </Grid>
+
+
+
+
+    </Border>
+</Window>
