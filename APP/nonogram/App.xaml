@@ -17,12 +17,12 @@
             <DataTemplate DataType="{x:Type viewModel:ImageListViewModel}">
                 <view:ImageListView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:GameViewModel}">
+            <!--<DataTemplate DataType="{x:Type viewModel:GameViewModel}">
                 <view:GameView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:BuyHelpViewModel}">
                 <view:BuyHelpView/>
-            </DataTemplate>
+            </DataTemplate>-->
 
 
 

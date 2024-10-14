@@ -42,8 +42,8 @@
 
                 <ContentControl Grid.ColumnSpan="2" Margin="4,10,10,10">
                     <StackPanel Orientation="Vertical">
-                        <RadioButton Content="New Image" Foreground="#998000" FontSize="20" Height="44" Margin="0,4,60,0" Style="{StaticResource MenuButton}"/>
-                        <RadioButton Content="Buy Help" Foreground="#998000" FontSize="20" Height="44" Margin="0,0,60,0" Style="{StaticResource MenuButton}"/>
+                        <RadioButton Content="New Image" Foreground="#998000" FontSize="20" Height="44" Margin="0,4,60,0" Style="{StaticResource MenuButton}" Command="{Binding ImageListViewCommand}" />
+                        <RadioButton Content="Buy Help" Foreground="#998000" FontSize="20" Height="44" Margin="0,0,60,0" Style="{StaticResource MenuButton}" Command="{Binding BuyHelpViewCommand}"/>
                         <RadioButton Content="Exit" Foreground="#998000" FontSize="20" Height="44" Margin="0,0,60,4" Style="{StaticResource MenuButton}"/>
                     </StackPanel>
                 </ContentControl>

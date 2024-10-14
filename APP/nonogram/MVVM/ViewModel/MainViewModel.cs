@@ -4,9 +4,17 @@ namespace nonogram.MVVM.ViewModel
 {
     internal class MainViewModel : ObservableObject
     {
+        public RelayCommand ImageListViewCommand { get; set; }
+        public RelayCommand BuyHelpViewCommand { get; set; }
+
+
+
 
         public ImageListViewModel ImageListVM { get; set; }
+        public ImageListViewModel BuyHelpVM { get; set; }
+
         public SearchBarViewModel SearchBarVM { get; set; }
+        public TitleBuyViewModel TitleBuyVM { get; set; }
 
 
         private object _currentViewMain;
@@ -49,14 +57,28 @@ namespace nonogram.MVVM.ViewModel
         public MainViewModel()
         {
             ImageListVM = new ImageListViewModel();
+
             CurrentViewMain = ImageListVM; // For now it is set to ImageListView, because this is the only that is ready and it should be also the first View after registration 
+
 
             //In the final version it should be dependent on whether the player has an unfinished image or not. In the first case the current view should be set to the unfinished image and in the second it should be the ImageListVM
 
             SearchBarVM = new SearchBarViewModel();
+            TitleBuyVM = new TitleBuyViewModel();
             CurrentViewTitle = SearchBarVM; // For now it is set to SearchBarView, because this is the only that is ready and it should be also the first View after registration
 
             //In the final version it should be dependent on whether the player has an unfinished image or not. In the first case the current view should be set to the title of unfinished image and in the second it should be the SearchBarVM
+
+            ImageListViewCommand = new RelayCommand(o => { CurrentViewMain = ImageListVM; CurrentViewTitle = SearchBarVM; });
+            BuyHelpViewCommand = new RelayCommand(o => { CurrentViewMain = BuyHelpVM; CurrentViewTitle = TitleBuyVM; });
+
+
+
+
+
+
+
+
 
             string email = "something@something.else"; //That shoud be acquired from DB
             string hash = HashHelper.ComputeSha256Hash(email);
