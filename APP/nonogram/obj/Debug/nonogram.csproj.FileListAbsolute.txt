@@ -27,7 +27,9 @@ D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\GameView.baml
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\LoginWindow.g.cs
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\LoginWindow.baml
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\SearchBarView.g.cs
-D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\TitleBarView.g.cs
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\SearchBarView.baml
-D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\TitleBarView.baml
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\Style\ScrollBarStyle.baml
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\TitleBuyView.g.cs
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\TitleGameView.g.cs
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\TitleBuyView.baml
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\TitleGameView.baml

@@ -120,6 +120,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVVM\Model\ListImage.cs" />
+    <Compile Include="MVVM\ViewModel\BuyHelpViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\GameViewModel.cs" />
     <Compile Include="MVVM\ViewModel\ImageListViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModel\SearchBarViewModel.cs" />
