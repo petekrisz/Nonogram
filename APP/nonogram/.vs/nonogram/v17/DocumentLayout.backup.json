@@ -3,11 +3,7 @@
   "WorkspaceRootPath": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|d:\\school\\nono\\nonogram\\app\\nonogram\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -15,12 +11,24 @@
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|d:\\school\\nono\\nonogram\\app\\nonogram\\common\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:common\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\searchbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\searchbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\common\\observableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:common\\observableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\searchbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\searchbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\titlebarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\titlebarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\style\\imageliststyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:style\\imageliststyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\imagelistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,10 +39,6 @@
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\imagelistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|d:\\school\\nono\\nonogram\\app\\nonogram\\style\\scrollbarstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:style\\scrollbarstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\style\\inputboxstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:style\\inputboxstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -43,20 +47,24 @@
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\searchbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\searchbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\style\\scrollbarstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:style\\scrollbarstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\searchbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\searchbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\style\\menubuttons.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:style\\menubuttons.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\style\\imageliststyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:style\\imageliststyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\gameview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\gameview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\titlebarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\titlebarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\common\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:common\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\common\\observableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:common\\observableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\titlebarview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,14 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\buyhelpview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\buyhelpview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\gameview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\gameview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\style\\menubuttons.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:style\\menubuttons.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\model\\listimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -94,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,82 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HashHelper.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\HashHelper.cs",
-              "RelativeDocumentMoniker": "Common\\HashHelper.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\HashHelper.cs",
-              "RelativeToolTip": "Common\\HashHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:52:08.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ScrollBarStyle.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ScrollBarStyle.xaml",
-              "RelativeDocumentMoniker": "Style\\ScrollBarStyle.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ScrollBarStyle.xaml",
-              "RelativeToolTip": "Style\\ScrollBarStyle.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-13T16:18:51.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ImageListViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\ImageListViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\ImageListViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\ImageListViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\ImageListViewModel.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T09:29:19.681Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\MainViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\MainViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\MainViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\MainViewModel.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAcwEEAAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T08:39:49.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\App.xaml",
-              "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\App.xaml",
-              "RelativeToolTip": "App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-13T10:49:56.693Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-11T15:19:53.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "InputBoxStyle.xaml",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\InputBoxStyle.xaml",
               "RelativeDocumentMoniker": "Style\\InputBoxStyle.xaml",
@@ -193,7 +118,55 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MenuButtons.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\MenuButtons.xaml",
+              "RelativeDocumentMoniker": "Style\\MenuButtons.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\MenuButtons.xaml",
+              "RelativeToolTip": "Style\\MenuButtons.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-11T21:36:37.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "ScrollBarStyle.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ScrollBarStyle.xaml",
+              "RelativeDocumentMoniker": "Style\\ScrollBarStyle.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ScrollBarStyle.xaml",
+              "RelativeToolTip": "Style\\ScrollBarStyle.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-13T16:18:51.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-13T10:49:56.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-11T15:19:53.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SearchBarView.xaml",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\SearchBarView.xaml",
               "RelativeDocumentMoniker": "MVVM\\View\\SearchBarView.xaml",
@@ -205,7 +178,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "TitleBarView.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleBarView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\TitleBarView.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleBarView.xaml",
+              "RelativeToolTip": "MVVM\\View\\TitleBarView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-13T15:31:18.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
@@ -218,20 +203,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ObservableObject.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\ObservableObject.cs",
-              "RelativeDocumentMoniker": "Common\\ObservableObject.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\ObservableObject.cs",
-              "RelativeToolTip": "Common\\ObservableObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\MainViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\MainViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\MainViewModel.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T15:27:46.674Z",
+              "WhenOpened": "2024-10-13T08:39:49.52Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 4,
+              "Title": "SearchBarViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\SearchBarViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\SearchBarViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\SearchBarViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\SearchBarViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T15:41:02.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ImageListStyle.xaml",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ImageListStyle.xaml",
               "RelativeDocumentMoniker": "Style\\ImageListStyle.xaml",
@@ -243,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ImageListView.xaml",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ImageListView.xaml",
               "RelativeDocumentMoniker": "MVVM\\View\\ImageListView.xaml",
@@ -255,53 +253,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "TitleBarView.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleBarView.xaml",
-              "RelativeDocumentMoniker": "MVVM\\View\\TitleBarView.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleBarView.xaml",
-              "RelativeToolTip": "MVVM\\View\\TitleBarView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-13T15:31:18.787Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SearchBarViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\SearchBarViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\SearchBarViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\SearchBarViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\SearchBarViewModel.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "ImageListViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\ImageListViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\ImageListViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\ImageListViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\ImageListViewModel.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAcwCQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T15:41:02.503Z"
+              "WhenOpened": "2024-10-13T09:29:19.681Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "TitleBarView.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleBarView.xaml.cs",
-              "RelativeDocumentMoniker": "MVVM\\View\\TitleBarView.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleBarView.xaml.cs",
-              "RelativeToolTip": "MVVM\\View\\TitleBarView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "HashHelper.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\HashHelper.cs",
+              "RelativeDocumentMoniker": "Common\\HashHelper.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\HashHelper.cs",
+              "RelativeToolTip": "Common\\HashHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T15:39:45.284Z"
+              "WhenOpened": "2024-10-14T09:52:08.901Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "GameView.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\GameView.xaml",
-              "RelativeDocumentMoniker": "MVVM\\View\\GameView.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\GameView.xaml",
-              "RelativeToolTip": "MVVM\\View\\GameView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-13T08:42:27.052Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "BuyHelpView.xaml",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\BuyHelpView.xaml",
               "RelativeDocumentMoniker": "MVVM\\View\\BuyHelpView.xaml",
@@ -324,15 +302,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "MenuButtons.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\MenuButtons.xaml",
-              "RelativeDocumentMoniker": "Style\\MenuButtons.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\MenuButtons.xaml",
-              "RelativeToolTip": "Style\\MenuButtons.xaml",
+              "DocumentIndex": 13,
+              "Title": "GameView.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\GameView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\GameView.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\GameView.xaml",
+              "RelativeToolTip": "MVVM\\View\\GameView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-11T21:36:37.132Z",
+              "WhenOpened": "2024-10-13T08:42:27.052Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ObservableObject.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\ObservableObject.cs",
+              "RelativeDocumentMoniker": "Common\\ObservableObject.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\ObservableObject.cs",
+              "RelativeToolTip": "Common\\ObservableObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T15:27:46.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TitleBarView.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleBarView.xaml.cs",
+              "RelativeDocumentMoniker": "MVVM\\View\\TitleBarView.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleBarView.xaml.cs",
+              "RelativeToolTip": "MVVM\\View\\TitleBarView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T15:39:45.284Z"
             },
             {
               "$type": "Document",

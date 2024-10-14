@@ -56,7 +56,7 @@
             </StackPanel>
 
             <!--<TextBox Grid.Column="1" Width="500" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Style="{StaticResource InputTextBox}"/>-->
-            <ContentControl x:Name="SearchBox" Grid.Row="0" Grid.Column="1" Margin="10" Content="{Binding CurrentViewTitle}"/>
+            <ContentControl x:Name="TitleBar" Grid.Row="0" Grid.Column="1" Margin="10" Content="{Binding CurrentViewTitle}"/>
 
             <Border BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="142" Height="140" Margin="0,10,1013,0" Grid.Row="1" Grid.ColumnSpan="2">
                 <Border.Background>

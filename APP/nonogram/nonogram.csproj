@@ -93,7 +93,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\TitleBarView.xaml">
+    <Page Include="MVVM\View\TitleBuyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TitleGameView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,6 +123,8 @@
     <Compile Include="MVVM\ViewModel\ImageListViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModel\SearchBarViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TitleBuyViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TitleGameViewModel.cs" />
     <Compile Include="MVVM\View\BuyHelpView.xaml.cs">
       <DependentUpon>BuyHelpView.xaml</DependentUpon>
     </Compile>
@@ -131,8 +137,11 @@
     <Compile Include="MVVM\View\SearchBarView.xaml.cs">
       <DependentUpon>SearchBarView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\TitleBarView.xaml.cs">
-      <DependentUpon>TitleBarView.xaml</DependentUpon>
+    <Compile Include="MVVM\View\TitleBuyView.xaml.cs">
+      <DependentUpon>TitleBuyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TitleGameView.xaml.cs">
+      <DependentUpon>TitleGameView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

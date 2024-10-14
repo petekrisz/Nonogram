@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\School\NoNo\Nonogram\APP\nonogram\App.xaml
-11-1483981453
+12217198252
 
-19259190127
+222136962240
 13-38814620
-LoginWindow.xaml;MainWindow.xaml;MVVM\View\BuyHelpView.xaml;MVVM\View\ImageListView.xaml;MVVM\View\GameView.xaml;MVVM\View\SearchBarView.xaml;MVVM\View\TitleBarView.xaml;Style\ImageListStyle.xaml;Style\InputBoxStyle.xaml;Style\MenuButtons.xaml;Style\ScrollBarStyle.xaml;
+LoginWindow.xaml;MainWindow.xaml;MVVM\View\BuyHelpView.xaml;MVVM\View\ImageListView.xaml;MVVM\View\GameView.xaml;MVVM\View\SearchBarView.xaml;MVVM\View\TitleBuyView.xaml;MVVM\View\TitleGameView.xaml;Style\ImageListStyle.xaml;Style\InputBoxStyle.xaml;Style\MenuButtons.xaml;Style\ScrollBarStyle.xaml;
 
-False
+True
 

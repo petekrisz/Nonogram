@@ -6,13 +6,16 @@
              xmlns:local="clr-namespace:nonogram.MVVM.View"
              xmlns:vm="clr-namespace:nonogram.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="130"  d:DesignWidth="1010">
 
     <UserControl.DataContext>
         <vm:SearchBarViewModel />
     </UserControl.DataContext>
 
     <Grid>
-        <TextBox Width="500" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Style="{StaticResource InputTextBox}" Text="{Binding SearchBar, UpdateSourceTrigger=PropertyChanged}"/>
+        <StackPanel Orientation="Horizontal" >
+            <TextBox Width="300" Height="50" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" Style="{StaticResource InputTextBox}" Text="{Binding SearchBar, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="IMAGES" Foreground="#998000" FontSize="40" FontWeight="ExtraBold" FontFamily="/Fonts/#Kabala" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="700" Height="130"/>
+        </StackPanel>
     </Grid>
 </UserControl>
