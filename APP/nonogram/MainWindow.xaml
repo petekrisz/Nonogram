@@ -6,7 +6,7 @@
         xmlns:viewModel="clr-namespace:nonogram.MVVM.ViewModel"
         xmlns:local="clr-namespace:nonogram"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+        Title="MainWindow" Height="720" Width="1280" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True" HorizontalAlignment="Center" VerticalAlignment="Center">
     
     
     
@@ -60,7 +60,7 @@
 
             <Border BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="142" Height="140" Margin="0,10,1013,0" Grid.Row="1" Grid.ColumnSpan="2">
                 <Border.Background>
-                    <ImageBrush x:Name="avatar" ImageSource="/Images/woman.png" Stretch="None"/>
+                    <ImageBrush x:Name="avatar" ImageSource="{Binding AvatarUrl}" Stretch="None"/>
                 </Border.Background>
                 <Border.Clip>
                     <EllipseGeometry Center="70,70" RadiusX="70" RadiusY="70"/>

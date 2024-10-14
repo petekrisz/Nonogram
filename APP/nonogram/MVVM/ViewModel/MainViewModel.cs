@@ -39,7 +39,16 @@ namespace nonogram.MVVM.ViewModel
         }
 
 
-
+        private string _avatarUrl;
+        public string AvatarUrl
+        {
+            get { return _avatarUrl; }
+            set
+            {
+                _avatarUrl = value;
+                OnPropertyChanged();
+            }
+        }
 
 
         public MainViewModel()
@@ -53,6 +62,13 @@ namespace nonogram.MVVM.ViewModel
             CurrentViewTitle = SearchBarVM; // For now it is set to SearchBarView, because this is the only that is ready and it should be also the first View after registration
 
             //In the final version it should be dependent on whether the player has an unfinished image or not. In the first case the current view should be set to the title of unfinished image and in the second it should be the SearchBarVM
+
+            string email = "something@something.else"; //That shoud be acquired from DB
+            string hash = HashHelper.ComputeSha256Hash(email);
+            AvatarUrl = "https://www.gravatar.com/avatar/" + hash + "?s=140&d=identicon";
+
+
+
         }
     }
 }
