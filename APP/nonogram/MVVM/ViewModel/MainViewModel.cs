@@ -80,7 +80,7 @@ namespace nonogram.MVVM.ViewModel
 
 
 
-            string email = "something@something.else"; //That shoud be acquired from DB
+            string email = "somethingratherdifferent@something.else"; //That shoud be acquired from DB
             string hash = HashHelper.ComputeSha256Hash(email);
             AvatarUrl = "https://www.gravatar.com/avatar/" + hash + "?s=140&d=identicon";
 
