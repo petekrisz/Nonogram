@@ -16,7 +16,7 @@ namespace nonogram.Common
 
         public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
         {
-            _execute = execute;
+            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
         }
 
@@ -27,7 +27,10 @@ namespace nonogram.Common
 
         public void Execute(object parameter)
         {
-            _canExecute(parameter);
+            if (CanExecute(parameter))
+            {
+                _execute(parameter);
+            }
         }
     }
 }

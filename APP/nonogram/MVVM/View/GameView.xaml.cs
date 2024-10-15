@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace nonogram.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for ImageView.xaml
+    /// Interaction logic for GameView.xaml
     /// </summary>
-    public partial class ImageView : UserControl
+    public partial class GameView : UserControl
     {
-        public ImageView()
+        public GameView()
         {
             InitializeComponent();
         }

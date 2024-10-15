@@ -81,11 +81,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\ImageListView.xaml">
+    <Page Include="MVVM\View\GameView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\GameView.xaml">
+    <Page Include="MVVM\View\ImageListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,11 +130,11 @@
     <Compile Include="MVVM\View\BuyHelpView.xaml.cs">
       <DependentUpon>BuyHelpView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\ImageListView.xaml.cs">
-      <DependentUpon>ImageListView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MVVM\View\GameView.xaml.cs">
       <DependentUpon>GameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ImageListView.xaml.cs">
+      <DependentUpon>ImageListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\SearchBarView.xaml.cs">
       <DependentUpon>SearchBarView.xaml</DependentUpon>
