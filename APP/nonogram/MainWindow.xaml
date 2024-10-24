@@ -63,7 +63,7 @@
                     <ImageBrush x:Name="avatar" ImageSource="{Binding AvatarUrl}" Stretch="None"/>
                 </Border.Background>
                 <Border.Clip>
-                    <EllipseGeometry Center="70,70" RadiusX="70" RadiusY="70"/>
+                    <EllipseGeometry Center="71,70" RadiusX="70" RadiusY="70"/>
                 </Border.Clip>
             </Border>
 
