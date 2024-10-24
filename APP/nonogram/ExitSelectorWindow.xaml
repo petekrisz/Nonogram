@@ -1,0 +1,21 @@
+﻿<Window x:Class="nonogram.ExitSelectorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:nonogram"
+        mc:Ignorable="d"
+        Title="ExitSelectorWindow" Height="150" Width="300" 
+        Style="{StaticResource ExitSelectorWindowStyle}"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+    <Border Background="#1A0D00" CornerRadius="10">
+        <Grid>
+            <TextBlock x:Name="Message" Text="What would you like to do?" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="30"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
+                <Button x:Name="Logout" Content="Logout" Width="100" Height="30" Style="{StaticResource ReddishButtonStyle}"/>
+                <Button x:Name="Exit" Content="Exit" Width="100" Height="30" Style="{StaticResource ReddishButtonStyle}"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

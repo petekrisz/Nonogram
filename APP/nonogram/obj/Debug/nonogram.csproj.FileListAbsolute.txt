@@ -33,3 +33,8 @@ D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\TitleBuyView.g.cs
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\TitleGameView.g.cs
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\TitleBuyView.baml
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\TitleGameView.baml
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\Style\ExitSelectorWindowStyle.baml
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\ExitSelectorWindow.g.cs
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\ExitSelectorWindow.baml
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\UserMenuView.g.cs
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\UserMenuView.baml

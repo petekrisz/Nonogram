@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ExitSelectorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -70,6 +74,9 @@
     <Compile Include="Common\HashHelper.cs" />
     <Compile Include="Common\ObservableObject.cs" />
     <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="ExitSelectorWindow.xaml.cs">
+      <DependentUpon>ExitSelectorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -101,6 +108,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\UserMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\ExitSelectorWindowStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Style\ImageListStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +142,7 @@
     <Compile Include="MVVM\ViewModel\SearchBarViewModel.cs" />
     <Compile Include="MVVM\ViewModel\TitleBuyViewModel.cs" />
     <Compile Include="MVVM\ViewModel\TitleGameViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\UserManuViewModel.cs" />
     <Compile Include="MVVM\View\BuyHelpView.xaml.cs">
       <DependentUpon>BuyHelpView.xaml</DependentUpon>
     </Compile>
@@ -144,6 +160,9 @@
     </Compile>
     <Compile Include="MVVM\View\TitleGameView.xaml.cs">
       <DependentUpon>TitleGameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\UserMenuView.xaml.cs">
+      <DependentUpon>UserMenuView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

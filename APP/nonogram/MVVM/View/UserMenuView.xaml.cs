@@ -13,27 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace nonogram
+namespace nonogram.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for UserMenuView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UserMenuView : UserControl
     {
-        public MainWindow()
+        public UserMenuView()
         {
             InitializeComponent();
         }
-
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
-        {
-            ExitSelectorWindow exitSelector = new ExitSelectorWindow
-            {
-                Owner = this // Set the owner to the main window
-            };
-            exitSelector.ShowDialog();
-        }
-
-
     }
 }
