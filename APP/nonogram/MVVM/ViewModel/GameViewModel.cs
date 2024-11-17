@@ -1,98 +1,67 @@
 ﻿using nonogram.Common;
 using nonogram.DB;
-using System.Collections.ObjectModel;
-using System.Windows.Input;
+using nonogram.MVVM.Model;
+using System.Diagnostics;
 
 namespace nonogram.MVVM.ViewModel
 {
     public class GameViewModel : ObservableObject
     {
-        public ObservableCollection<ButtonModel> Buttons { get; set; }
-        public int Rows { get; set; }
-        public int Columns { get; set; }
-
-        public GameViewModel(IMAGE image)
+        private double _cellSize = 18;
+        public double CellSize
         {
-            Rows = image.Rows;
-            Columns = image.Columns;
-            Buttons = new ObservableCollection<ButtonModel>();
-
-            //checking the length of the content:
-            int expectedLength = Rows * Columns;
-            if (image.Content.Length != expectedLength)
-            {
-                throw new System.Exception($"A kép contentjével gond van. Ennyi: {image.Content.Length}, miközben ennyi kellene legyen: {expectedLength}");
-
-            }
-
-
-                for (int i = 0; i < Rows; i++)
-            {
-                for (int j = 0; j < Columns; j++)
-                {
-                    Buttons.Add(new ButtonModel
-                    {
-                        Row = i,
-                        Column = j,
-                        Content = image.Content[i * Columns + j].ToString(),
-                        Command = new RelayCommand<object> (ChangeButtonState)
-                    });
-                }
-            }
-        }
-
-        private void ChangeButtonState(object parameter)
-        {
-            if (parameter is ButtonModel button)
-            {
-                switch (button.State)
-                {
-                    case ButtonState.Default:
-                        button.State = ButtonState.Black;
-                        button.Content = string.Empty;
-                        break;
-                    case ButtonState.Black:
-                        button.State = ButtonState.X;
-                        button.Content = "X";
-                        break;
-                    case ButtonState.X:
-                        button.State = ButtonState.Question;
-                        button.Content = "?";
-                        break;
-                    case ButtonState.Question:
-                        button.State = ButtonState.Default;
-                        button.Content = string.Empty;
-                        break;
-                }
-            }
-        }
-    }
-
-    public class ButtonModel : ObservableObject
-    {
-        private ButtonState _state;
-        public ButtonState State
-        {
-            get => _state;
+            get => _cellSize;
             set
             {
-                _state = value;
+                _cellSize = value;
                 OnPropertyChanged();
             }
         }
 
-        public int Row { get; set; }
-        public int Column { get; set; }
-        public string Content { get; set; }
-        public ICommand Command { get; set; }
-    }
+        private double _fontSize = 10;
+        public double FontSize
+        {
+            get => _fontSize;
+            set
+            {
+                _fontSize = value;
+                OnPropertyChanged();
+            }
+        }
 
-    public enum ButtonState
-    {
-        Default,
-        Black,
-        X,
-        Question
+        public GameGrid GameGrid { get; set; }
+
+        public GameViewModel(IMAGE image)
+        {
+            GameGrid = new GameGrid(image);
+            Debug.WriteLine($"ColumnNumbersTable count: {GameGrid.ColumnNumbersTable?.Count}");
+            Debug.WriteLine($"RowNumbersTable count: {GameGrid.RowNumbersTable?.Count}");
+        }
+
+        public void CellClicked(GameCell cell)
+        {
+            switch (cell.State)
+            {
+                case 0:
+                    cell.Background = "Black";
+                    cell.DisplayText = string.Empty;
+                    cell.State = 1;
+                    break;
+                case 1:
+                    cell.Background = "#FFF7CC";
+                    cell.DisplayText = "X";
+                    cell.State = 2;
+                    break;
+                case 2:
+                    cell.DisplayText = "?";
+                    cell.State = 3;
+                    break;
+                case 3:
+                    cell.DisplayText = string.Empty;
+                    cell.State = 0;
+                    break;
+            }
+        }
     }
 
 }

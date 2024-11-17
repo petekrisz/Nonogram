@@ -74,6 +74,7 @@
     <Compile Include="Common\HashHelper.cs" />
     <Compile Include="Common\ObservableObject.cs" />
     <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Converters\SizeConverter.cs" />
     <Compile Include="DB\DataStorage.cs" />
     <Compile Include="DB\IMAGE.cs" />
     <Compile Include="ExitSelectorWindow.xaml.cs">
@@ -134,8 +135,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Style\UniformGridStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\Model\GameGrid.cs" />
     <Compile Include="MVVM\Model\ListImage.cs" />
     <Compile Include="MVVM\ViewModel\BuyHelpViewModel.cs" />
     <Compile Include="MVVM\ViewModel\GameViewModel.cs" />

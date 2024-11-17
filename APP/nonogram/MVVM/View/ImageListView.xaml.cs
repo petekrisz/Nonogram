@@ -19,12 +19,9 @@ namespace nonogram.MVVM.View
 
         private void OnImageSelected(object sender, MouseButtonEventArgs e)
         {
-            if (sender is ContentPresenter contentPresenter && contentPresenter.Content is ListImage listImage)
+            if (sender is ContentPresenter contentPresenter && contentPresenter.Content is ListImage listImage && DataContext is ImageListViewModel viewModel && Application.Current.MainWindow.DataContext is MainViewModel mainViewModel)
             {
-                if (DataContext is ImageListViewModel viewModel && Application.Current.MainWindow.DataContext is MainViewModel mainViewModel)
-                {
-                    mainViewModel.GameViewCommand.Execute(listImage.Image);
-                }
+                mainViewModel.GameViewCommand.Execute(listImage.Image);
             }
         }
 

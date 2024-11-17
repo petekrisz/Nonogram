@@ -77,8 +77,8 @@ namespace nonogram.MVVM.ViewModel
 
             //In the final version it should be dependent on whether the player has an unfinished image or not. In the first case the current view should be set to the title of unfinished image and in the second it should be the SearchBarVM
 
-            ImageListViewCommand = new RelayCommand<object> (o => { CurrentViewMain = ImageListVM; CurrentViewTitle = SearchBarVM; });
-            BuyHelpViewCommand = new RelayCommand<object> (o => { CurrentViewMain = BuyHelpVM; CurrentViewTitle = TitleBuyVM; });
+            ImageListViewCommand = new RelayCommand<object> (_ => { CurrentViewMain = ImageListVM; CurrentViewTitle = SearchBarVM; });
+            BuyHelpViewCommand = new RelayCommand<object> (_ => { CurrentViewMain = BuyHelpVM; CurrentViewTitle = TitleBuyVM; });
             GameViewCommand = new RelayCommand<IMAGE>(OpenGameView);
 
 
