@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace nonogram
 {
@@ -13,6 +14,8 @@ namespace nonogram
 
             Logout.Click += Logout_Click;
             Exit.Click += Exit_Click;
+
+            this.Deactivated += ExitSelectorWindow_Deactivated;
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
@@ -27,5 +30,11 @@ namespace nonogram
         {
             Application.Current.Shutdown();                 // This closes the whole application
         }
+
+        private void ExitSelectorWindow_Deactivated(object sender, EventArgs e)
+        {
+            this.Close();                                   // If clicked by mistake, clicking outside the window brings back the user to the app
+        }
+
     }
 }

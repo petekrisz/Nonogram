@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModel="clr-namespace:nonogram.MVVM.ViewModel"
         xmlns:local="clr-namespace:nonogram"
+        xmlns:view="clr-namespace:nonogram.MVVM.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True" HorizontalAlignment="Center" VerticalAlignment="Center">
-    
-    
-    
+
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-    
-    
-    
-    
-    
-    
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:BuyHelpViewModel}">
+            <view:BuyHelpView/>
+        </DataTemplate>
+    </Window.Resources>
+
     <Border Background="#1A0D00" CornerRadius="25">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -49,7 +49,6 @@
                 </ContentControl>
             </Grid>
 
-
             <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2" >
                 <TextBlock Text="NONO&#x0a;GRAM" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#998000" FontSize="38"  Margin="20,17,0,0" FontFamily="/Fonts/#Kabala" FontWeight="ExtraBold" TextWrapping="Wrap"/>
                 <Image x:Name="logo" Source="/Images/logo.png" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="5,18,0,10"/>
@@ -72,11 +71,7 @@
                 </ScrollViewer.Resources>
                 <ContentControl Content="{Binding CurrentViewMain}"/>
             </ScrollViewer>
-            
+
         </Grid>
-
-
-
-
     </Border>
 </Window>
