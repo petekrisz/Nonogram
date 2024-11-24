@@ -4,9 +4,53 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:nonogram.MVVM.View"
+             xmlns:vm="clr-namespace:nonogram.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vm:BuyHelpViewModel/>
+    </UserControl.DataContext>
     <Grid>
+        <StackPanel>
+            <!-- Megmutat 3 hibás jelölést -->
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Megmutat 3 hibás jelölést (10 kredit)" Width="200" Style="{StaticResource TextStyle}"/>
+                <Button Content="-" Width="30" Command="{Binding DecreaseCommand}" CommandParameter="Megmutat3Hibas"/>
+                <TextBlock Text="{Binding Megmutat3HibasCount}" Width="30" HorizontalAlignment="Center" Style="{StaticResource TextStyle}"/>
+                <Button Content="+" Width="30" Command="{Binding IncreaseCommand}" CommandParameter="Megmutat3Hibas"/>
+            </StackPanel>
 
+            <!-- Megmutat 2 hibás jelölést -->
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Megmutat 2 hibás jelölést (7 kredit)" Width="200" Style="{StaticResource TextStyle}"/>
+                <Button Content="-" Width="30" Command="{Binding DecreaseCommand}" CommandParameter="Megmutat2Hibas"/>
+                <TextBlock Text="{Binding Megmutat2HibasCount}" Width="30" HorizontalAlignment="Center" Style="{StaticResource TextStyle}"/>
+                <Button Content="+" Width="30" Command="{Binding IncreaseCommand}" CommandParameter="Megmutat2Hibas"/>
+            </StackPanel>
+
+            <!-- Random view -->
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Random view (5 kredit)" Width="200" Style="{StaticResource TextStyle}"/>
+                <Button Content="-" Width="30" Command="{Binding DecreaseCommand}" CommandParameter="RandomView"/>
+                <TextBlock Text="{Binding RandomViewCount}" Width="30" HorizontalAlignment="Center" Style="{StaticResource TextStyle}"/>
+                <Button Content="+" Width="30" Command="{Binding IncreaseCommand}" CommandParameter="RandomView"/>
+            </StackPanel>
+
+            <!-- View Row -->
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="View Row (15 kredit)" Width="200" Style="{StaticResource TextStyle}"/>
+                <Button Content="-" Width="30" Command="{Binding DecreaseCommand}" CommandParameter="ViewRow"/>
+                <TextBlock Text="{Binding ViewRowCount}" Width="30" HorizontalAlignment="Center" Style="{StaticResource TextStyle}"/>
+                <Button Content="+" Width="30" Command="{Binding IncreaseCommand}" CommandParameter="ViewRow"/>
+            </StackPanel>
+
+            <!-- View Column -->
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="View Column (15 kredit)" Width="200" Style="{StaticResource TextStyle}"/>
+                <Button Content="-" Width="30" Command="{Binding DecreaseCommand}" CommandParameter="ViewColumn"/>
+                <TextBlock Text="{Binding ViewColumnCount}" Width="30" HorizontalAlignment="Center" Style="{StaticResource TextStyle}"/>
+                <Button Content="+" Width="30" Command="{Binding IncreaseCommand}" CommandParameter="ViewColumn"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>
