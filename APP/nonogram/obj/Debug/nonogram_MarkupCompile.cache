@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\
+C:\Users\User\Desktop\PROJECTMUNKA\Nonogram-GameView\APP\nonogram\obj\Debug\
 nonogram
 none
 false
 DEBUG;TRACE
-D:\School\NoNo\Nonogram\APP\nonogram\App.xaml
-15-678035620
-
-26-1774161395
+C:\Users\User\Desktop\PROJECTMUNKA\Nonogram-GameView\APP\nonogram\App.xaml
+16-1356027168
+11932350996
+301717300452
 13-38814620
-ExitSelectorWindow.xaml;LoginWindow.xaml;MainWindow.xaml;MVVM\View\BuyHelpView.xaml;MVVM\View\GameView.xaml;MVVM\View\ImageListView.xaml;MVVM\View\SearchBarView.xaml;MVVM\View\TitleBuyView.xaml;MVVM\View\TitleGameView.xaml;MVVM\View\UserMenuView.xaml;Style\ExitSelectorWindowStyle.xaml;Style\ImageListStyle.xaml;Style\InputBoxStyle.xaml;Style\MenuButtons.xaml;Style\ScrollBarStyle.xaml;
+ExitSelectorWindow.xaml;LoginWindow.xaml;MainWindow.xaml;MVVM\View\BuyHelpView.xaml;MVVM\View\GameView.xaml;MVVM\View\ImageListView.xaml;MVVM\View\SearchBarView.xaml;MVVM\View\TitleBuyView.xaml;MVVM\View\TitleGameView.xaml;MVVM\View\UserMenuView.xaml;Style\ExitSelectorWindowStyle.xaml;Style\ImageListStyle.xaml;Style\InputBoxStyle.xaml;Style\MenuButtons.xaml;Style\ScrollBarStyle.xaml;Style\UniformGridStyle.xaml;
 
 False
 

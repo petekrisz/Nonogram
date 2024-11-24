@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using nonogram.MVVM.ViewModel;
+using nonogram.MVVM.Model;
+using System;
+using System.Diagnostics;
 
 namespace nonogram.MVVM.View
 {
@@ -23,6 +15,40 @@ namespace nonogram.MVVM.View
         public GameView()
         {
             InitializeComponent();
+        }
+
+        public void SetViewModel(GameViewModel viewModel)
+        {
+            DataContext = viewModel;
+        }
+
+        private void UserControl_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (DataContext is GameViewModel viewModel)
+            {
+                if (e.Delta > 0)
+                {
+                    viewModel.CellSize += 2;
+                    viewModel.FontSize += 1;
+                }
+                else if (e.Delta < 0)
+                {
+                    viewModel.CellSize = Math.Max(10, viewModel.CellSize - 2);
+                    viewModel.FontSize = Math.Max(6, viewModel.FontSize - 1);
+                }
+            }
+        }
+
+        private void TextBlock_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Debug.WriteLine("MouseLeftButtonUp Event Triggered");
+            if (sender is TextBlock textBlock && textBlock.DataContext is GameCell cell)
+            {
+                if (DataContext is GameViewModel viewModel)
+                {
+                    viewModel.CellClicked(cell);
+                }
+            }
         }
     }
 }
