@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="nonogram.MVVM.View.SearchBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:nonogram.MVVM.View"
+             xmlns:vm="clr-namespace:nonogram.MVVM.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="130"  d:DesignWidth="1010">
+
+    <UserControl.DataContext>
+        <vm:SearchBarViewModel />
+    </UserControl.DataContext>
+
+    <Grid>
+        <StackPanel Orientation="Horizontal" >
+            <TextBox Width="300" Height="50" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" Style="{StaticResource InputTextBox}" Text="{Binding SearchBar, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="IMAGES" Foreground="#998000" FontSize="40" FontWeight="ExtraBold" FontFamily="/Fonts/#Kabala" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="700" Height="130"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
