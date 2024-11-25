@@ -74,6 +74,9 @@
     <Compile Include="Common\HashHelper.cs" />
     <Compile Include="Common\ObservableObject.cs" />
     <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Converters\SizeConverter.cs" />
+    <Compile Include="DB\DataStorage.cs" />
+    <Compile Include="DB\IMAGE.cs" />
     <Compile Include="ExitSelectorWindow.xaml.cs">
       <DependentUpon>ExitSelectorWindow.xaml</DependentUpon>
     </Compile>
@@ -132,8 +135,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Style\UniformGridStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\Model\GameGrid.cs" />
     <Compile Include="MVVM\Model\ListImage.cs" />
     <Compile Include="MVVM\ViewModel\BuyHelpViewModel.cs" />
     <Compile Include="MVVM\ViewModel\GameViewModel.cs" />
@@ -184,6 +192,9 @@
     <Resource Include="Fonts\Kabala Regular.otf" />
     <Resource Include="Fonts\Kabala Bold.otf" />
     <Resource Include="Fonts\Kabala Extra Bold.otf" />
+    <Content Include="DB\Image_table.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -192,9 +203,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\person_icon_gold.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\person_icon_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\animal_icon_gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\animal_icon_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\plant_icon_gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\plant_icon_light.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

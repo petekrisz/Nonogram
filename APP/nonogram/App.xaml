@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:nonogram"
              xmlns:viewModel="clr-namespace:nonogram.MVVM.ViewModel"
              xmlns:view="clr-namespace:nonogram.MVVM.View"
+             xmlns:converters="clr-namespace:nonogram.Converters"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -13,6 +14,7 @@
                 <ResourceDictionary Source="Style/ImageListStyle.xaml"/>
                 <ResourceDictionary Source="Style/ScrollBarStyle.xaml"/>
                 <ResourceDictionary Source="Style/ExitSelectorWindowStyle.xaml"/>
+                <ResourceDictionary Source="Style/UniformGridStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:ImageListViewModel}">
@@ -25,9 +27,6 @@
                 <view:BuyHelpView/>
             </DataTemplate>
 
-
-
-
             <DataTemplate DataType="{x:Type viewModel:TitleBuyViewModel}">
                 <view:TitleBuyView/>
             </DataTemplate>
@@ -38,7 +37,22 @@
                 <view:TitleGameView/>
             </DataTemplate>
 
+            <Style x:Key="TextStyle" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="#998000"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="/Fonts/#Kabala"/>
+                <Setter Property="FontWeight" Value="ExtraBold"/>
+            </Style>
+
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="Foreground" Value="#998000"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="/Fonts/#Kabala"/>
+                <Setter Property="FontWeight" Value="ExtraBold"/>
+            </Style>
+
+            <converters:SizeConverter x:Key="SizeConverter"/>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         </ResourceDictionary>
     </Application.Resources>
-
 </Application>
