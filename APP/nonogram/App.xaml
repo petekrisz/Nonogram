@@ -14,7 +14,7 @@
                 <ResourceDictionary Source="Style/ImageListStyle.xaml"/>
                 <ResourceDictionary Source="Style/ScrollBarStyle.xaml"/>
                 <ResourceDictionary Source="Style/ExitSelectorWindowStyle.xaml"/>
-                <ResourceDictionary Source="Style/UniformGridStyle.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
 
             
@@ -40,7 +40,10 @@
             <DataTemplate DataType="{x:Type viewModel:TitleGameViewModel}">
                 <view:TitleGameView/>
             </DataTemplate>
-            
+
+            <converters:ZeroToVisibilityConverter x:Key="ZeroToVisibilityConverter"/>
+            <converters:BoolToBrushConverter x:Key="BoolToBrushConverter"/>
+
         </ResourceDictionary>
     </Application.Resources>
 

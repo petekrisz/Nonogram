@@ -3,37 +3,99 @@ using System.Windows.Data;
 using System.Windows.Media;
 using System;
 using System.Diagnostics;
+using nonogram.MVVM.ViewModel;
 
 namespace nonogram.Converters
 {
-    public class BoolToBrushConverter : IValueConverter
+    public class BoolToBrushConverter : IMultiValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        // Convert method for handling multiple binding values (IsHighlighted, ClickState)
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            Debug.WriteLine($"BoolToBrushConverter called. Value: {value}, Parameter: {parameter}");
-            bool isHighlighted = value is bool && (bool)value;
-
-            if (parameter as string == "ImageCell")
+            if (values.Length == 3)
             {
-                return isHighlighted
-                    ? new SolidColorBrush(Color.FromRgb(200, 200, 255)) // Highlight color for ImageCell
-                    : new SolidColorBrush(Color.FromRgb(255, 247, 204)); // Default #FFF7CC
+                bool isHighlighted = (bool)values[0];  // IsHighlighted value (first binding)
+                int clickState = (int)values[1];  // ClickState value (second binding)
+                Brush initialBackground = values[2] as Brush;  // InitialBackground (third binding)
+
+                // If ClickState is 1, return the black background
+                if (clickState == 1)
+                    return Brushes.Black;
+
+                // If highlighted, return highlight color
+                if (isHighlighted)
+                    return Brushes.WhiteSmoke;
+
+                // If not highlighted, return the initial background
+                return initialBackground ?? Brushes.Transparent;
             }
 
-            if (parameter as string == "Table")
-            {
-                return isHighlighted
-                    ? new SolidColorBrush(Color.FromRgb(211, 211, 211)) // Highlight color for Row/Column
-                    : new SolidColorBrush(Color.FromRgb(192, 192, 192)); // Default LightGray
-            }
-
-            return new SolidColorBrush(Colors.Transparent);
+            // Default case: return transparent if something goes wrong
+            return Brushes.Transparent;
         }
 
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
     }
+
+
+
+
+
+    //public class BoolToBrushConverter : IValueConverter
+    //{
+    //        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    //        {
+    //            if (value is bool isHighlighted && parameter is string context && targetType == typeof(Brush))
+    //            {
+    //                if (context == "ImageCell" && value is bool highlighted)
+    //                {
+    //                    // Access the InitialBackground property directly from the bound data context
+    //                    return highlighted ? Brushes.WhiteSmoke : Brushes.Transparent;
+    //                }
+
+    //                // Other contexts (e.g., hints)
+    //                if (context == "Table")
+    //                {
+    //                    return isHighlighted ? Brushes.LightGray : Brushes.Transparent;
+    //                }
+    //            }
+
+    //            return Brushes.Transparent; // Default case
+    //        }
+
+    //        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    //        {
+    //            throw new NotImplementedException();
+    //        }
+
+    //    //public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    //    //{
+    //    //    if (value is bool isHighlighted && parameter is string context && targetType == typeof(Brush))
+    //    //    {
+    //    //        // Get the InitialBackground from the DataContext
+    //    //        var element = parameter as GridElement;
+
+    //    //        // Return appropriate brush
+    //    //        if (context == "ImageCell")
+    //    //        {
+    //    //            return isHighlighted ? Brushes.WhiteSmoke : element?.InitialBackground ?? Brushes.Transparent;
+    //    //        }
+    //    //        else if (context == "Table")
+    //    //        {
+    //    //            return isHighlighted ? Brushes.LightGray : Brushes.Transparent;
+    //    //        }
+    //    //    }
+
+    //    //    // Default case
+    //    //    return Brushes.Transparent;
+    //    //}
+
+    //    //public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    //    //{
+    //    //    throw new NotImplementedException();
+    //    //}
+    //}
 }

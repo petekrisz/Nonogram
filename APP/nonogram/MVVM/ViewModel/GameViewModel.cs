@@ -97,14 +97,24 @@ namespace nonogram.MVVM.ViewModel
                 {
                     for (int j = 0; j < columns; j++)
                     {
-                        var cellValue = dataList[i][j];
+                        var cellValue = dataList[i][j]; //Get the value (either char or int)
+
+                        // Determine the initial background based on the table type
+                        var initialBrush = new SolidColorBrush(Color.FromRgb(255, 247, 204)); // Default for ImageCells
+                        if (listName == "RowHints" || listName == "HorizontalColumnHints")
+                        {
+                            initialBrush = Brushes.LightGray; // Example color for hints
+                        }
+
 
                         // Create a new GridElement
                         var gridElement = new GridElement
                         {
                             Row = i,
                             Column = j,
-                            IsHighlighted = false // Default: not highlighted
+                            InitialBackground = initialBrush, // Set the initial background
+                            IsHighlighted = false, // Default highlighting state
+                            ClickState = 0, // Default click state
                         };
 
                         // Create a TextBlock for the GridElement
@@ -117,15 +127,6 @@ namespace nonogram.MVVM.ViewModel
                             HorizontalAlignment = HorizontalAlignment.Center
                         };
 
-                        // Set default background colors for different table types
-                        if (targetCollection == ImageCellTableElements)
-                        {
-                            textBlock.Background = new SolidColorBrush(Color.FromRgb(255, 247, 204)); // #FFF7CC
-                        }
-                        else if (targetCollection == ColumnTableElements || targetCollection == RowTableElements)
-                        {
-                            textBlock.Background = new SolidColorBrush(Color.FromRgb(211, 211, 211)); // LightGray
-                        }
 
                         gridElement.Element = textBlock;
 
@@ -140,29 +141,75 @@ namespace nonogram.MVVM.ViewModel
         {
             Debug.WriteLine($"HighlightRowAndColumn called. Row: {row}, Column: {column}, Highlight: {highlight}");
 
-            // Highlight all elements in the row
-            foreach (var element in ImageCellTableElements.Where(e => e.Row == row))
+            // Highlight corresponding row in RowTableElements            
+            foreach (var rowElement in RowTableElements.Where(r => r.Row == row))
             {
-                element.IsHighlighted = highlight;
+                if (rowElement is GridElement rowGridElement)
+                {
+                    rowGridElement.IsHighlighted = highlight;
+                }
             }
 
-            // Highlight all elements in the column
-            foreach (var element in ImageCellTableElements.Where(e => e.Column == column))
+            // Highlight corresponding column in ColumnTableElements
+            foreach (var columnElement in ColumnTableElements.Where(c => c.Column == column))
             {
-                element.IsHighlighted = highlight;
+                if (columnElement is GridElement columnGridElement)
+                {
+                    columnGridElement.IsHighlighted = highlight;
+                }
             }
 
-            // Optionally, handle RowTableElements and ColumnTableElements
-            foreach (var rowElement in RowTableElements.Where(e => e.Row == row))
+            // Highlight the corresponding cell in the ImageCellTableElements
+            foreach (var cellElement in ImageCellTableElements.Where(c => c.Row == row || c.Column == column))
             {
-                rowElement.IsHighlighted = highlight;
-            }
+                if (cellElement is GridElement cellGridElement)
+                {
+                    Debug.WriteLine($"Element Row: {cellGridElement.Row}, Column: {cellGridElement.Column}, ClickState: {cellGridElement.ClickState}, Highlight: {highlight}");
 
-            foreach (var columnElement in ColumnTableElements.Where(e => e.Column == column))
-            {
-                columnElement.IsHighlighted = highlight;
+                    // Ensure cells with ClickState 1 are not highlighted
+                    if (cellGridElement.ClickState != 1)
+                    {
+                        cellGridElement.IsHighlighted = highlight;
+                    }
+                }
             }
         }
+
+
+
+        //public void HighlightRowAndColumn(int row, int column, bool highlight)
+        //{
+        //    Debug.WriteLine($"HighlightRowAndColumn called. Row: {row}, Column: {column}, Highlight: {highlight}");
+
+        //    // For debugging each element being updated
+        //    foreach (var element in ImageCellTableElements.Where(e => e.Row == row || e.Column == column))
+        //    {
+        //        Debug.WriteLine($"Element to be highlighted: Row {element.Row}, Column {element.Column}");
+        //    }
+
+        //    // Highlight all elements in the row
+        //    foreach (var element in ImageCellTableElements.Where(e => e.Row == row))
+        //    {
+        //        element.IsHighlighted = highlight;
+        //    }
+
+        //    // Highlight all elements in the column
+        //    foreach (var element in ImageCellTableElements.Where(e => e.Column == column))
+        //    {
+        //        element.IsHighlighted = highlight;
+        //    }
+
+        //    // Optionally, handle RowTableElements and ColumnTableElements
+        //    foreach (var rowElement in RowTableElements.Where(e => e.Row == row))
+        //    {
+        //        rowElement.IsHighlighted = highlight;
+        //    }
+
+        //    foreach (var columnElement in ColumnTableElements.Where(e => e.Column == column))
+        //    {
+        //        columnElement.IsHighlighted = highlight;
+        //    }
+        //}
 
 
         //public void HighlightRowAndColumn(int row, int column, bool highlight)
@@ -205,10 +252,24 @@ namespace nonogram.MVVM.ViewModel
     {
         private int _clickState;
         private bool _isHighlighted;
+        private Brush _initialBackground;
 
         public UIElement Element { get; set; }
         public int Row { get; set; }
         public int Column { get; set; }
+
+        public Brush InitialBackground
+        {
+            get => _initialBackground;
+            set
+            {
+                if (_initialBackground != value)
+                {
+                    _initialBackground = value;
+                    OnPropertyChanged(nameof(InitialBackground));
+                }
+            }
+        }
 
         public bool IsHighlighted
         {
