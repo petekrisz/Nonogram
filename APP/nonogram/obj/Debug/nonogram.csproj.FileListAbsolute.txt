@@ -38,3 +38,5 @@ D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\ExitSelectorWindow.g.cs
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\ExitSelectorWindow.baml
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\UserMenuView.g.cs
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\UserMenuView.baml
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\nonogram_Content.g.cs
+D:\School\NoNo\Nonogram\APP\nonogram\bin\Debug\DB\Image_table.csv

@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace nonogram.Common
 {
-    internal class ObservableObject : INotifyPropertyChanged
+    public class ObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -12,4 +12,9 @@ namespace nonogram.Common
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
+
+    
+
+
+
 }

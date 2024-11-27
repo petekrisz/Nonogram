@@ -1,20 +1,27 @@
 ﻿using nonogram.Common;
+using nonogram.DB;
+using nonogram.MVVM.View;
+using System.Windows.Input;
 
 namespace nonogram.MVVM.ViewModel
 {
     internal class MainViewModel : ObservableObject
     {
-        public RelayCommand ImageListViewCommand { get; set; }
-        public RelayCommand BuyHelpViewCommand { get; set; }
+        public RelayCommand<object> ImageListViewCommand { get; set; }
+        public RelayCommand<object> BuyHelpViewCommand { get; set; }
+        public RelayCommand<IMAGE> GameViewCommand { get; set; }
 
 
 
 
         public ImageListViewModel ImageListVM { get; set; }
         public ImageListViewModel BuyHelpVM { get; set; }
+        public GameViewModel GameVM { get; set; }
+
 
         public SearchBarViewModel SearchBarVM { get; set; }
         public TitleBuyViewModel TitleBuyVM { get; set; }
+        public TitleGameViewModel TitleGameVM { get; set; }
 
 
         private object _currentViewMain;
@@ -65,17 +72,14 @@ namespace nonogram.MVVM.ViewModel
 
             SearchBarVM = new SearchBarViewModel();
             TitleBuyVM = new TitleBuyViewModel();
+
             CurrentViewTitle = SearchBarVM; // For now it is set to SearchBarView, because this is the only that is ready and it should be also the first View after registration
 
             //In the final version it should be dependent on whether the player has an unfinished image or not. In the first case the current view should be set to the title of unfinished image and in the second it should be the SearchBarVM
 
-            ImageListViewCommand = new RelayCommand(o => { CurrentViewMain = ImageListVM; CurrentViewTitle = SearchBarVM; });
-            BuyHelpViewCommand = new RelayCommand(o => { CurrentViewMain = BuyHelpVM; CurrentViewTitle = TitleBuyVM; });
-
-
-
-
-
+            ImageListViewCommand = new RelayCommand<object> (_ => { CurrentViewMain = ImageListVM; CurrentViewTitle = SearchBarVM; });
+            BuyHelpViewCommand = new RelayCommand<object> (_ => { CurrentViewMain = BuyHelpVM; CurrentViewTitle = TitleBuyVM; });
+            GameViewCommand = new RelayCommand<IMAGE>(OpenGameView);
 
 
 
@@ -86,6 +90,21 @@ namespace nonogram.MVVM.ViewModel
 
 
 
+
         }
+
+        public void OpenGameView(IMAGE selectedImage)
+        {
+            GameVM = new GameViewModel(selectedImage);
+            TitleGameVM = new TitleGameViewModel(selectedImage.Title);
+            var gameView = new GameView();
+            gameView.SetViewModel(GameVM);
+            CurrentViewMain = gameView;
+            CurrentViewTitle = TitleGameVM;
+        }
+
+
+
+
     }
 }
