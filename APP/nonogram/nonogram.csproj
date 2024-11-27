@@ -74,7 +74,8 @@
     <Compile Include="Common\HashHelper.cs" />
     <Compile Include="Common\ObservableObject.cs" />
     <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Converters\SizeConverter.cs" />
+    <Compile Include="Converters\BoolToBrushConverter.cs" />
+    <Compile Include="Converters\ZeroToVisibilityConverter.cs" />
     <Compile Include="DB\DataStorage.cs" />
     <Compile Include="DB\IMAGE.cs" />
     <Compile Include="ExitSelectorWindow.xaml.cs">

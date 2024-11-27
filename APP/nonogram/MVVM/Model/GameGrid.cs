@@ -1,183 +1,162 @@
 ﻿using nonogram.Common;
 using nonogram.DB;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
 
 namespace nonogram.MVVM.Model
 {
     public class GameGrid : ObservableObject
     {
-        public ObservableCollection<GameCell> Cells { get; set; }
-        public ObservableCollection<ObservableCollection<int?>> RowNumbersTable { get; set; }
-        public ObservableCollection<ObservableCollection<int?>> ColumnNumbersTable { get; set; }
-        public int Rows { get; set; }
-        public int Columns { get; set; }
-        public int RowCount => RowNumbersTable?.Count ?? 0;
-        public int ColumnCount => ColumnNumbersTable?.Count ?? 0;
-
+        public List<List<char>> ImageCells { get; set; }
+        public List<List<int>> RowHints { get; private set; }
+        public List<List<int>> ColumnHints { get; private set; }
+        public int Rows { get; private set; }
+        public int Columns { get; private set; }
+        public int MaxRowHintCount { get; private set; }
+        public int MaxColumnHintCount { get; private set; }
 
         public GameGrid(IMAGE image)
         {
             Rows = image.Rows;
             Columns = image.Columns;
-            Cells = new ObservableCollection<GameCell>();
-            RowNumbersTable = new ObservableCollection<ObservableCollection<int?>>();
-            ColumnNumbersTable = new ObservableCollection<ObservableCollection<int?>>();
+            ImageCells = new List<List<char>>();
+            RowHints = new List<List<int>>();
+            ColumnHints = new List<List<int>>();
+            MaxRowHintCount = 0;
+            MaxColumnHintCount = 0;
+            InitializeGrid(image.Content);
+            CalculateHints();
+        }
 
-            CalculateNumbers(image);
 
+
+
+        private void InitializeGrid(string content)
+        {
             for (int i = 0; i < Rows; i++)
             {
-                for (int j = 0; j < Columns; j++)
-                {
-                    Cells.Add(new GameCell
-                    {
-                        Content = image.Content[i * Columns + j].ToString()
-                    });
-                }
+                var temp = content.Skip(i * Columns).Take(Columns).ToList();
+                ImageCells.Add(temp);
             }
+        }
+
+        private void CalculateHints()
+        {
+            // Calculate RowHints
+            RowHints = ImageCells
+                .Select(row => CalculateConsecutiveCells(new string(row.ToArray())))
+                .ToList();
+
+            MaxRowHintCount = RowHints.Max(hint => hint.Count);
+
+            // Calculate ColumnHints
+            ColumnHints = Enumerable.Range(0, Columns)
+                .Select(col => CalculateConsecutiveCells(new string(ImageCells.Select(row => row[col]).ToArray())))
+                .ToList();
+
+            MaxColumnHintCount = ColumnHints.Max(hint => hint.Count);
         }
 
         private List<int> CalculateConsecutiveCells(string line)
         {
-            List<int> result = new List<int>();
-            int count = 0;
-            foreach (char c in line)
-            {
-                if (c == '1')
+            return line
+                .Aggregate(new List<int> { 0 }, (acc, c) =>
                 {
-                    count++;
-                }
-                else if (count > 0)
-                {
-                    result.Add(count);
-                    count = 0;
-                }
-            }
-            if (count > 0)
-            {
-                result.Add(count);
-            }
-            return result;
+                    if (c == '1')
+                        acc[acc.Count - 1]++;
+                    else if (acc[acc.Count - 1] > 0)
+                        acc.Add(0);
+                    return acc;
+                })
+                .Where(count => count > 0)
+                .ToList();
         }
 
-        private void CalculateNumbers(IMAGE image)
+        public List<List<int>> GetRowHints()
         {
-            // Calculate row numbers
-            int columnRowNumbers = 0;
-            List<List<int>> rowNumbers = new List<List<int>>();
-            for (int i = 0; i < Rows; i++)
+            return RowHints.Select(list => Enumerable.Repeat(0, MaxRowHintCount - list.Count).Concat(list).ToList()).ToList();
+        }
+
+        public List<List<int>> GetHorizontalColumnHints()
+        {
+            List<List<int>> HorizontalColumnHints = new List<List<int>>();
+            for (int i = 0; i < MaxColumnHintCount; i++)
             {
-                string row = image.Content.Substring(i * Columns, Columns);
-                var rowNumbersList = CalculateConsecutiveCells(row);
-                rowNumbers.Add(rowNumbersList);
-                if (rowNumbersList.Count > columnRowNumbers)
-                {
-                    columnRowNumbers = rowNumbersList.Count;
-                }
+                HorizontalColumnHints.Add(new List<int>());
             }
 
-            // Fill row numbers table
-            for (int i = 0; i < Rows; i++)
+            // Fill the transformed list
+            for (int i = 0; i < MaxColumnHintCount; i++)
             {
-                var row = new ObservableCollection<int?>();
-                for (int j = 0; j < columnRowNumbers; j++)
+                for (int j = 0; j < ColumnHints.Count; j++)
                 {
-                    if (j < rowNumbers[i].Count)
+                    int indexFromEnd = ColumnHints[j].Count - 1 - i;
+                    if (indexFromEnd >= 0)
                     {
-                        row.Insert(0, rowNumbers[i][rowNumbers[i].Count - 1 - j]);
+                        HorizontalColumnHints[i].Add(ColumnHints[j][indexFromEnd]);
                     }
                     else
                     {
-                        row.Insert(0, null);
+                        HorizontalColumnHints[i].Add(0);
                     }
-                }
-                RowNumbersTable.Add(row);
-            }
-
-            // Calculate column numbers
-            int rowColumnNumbers = 0;
-            List<List<int>> columnNumbers = new List<List<int>>();
-            for (int j = 0; j < Columns; j++)
-            {
-                var column = new System.Text.StringBuilder();
-                for (int i = 0; i < Rows; i++)
-                {
-                    column.Append(image.Content[i * Columns + j]);
-                }
-                var columnNumbersList = CalculateConsecutiveCells(column.ToString());
-                columnNumbers.Add(columnNumbersList);
-                if (columnNumbersList.Count > rowColumnNumbers)
-                {
-                    rowColumnNumbers = columnNumbersList.Count;
                 }
             }
 
-            // Fill column numbers table
-            for (int j = 0; j < Columns; j++)
-            {
-                var column = new ObservableCollection<int?>();
-                for (int i = 0; i < rowColumnNumbers; i++)
-                {
-                    if (i < columnNumbers[j].Count)
-                    {
-                        column.Insert(0, columnNumbers[j][columnNumbers[j].Count - 1 - i]);
-                    }
-                    else
-                    {
-                        column.Insert(0, null);
-                    }
-                }
-                ColumnNumbersTable.Add(column);
-            }
+            // Reverse the order of the outer list to match the desired output
+            HorizontalColumnHints.Reverse();
+
+            return HorizontalColumnHints;
         }
     }
 
-    public class GameCell : ObservableObject
-    {
-        private string _content;
-        public string Content
+        public class GameCell : ObservableObject
         {
-            get => _content;
-            set
+            private string _content;
+            public string Content
             {
-                _content = value;
-                OnPropertyChanged();
+                get => _content;
+                set
+                {
+                    _content = value;
+                    OnPropertyChanged();
+                }
             }
-        }
 
-        private string _displayText;
-        public string DisplayText
-        {
-            get => _displayText;
-            set
+            private string _displayText;
+            public string DisplayText
             {
-                _displayText = value;
-                OnPropertyChanged();
+                get => _displayText;
+                set
+                {
+                    _displayText = value;
+                    OnPropertyChanged();
+                }
             }
-        }
 
-        private string _background;
-        public string Background
-        {
-            get => _background;
-            set
+            private string _background;
+            public string Background
             {
-                _background = value;
-                OnPropertyChanged();
+                get => _background;
+                set
+                {
+                    _background = value;
+                    OnPropertyChanged();
+                }
             }
-        }
 
-        private int _state;
-        public int State
-        {
-            get => _state;
-            set
+            private int _state;
+            public int State
             {
-                _state = value;
-                OnPropertyChanged();
+                get => _state;
+                set
+                {
+                    _state = value;
+                    OnPropertyChanged();
+                }
             }
-        }
 
         public GameCell()
         {

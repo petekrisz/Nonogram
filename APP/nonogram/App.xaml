@@ -17,6 +17,7 @@
                 <ResourceDictionary Source="Style/UniformGridStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
+            
             <DataTemplate DataType="{x:Type viewModel:ImageListViewModel}">
                 <view:ImageListView/>
             </DataTemplate>
@@ -39,12 +40,7 @@
             <DataTemplate DataType="{x:Type viewModel:TitleGameViewModel}">
                 <view:TitleGameView/>
             </DataTemplate>
-
-            <converters:SizeConverter x:Key="SizeConverter"/>
-
-            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-
-
+            
         </ResourceDictionary>
     </Application.Resources>
 
