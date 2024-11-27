@@ -16,19 +16,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <ItemsControl Name="ItemsControlLeft" Grid.Column="0" ItemsSource="{Binding ImagesLeft}" ItemTemplate="{StaticResource ItemTemplate}" Margin="10,0,0,0">
-            <ItemsControl.ItemContainerStyle>
-                <Style TargetType="ContentPresenter">
-                    <EventSetter Event="MouseLeftButtonUp" Handler="OnImageSelected" />
-                </Style>
-            </ItemsControl.ItemContainerStyle>
-        </ItemsControl>
-        <ItemsControl Name="ItemsControlRight" Grid.Column="1" ItemsSource="{Binding ImagesRight}" ItemTemplate="{StaticResource ItemTemplate}" Margin="10,0,0,0">
-            <ItemsControl.ItemContainerStyle>
-                <Style TargetType="ContentPresenter">
-                    <EventSetter Event="MouseLeftButtonUp" Handler="OnImageSelected" />
-                </Style>
-            </ItemsControl.ItemContainerStyle>
-        </ItemsControl>
+        <ItemsControl Name="ItemsControlLeft" Grid.Column="0" ItemsSource="{Binding ImagesLeft}" ItemTemplate="{StaticResource ItemTemplate}"/>
+        <ItemsControl Name="ItemsControlRight" Grid.Column="1" ItemsSource="{Binding ImagesRight}" ItemTemplate="{StaticResource ItemTemplate}"/>
     </Grid>
 </UserControl>
