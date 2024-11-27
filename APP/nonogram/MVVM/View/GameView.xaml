@@ -7,7 +7,8 @@
              xmlns:convert="clr-namespace:nonogram.Converters"
              xmlns:vm="clr-namespace:nonogram.MVVM.ViewModel"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             PreviewMouseWheel="GameView_PreviewMouseWheel">
 
     <UserControl.Resources>
         <convert:ZeroToVisibilityConverter x:Key="ZeroToVisibilityConverter"/>

@@ -14,6 +14,7 @@ namespace nonogram.MVVM.View
     /// </summary>
     public partial class GameView : UserControl
     {
+        private double _currentScale = 1.0;  // Default scale value for zooming
         public GameView()
         {
             InitializeComponent();
@@ -22,14 +23,34 @@ namespace nonogram.MVVM.View
             Debug.WriteLine("GameView loaded and DataContext set.");
 
         }
-
-
         public void SetViewModel(GameViewModel viewModel)
         {
             DataContext = viewModel;
         }
+        private void GameView_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            // Determine the zoom direction (up or down)
+            if (e.Delta > 0) // Scroll up (zoom in)
+            {
+                _currentScale += 0.1;  // Increase scale (zoom in)
+            }
+            else if (e.Delta < 0) // Scroll down (zoom out)
+            {
+                _currentScale -= 0.1;  // Decrease scale (zoom out)
+            }
 
+            // Set a limit to prevent the zoom from becoming too small or too large
+            _currentScale = Math.Max(0.1, Math.Min(_currentScale, 3.0)); // Min 0.1x, Max 3.0x zoom
 
+            // Apply the scaling to the GameView's content
+            ApplyZoom();
+        }
+        private void ApplyZoom()
+        {
+            // Apply the ScaleTransform to the entire GameView (or its content)
+            var scaleTransform = new ScaleTransform(_currentScale, _currentScale);
+            this.RenderTransform = scaleTransform;
+        }
         private void TextBlock_MouseEnter(object sender, MouseEventArgs e)
         {
             if (sender is Border border && border.DataContext is GridElement element && DataContext is GameViewModel viewModel)
