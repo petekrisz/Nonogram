@@ -60,6 +60,17 @@ namespace nonogram.MVVM.ViewModel
             }
         }
 
+        private double _zoomLevel = 1.0;
+        public double ZoomLevel
+        {
+            get => _zoomLevel;
+            set
+            {
+                _zoomLevel = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public MainViewModel()
         {

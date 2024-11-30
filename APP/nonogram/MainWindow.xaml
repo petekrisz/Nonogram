@@ -66,17 +66,12 @@
                 </Border.Clip>
             </Border>
 
-            <ScrollViewer Grid.Row="1" Grid.Column="1" Margin="25" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
-                <ScrollViewer.Resources>
-                    <Style TargetType="ScrollBar" BasedOn="{StaticResource CustomScrollBar}" />
-                </ScrollViewer.Resources>
+            <ScrollViewer Grid.Row="1" Grid.Column="1" Margin="25"
+                          HorizontalScrollBarVisibility="Auto" 
+                          VerticalScrollBarVisibility="Auto"
+                          Style="{StaticResource CustomScrollViewerStyle}">
                 <ContentControl Content="{Binding CurrentViewMain}"/>
             </ScrollViewer>
-            
         </Grid>
-
-
-
-
     </Border>
 </Window>

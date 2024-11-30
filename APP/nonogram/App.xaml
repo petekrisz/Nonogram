@@ -14,8 +14,11 @@
                 <ResourceDictionary Source="Style/ImageListStyle.xaml"/>
                 <ResourceDictionary Source="Style/ScrollBarStyle.xaml"/>
                 <ResourceDictionary Source="Style/ExitSelectorWindowStyle.xaml"/>
+                <ResourceDictionary Source="Style/CustomScrollViewerStyle.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
+            
+
 
             
             <DataTemplate DataType="{x:Type viewModel:ImageListViewModel}">
