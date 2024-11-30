@@ -182,6 +182,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Images\13HDiamond_gold.png" />
+    <Resource Include="Images\13HDiamond_light.png" />
+    <Resource Include="Images\1H_gold.png" />
+    <Resource Include="Images\1H_light.png" />
+    <Resource Include="Images\1LHint_gold.png" />
+    <Resource Include="Images\1LHint_light.png" />
+    <Resource Include="Images\3H_gold.png" />
+    <Resource Include="Images\3H_light.png" />
+    <Resource Include="Images\3LineHint_gold.png" />
+    <Resource Include="Images\3LineHint_light.png" />
+    <Resource Include="Images\8H_gold.png" />
+    <Resource Include="Images\8H_light.png" />
+    <Resource Include="Images\CheckAll_3H_gold.png" />
+    <Resource Include="Images\CheckAll_3H_light.png" />
+    <Resource Include="Images\EraseW_gold.png" />
+    <Resource Include="Images\EraseW_light.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
