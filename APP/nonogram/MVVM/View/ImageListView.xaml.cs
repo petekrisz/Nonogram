@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using nonogram.DB;
@@ -15,7 +16,10 @@ namespace nonogram.MVVM.View
         public ImageListView()
         {
             InitializeComponent();
-            
+            Loaded += (s, e) =>
+            {
+                Debug.WriteLine($"ImageListView DataContext: {DataContext?.GetType().Name}");
+            };
         }
 
         private void OnImageSelected(object sender, MouseButtonEventArgs e)
@@ -35,6 +39,12 @@ namespace nonogram.MVVM.View
                     mainViewModel.GameViewCommand.Execute(selectedImage);
                 }
             }
+        }
+
+        private void TestBindings()
+        {
+            Debug.WriteLine($"ItemsControlLeft has {ItemsControlLeft.Items.Count} items.");
+            Debug.WriteLine($"ItemsControlRight has {ItemsControlRight.Items.Count} items.");
         }
 
     }

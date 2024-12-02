@@ -1,5 +1,6 @@
 ﻿using nonogram.MVVM.ViewModel;
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,17 +17,14 @@ namespace nonogram.MVVM.View
         public SearchBarView()
         {
             InitializeComponent();
-            //this.DataContext = this;
-            // Get the MainViewModel from the MainWindow's DataContext
-            var mainViewModel = Application.Current.MainWindow.DataContext as MainViewModel;
-
-            if (mainViewModel != null)
+            if (!DesignerProperties.GetIsInDesignMode(this))
             {
-                DataContext = mainViewModel.SearchBarVM;
+                var mainViewModel = Application.Current.MainWindow.DataContext as MainViewModel;
+                DataContext = mainViewModel?.SearchBarVM ?? throw new InvalidOperationException("MainWindow's DataContext is invalid.");
             }
             else
             {
-                throw new InvalidOperationException("MainWindow's DataContext is not of type MainViewModel.");
+                DataContext = new SearchBarViewModel(); // Provide dummy data for design-time
             }
 
             Debug.WriteLine($"SearchBarView Initialized. DataContext: {DataContext?.GetType().Name ?? "null"}");
