@@ -14,7 +14,14 @@
 
     <Grid>
         <StackPanel Orientation="Horizontal" >
-            <TextBox Width="300" Height="50" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" Style="{StaticResource InputTextBox}" Text="{Binding SearchBar, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="SearchBox"
+                     Width="300" Height="50" 
+                     VerticalAlignment="Center" 
+                     HorizontalAlignment="Left" 
+                     Margin="10" 
+                     Style="{StaticResource InputTextBox}" 
+                     Text="{Binding SearchBar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     KeyDown="SearchBox_KeyDown"/>
             <Label Content="IMAGES" Foreground="#998000" FontSize="40" FontWeight="ExtraBold" FontFamily="/Fonts/#Kabala" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="700" Height="130"/>
         </StackPanel>
     </Grid>

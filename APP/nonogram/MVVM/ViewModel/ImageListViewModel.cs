@@ -3,68 +3,142 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using nonogram.DB;
 using System.Windows.Input;
+using System.Data;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Windows;
+using nonogram.Common;
 
 
 namespace nonogram.MVVM.ViewModel
 {
 
-    public class ImageListViewModel : INotifyPropertyChanged
+    public class ImageListViewModel : ObservableObject
     {
-        
-        // private static Random rnd = new Random(); <-- it is not used now
+        private string _searchBar;
 
+        // The property for the search term
+        public string SearchBar
+        {
+            get { return _searchBar; }
+            set
+            {
+                if (_searchBar != value)
+                {
+                    _searchBar = value;
+                    OnPropertyChanged(nameof(SearchBar));
+                    FilterImages(_searchBar); // Call FilterImages whenever the search term changes
+                }
+            }
+        }
+
+        // Notifies the UI when a property value changes.
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public ObservableCollection<ListImage> ImagesLeft { get; set; }
-        public ObservableCollection<ListImage> ImagesRight { get; set; }
+        // Observable collection for the images displayed in the left column.
+        private ObservableCollection<ListImage> _imagesLeft;
+        public ObservableCollection<ListImage> ImagesLeft
+        {
+            get { return _imagesLeft; }
+            set
+            {
+                if (_imagesLeft != value)
+                {
+                    _imagesLeft = value;
+                    OnPropertyChanged(nameof(ImagesLeft));
+                }
+            }
+        }
+        // Observable collection for the images displayed in the right column.
+        private ObservableCollection<ListImage> _imagesRight;
+        public ObservableCollection<ListImage> ImagesRight
+        {
+            get { return _imagesRight; }
+            set
+            {
+                if (_imagesRight != value)
+                {
+                    _imagesRight = value;
+                    OnPropertyChanged(nameof(ImagesRight));
+                }
+            }
+        }
         public ICommand ImageSelectedCommand { get; set; }
 
         public ImageListViewModel()
         {
             ImagesLeft = new ObservableCollection<ListImage>();
             ImagesRight = new ObservableCollection<ListImage>();
-            LoadImages();
+            SearchBar = string.Empty; // Initialize SearchBar to empty
+            FilterImages(SearchBar); // Load images based on the initial search term
         }
 
-        private void LoadImages()
+        public void FilterImages(string searchTerm)
         {
-            var dataStorage = new DataStorage("Image_table.csv"); // For now it is set to a static csv file instead of DB
-            var imageTableList = dataStorage.ImageTableList;
+            Debug.WriteLine($"FilterImages called with searchTerm: '{searchTerm}'");
 
-            foreach (var image in imageTableList) 
+            ImagesLeft.Clear();
+            ImagesRight.Clear();
+
+            DbManager dbManager = new DbManager();
+            string query = @"
+                SELECT IMAGEId, Title, IMAGERows, IMAGEColumns, Category, CategoryLogo, Score, ColourType
+                FROM IMAGE
+                WHERE Category LIKE @Search OR Title LIKE @Search";
+            var parameters = new Dictionary<string, object>
+            {
+                { "@Search", $"%{searchTerm}%" }
+            };
+            var dataTable = dbManager.ExecuteQuery(query, parameters);
+            Debug.WriteLine($"FilterImages: Found {dataTable.Rows.Count} results.");
+
+            foreach (DataRow row in dataTable.Rows)
             {
                 var item = new ListImage
                 {
-                    ImageSource = $"/Images/{image.CategoryLogo}",
-                    ImageTitle = image.Title,
-                    ImageDetails = $"Colour: {(image.ColourType == 0 ? "BW" : "C")} / Size: {image.Rows} * {image.Columns} / Score: {image.Score}",
-                    Image = image
+                    IMAGEId = Convert.ToInt32(row["IMAGEId"]),
+                    ImageSource = $"/Images/{row["CategoryLogo"]}",
+                    ImageTitle = row["Title"].ToString(),
+                    ImageDetails = $"Colour: {(Convert.ToInt32(row["ColourType"]) == 0 ? "BW" : "C")} / Size: {row["IMAGERows"]} * {row["IMAGEColumns"]} / Score: {row["Score"]}"
                 };
-
                 if (ImagesLeft.Count <= ImagesRight.Count)
                 {
                     ImagesLeft.Add(item);
+                    Debug.WriteLine("one item added to ImagesLeft.");
                 }
                 else
                 {
                     ImagesRight.Add(item);
+                    Debug.WriteLine("one item added to ImagesRight.");
                 }
             }
+
+            if (dataTable.Rows.Count == 0)
+            {
+                Debug.WriteLine($"No result called.");
+                var noImageItem = new ListImage
+                {
+                    IMAGEId = -1,
+                    ImageSource = "/Images/No_icon_gold.png",
+                    ImageTitle = "No Image Found!",
+                    ImageDetails = ""
+                };
+                ImagesLeft.Add(noImageItem);
+                Debug.WriteLine($"noImageItem added as special case.");
+            }
+
+            // Notify the UI that the collections have changed
+            OnPropertyChanged(nameof(ImagesLeft));
+            OnPropertyChanged(nameof(ImagesRight));
+            Debug.WriteLine($"ImagesLeft count: {ImagesLeft.Count}");
+            Debug.WriteLine($"ImagesRight count: {ImagesRight.Count}");
         }
-
-        /* Now it is not needed anymore
-         * public static string RandomString(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length)
-                .Select(s => s[rnd.Next(s.Length)]).ToArray());
-        }*/
-
     }
 
-    
+
 }

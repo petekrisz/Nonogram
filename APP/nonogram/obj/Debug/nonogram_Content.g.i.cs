@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db/image_table.csv")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/no_icon_light.png")]
 
 

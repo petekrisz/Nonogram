@@ -20,8 +20,8 @@ namespace nonogram.MVVM.Model
 
         public GameGrid(IMAGE image)
         {
-            Rows = image.Rows;
-            Columns = image.Columns;
+            Rows = image.IMAGERows;
+            Columns = image.IMAGEColumns;
             ImageCells = new List<List<char>>();
             RowHints = new List<List<int>>();
             ColumnHints = new List<List<int>>();
