@@ -9,12 +9,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
 using nonogram.Common;
+using nonogram.MVVM.View;
 
 
 namespace nonogram.MVVM.ViewModel
 {
 
-    public class ImageListViewModel : ObservableObject
+    public class ImageListViewModel : INotifyPropertyChanged
     {
         private string _searchBar;
 
@@ -28,7 +29,7 @@ namespace nonogram.MVVM.ViewModel
                 {
                     _searchBar = value;
                     OnPropertyChanged(nameof(SearchBar));
-                    FilterImages(_searchBar); // Call FilterImages whenever the search term changes
+                    //FilterImages(_searchBar); // Call FilterImages whenever the search term changes
                 }
             }
         }
@@ -82,20 +83,24 @@ namespace nonogram.MVVM.ViewModel
         {
             Debug.WriteLine($"FilterImages called with searchTerm: '{searchTerm}'");
 
+
             ImagesLeft.Clear();
             ImagesRight.Clear();
 
+            // New temporary collections
+            var newImagesLeft = new ObservableCollection<ListImage>();
+            var newImagesRight = new ObservableCollection<ListImage>();
+
             DbManager dbManager = new DbManager();
             string query = @"
-                SELECT IMAGEId, Title, IMAGERows, IMAGEColumns, Category, CategoryLogo, Score, ColourType
-                FROM IMAGE
-                WHERE Category LIKE @Search OR Title LIKE @Search";
+        SELECT IMAGEId, Title, IMAGERows, IMAGEColumns, Category, CategoryLogo, Score, ColourType
+        FROM IMAGE
+        WHERE Category LIKE @Search OR Title LIKE @Search";
             var parameters = new Dictionary<string, object>
-            {
-                { "@Search", $"%{searchTerm}%" }
-            };
+    {
+        { "@Search", $"%{searchTerm}%" }
+    };
             var dataTable = dbManager.ExecuteQuery(query, parameters);
-            Debug.WriteLine($"FilterImages: Found {dataTable.Rows.Count} results.");
 
             foreach (DataRow row in dataTable.Rows)
             {
@@ -106,21 +111,15 @@ namespace nonogram.MVVM.ViewModel
                     ImageTitle = row["Title"].ToString(),
                     ImageDetails = $"Colour: {(Convert.ToInt32(row["ColourType"]) == 0 ? "BW" : "C")} / Size: {row["IMAGERows"]} * {row["IMAGEColumns"]} / Score: {row["Score"]}"
                 };
-                if (ImagesLeft.Count <= ImagesRight.Count)
-                {
-                    ImagesLeft.Add(item);
-                    Debug.WriteLine("one item added to ImagesLeft.");
-                }
+
+                if (newImagesLeft.Count <= newImagesRight.Count)
+                    newImagesLeft.Add(item);
                 else
-                {
-                    ImagesRight.Add(item);
-                    Debug.WriteLine("one item added to ImagesRight.");
-                }
+                    newImagesRight.Add(item);
             }
 
             if (dataTable.Rows.Count == 0)
             {
-                Debug.WriteLine($"No result called.");
                 var noImageItem = new ListImage
                 {
                     IMAGEId = -1,
@@ -128,16 +127,82 @@ namespace nonogram.MVVM.ViewModel
                     ImageTitle = "No Image Found!",
                     ImageDetails = ""
                 };
-                ImagesLeft.Add(noImageItem);
-                Debug.WriteLine($"noImageItem added as special case.");
+                newImagesLeft.Add(noImageItem);
             }
 
-            // Notify the UI that the collections have changed
-            OnPropertyChanged(nameof(ImagesLeft));
-            OnPropertyChanged(nameof(ImagesRight));
+            // Replace collections
+            ImagesLeft = newImagesLeft;
+            ImagesRight = newImagesRight;
+
             Debug.WriteLine($"ImagesLeft count: {ImagesLeft.Count}");
             Debug.WriteLine($"ImagesRight count: {ImagesRight.Count}");
+
+            OnPropertyChanged(nameof(ImagesLeft));
+            OnPropertyChanged(nameof(ImagesRight));
         }
+
+
+
+        //public void FilterImages(string searchTerm)
+        //{
+        //    Debug.WriteLine($"FilterImages called with searchTerm: '{searchTerm}'");
+
+        //    ImagesLeft.Clear();
+        //    ImagesRight.Clear();
+
+        //    DbManager dbManager = new DbManager();
+        //    string query = @"
+        //        SELECT IMAGEId, Title, IMAGERows, IMAGEColumns, Category, CategoryLogo, Score, ColourType
+        //        FROM IMAGE
+        //        WHERE Category LIKE @Search OR Title LIKE @Search";
+        //    var parameters = new Dictionary<string, object>
+        //    {
+        //        { "@Search", $"%{searchTerm}%" }
+        //    };
+        //    var dataTable = dbManager.ExecuteQuery(query, parameters);
+        //    Debug.WriteLine($"FilterImages: Found {dataTable.Rows.Count} results.");
+
+        //    foreach (DataRow row in dataTable.Rows)
+        //    {
+        //        var item = new ListImage
+        //        {
+        //            IMAGEId = Convert.ToInt32(row["IMAGEId"]),
+        //            ImageSource = $"/Images/{row["CategoryLogo"]}",
+        //            ImageTitle = row["Title"].ToString(),
+        //            ImageDetails = $"Colour: {(Convert.ToInt32(row["ColourType"]) == 0 ? "BW" : "C")} / Size: {row["IMAGERows"]} * {row["IMAGEColumns"]} / Score: {row["Score"]}"
+        //        };
+        //        if (ImagesLeft.Count <= ImagesRight.Count)
+        //        {
+        //            ImagesLeft.Add(item);
+        //            Debug.WriteLine("one item added to ImagesLeft.");
+        //        }
+        //        else
+        //        {
+        //            ImagesRight.Add(item);
+        //            Debug.WriteLine("one item added to ImagesRight.");
+        //        }
+        //    }
+
+        //    if (dataTable.Rows.Count == 0)
+        //    {
+        //        Debug.WriteLine($"No result called.");
+        //        var noImageItem = new ListImage
+        //        {
+        //            IMAGEId = -1,
+        //            ImageSource = "/Images/No_icon_gold.png",
+        //            ImageTitle = "No Image Found!",
+        //            ImageDetails = ""
+        //        };
+        //        ImagesLeft.Add(noImageItem);
+        //        Debug.WriteLine($"noImageItem added as special case.");
+        //    }
+
+        //    // Notify the UI that the collections have changed
+        //    OnPropertyChanged(nameof(ImagesLeft));
+        //    OnPropertyChanged(nameof(ImagesRight));
+        //    Debug.WriteLine($"ImagesLeft count: {ImagesLeft.Count}");
+        //    Debug.WriteLine($"ImagesRight count: {ImagesRight.Count}");
+        //}
     }
 
 

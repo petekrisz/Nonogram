@@ -81,7 +81,9 @@ namespace nonogram.MVVM.ViewModel
 
         public MainViewModel()
         {
-            ImageListVM = new ImageListViewModel();
+            ImageListViewModel ImageListVM = new ImageListViewModel();
+            Debug.WriteLine($"Binding ImagesLeft to {ImageListVM.ImagesLeft.Count} items");
+
             SearchBarVM = new SearchBarViewModel();
             TitleBuyVM = new TitleBuyViewModel();
 
