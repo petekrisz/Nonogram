@@ -10,3 +10,5 @@ APP/nonogram/.vs/FileContentIndex/
 *.vsidx
 /Dokumentáció/~$NONOGRAM.pptx
 /Dokumentáció/~$atbázis normalizálás.docx
+/APP/nonogram/.vs/nonogram/CopilotIndices
+/.gitignore
