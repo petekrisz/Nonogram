@@ -1,6 +1,7 @@
 ﻿using nonogram.Common;
 using nonogram.DB;
 using nonogram.MVVM.View;
+using System.Diagnostics;
 using System.Windows.Input;
 
 namespace nonogram.MVVM.ViewModel
@@ -15,7 +16,7 @@ namespace nonogram.MVVM.ViewModel
 
 
         public ImageListViewModel ImageListVM { get; set; }
-        public ImageListViewModel BuyHelpVM { get; set; }
+        public BuyHelpViewModel BuyHelpVM { get; set; }
         public GameViewModel GameVM { get; set; }
 
 
@@ -24,15 +25,17 @@ namespace nonogram.MVVM.ViewModel
         public TitleGameViewModel TitleGameVM { get; set; }
 
 
+
         private object _currentViewMain;
 
-        public object CurrentViewMain 
+        public object CurrentViewMain
         {
-            get {  return _currentViewMain; } 
-            set 
-            { 
+            get { return _currentViewMain; }
+            set
+            {
                 _currentViewMain = value;
-                OnPropertyChanged();
+                Debug.WriteLine($"CurrentViewMain set to: {_currentViewMain?.GetType().Name}");
+                OnPropertyChanged(nameof(CurrentViewMain));
             }
         }
         
@@ -43,8 +46,12 @@ namespace nonogram.MVVM.ViewModel
             get { return _currentViewTitle; }
             set
             {
-                _currentViewTitle = value;
-                OnPropertyChanged();
+                if (_currentViewTitle != value)
+                {
+                    _currentViewTitle = value;
+                    Debug.WriteLine($"CurrentViewTitle set to: {_currentViewTitle?.GetType().Name}");
+                    OnPropertyChanged(nameof(CurrentViewTitle));
+                }
             }
         }
 
@@ -74,34 +81,38 @@ namespace nonogram.MVVM.ViewModel
 
         public MainViewModel()
         {
-            ImageListVM = new ImageListViewModel();
-
-            CurrentViewMain = ImageListVM; // For now it is set to ImageListView, because this is the only that is ready and it should be also the first View after registration 
-
-
-            //In the final version it should be dependent on whether the player has an unfinished image or not. In the first case the current view should be set to the unfinished image and in the second it should be the ImageListVM
+            ImageListViewModel ImageListVM = new ImageListViewModel();
+            Debug.WriteLine($"Binding ImagesLeft to {ImageListVM.ImagesLeft.Count} items");
 
             SearchBarVM = new SearchBarViewModel();
             TitleBuyVM = new TitleBuyViewModel();
 
-            CurrentViewTitle = SearchBarVM; // For now it is set to SearchBarView, because this is the only that is ready and it should be also the first View after registration
+            Debug.WriteLine("Subscribing SearchBarVM.SearchTermUpdated to ImageListVM.FilterImages.");
+            SearchBarVM.SearchTermUpdated += ImageListVM.FilterImages;
+            Debug.WriteLine("Subscription completed.");
 
-            //In the final version it should be dependent on whether the player has an unfinished image or not. In the first case the current view should be set to the title of unfinished image and in the second it should be the SearchBarVM
+            CurrentViewMain = ImageListVM;
+            CurrentViewTitle = SearchBarVM;
 
-            ImageListViewCommand = new RelayCommand<object> (_ => { CurrentViewMain = ImageListVM; CurrentViewTitle = SearchBarVM; });
-            BuyHelpViewCommand = new RelayCommand<object> (_ => { CurrentViewMain = BuyHelpVM; CurrentViewTitle = TitleBuyVM; });
+            Debug.WriteLine($"CurrentViewTitle assigned: {CurrentViewTitle?.GetType().Name}");
+
+            ImageListViewCommand = new RelayCommand<object>(_ =>
+            {
+                CurrentViewMain = ImageListVM;
+                CurrentViewTitle = SearchBarVM;
+                Debug.WriteLine("ImageListViewCommand executed.");
+            });
+            BuyHelpViewCommand = new RelayCommand<object>(_ =>
+            {
+                CurrentViewMain = BuyHelpVM;
+                CurrentViewTitle = TitleBuyVM;
+                Debug.WriteLine("BuyHelpViewCommand executed.");
+            });
             GameViewCommand = new RelayCommand<IMAGE>(OpenGameView);
 
-
-
-
-            string email = "somethingratherdifferent@something.else"; //That shoud be acquired from DB
+            string email = "somethingratherdifferent@something.else"; //That should be acquired from DB
             string hash = HashHelper.ComputeSha256Hash(email);
             AvatarUrl = "https://www.gravatar.com/avatar/" + hash + "?s=140&d=identicon";
-
-
-
-
         }
 
         public void OpenGameView(IMAGE selectedImage)
