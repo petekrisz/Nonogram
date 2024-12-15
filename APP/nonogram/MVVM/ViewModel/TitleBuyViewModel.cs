@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace nonogram.MVVM.ViewModel
 {
-    internal class TitleBuyViewModel
+    public class TitleBuyViewModel
     {
     }
 }

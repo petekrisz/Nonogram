@@ -93,13 +93,13 @@ namespace nonogram.MVVM.ViewModel
 
             DbManager dbManager = new DbManager();
             string query = @"
-        SELECT IMAGEId, Title, IMAGERows, IMAGEColumns, Category, CategoryLogo, Score, ColourType
-        FROM IMAGE
-        WHERE Category LIKE @Search OR Title LIKE @Search";
+                            SELECT IMAGEId, Title, IMAGERows, IMAGEColumns, Category, CategoryLogo, Score, ColourType
+                            FROM IMAGE
+                            WHERE Category LIKE @Search OR Title LIKE @Search";
             var parameters = new Dictionary<string, object>
-    {
-        { "@Search", $"%{searchTerm}%" }
-    };
+            {
+                { "@Search", $"%{searchTerm}%" }
+            };
             var dataTable = dbManager.ExecuteQuery(query, parameters);
 
             foreach (DataRow row in dataTable.Rows)

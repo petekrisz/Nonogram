@@ -2,7 +2,7 @@
 
 namespace nonogram.MVVM.ViewModel
 {
-    internal class TitleGameViewModel : ObservableObject
+    public class TitleGameViewModel : ObservableObject
     {
         private string _title;
         public string Title

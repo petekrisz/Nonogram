@@ -10,6 +10,7 @@ namespace nonogram.MVVM.Model
 {
     public class GameGrid : ObservableObject
     {
+        public int IMAGEId { get; private set; }
         public List<List<char>> ImageCells { get; set; }
         public List<List<int>> RowHints { get; private set; }
         public List<List<int>> ColumnHints { get; private set; }
@@ -17,9 +18,12 @@ namespace nonogram.MVVM.Model
         public int Columns { get; private set; }
         public int MaxRowHintCount { get; private set; }
         public int MaxColumnHintCount { get; private set; }
+        public string RowFinished { get; set; }
+        public string ColumnFinished { get; set; }
 
         public GameGrid(IMAGE image)
         {
+            IMAGEId = image.IMAGEId;
             Rows = image.IMAGERows;
             Columns = image.IMAGEColumns;
             ImageCells = new List<List<char>>();
@@ -27,6 +31,8 @@ namespace nonogram.MVVM.Model
             ColumnHints = new List<List<int>>();
             MaxRowHintCount = 0;
             MaxColumnHintCount = 0;
+            RowFinished = image.RowFinished;
+            ColumnFinished = image.ColumnFinished;
             InitializeGrid(image.Content);
             CalculateHints();
         }
@@ -60,7 +66,7 @@ namespace nonogram.MVVM.Model
             MaxColumnHintCount = ColumnHints.Max(hint => hint.Count);
         }
 
-        private List<int> CalculateConsecutiveCells(string line)
+        public List<int> CalculateConsecutiveCells(string line)
         {
             return line
                 .Aggregate(new List<int> { 0 }, (acc, c) =>

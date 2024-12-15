@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -12,20 +13,25 @@ namespace nonogram.DB
     {
         private const string ConnectionStringWithoutDb = "Server=localhost;Port=3306;Uid=root;Pwd=;";
         private const string ConnectionStringWithDb = "Server=localhost;Port=3306;Database=nonogram;Uid=root;Pwd=;";
+        private static bool isDatabaseInitialized = false;
 
         public DbManager()
         {
-            InitializeDatabaseAndTables();
+            if (!isDatabaseInitialized)
+            {
+                InitializeDatabaseAndTables();
+                isDatabaseInitialized = true;
+            }
         }
 
         /// <summary>
         /// Creates the database, tables, and populates data from CSV files.
         /// </summary>
-        public void InitializeDatabaseAndTables()
+        public void InitializeDatabaseAndTables(bool populateFromCsv = true)
         {
             CreateDatabase();
             CreateTables();
-            PopulateTablesFromCsv();
+            if (populateFromCsv) PopulateTablesFromCsv();
         }
 
         /// <summary>
@@ -95,12 +101,17 @@ namespace nonogram.DB
             CategoryLogo VARCHAR(255),
             Content TEXT,
             Score INT,
-            ColourType INT
+            ColourType INT,
+            RowFinished VARCHAR(100),
+            ColumnFinished VARCHAR(100)
         );
 
         CREATE TABLE IF NOT EXISTS HELP (
             TypeOfHelp VARCHAR(50) PRIMARY KEY,
-            Price INT
+            Price INT,
+            Weight DOUBLE,
+            HelpLogoG VARCHAR(50),
+            HelpLogoL VARCHAR(50)
         );
 
         CREATE TABLE IF NOT EXISTS USERHELP (
@@ -135,9 +146,10 @@ namespace nonogram.DB
         {
             foreach (var tableName in new[] { "USER", "IMAGE", "HELP", "USERHELP", "USERIMAGE" })
             {
+                if (IsTablePopulated(tableName)) continue;
+
                 var filePath = $"DB/{tableName}.csv";
-                if (!File.Exists(filePath))
-                    continue;
+                if (!File.Exists(filePath)) continue;
 
                 var csvLines = File.ReadLines(filePath).Skip(1); // Skip header
                 foreach (var line in csvLines)
@@ -147,11 +159,20 @@ namespace nonogram.DB
             }
         }
 
+        private bool IsTablePopulated(string tableName)
+        {
+            string query = $"SELECT COUNT(*) FROM {tableName}";
+            var result = ExecuteQuery(query);
+            return result.Rows.Count > 0 && Convert.ToInt32(result.Rows[0][0]) > 0;
+        }
+
+
         /// <summary>
         /// Inserts a record into the specified table from a CSV line.
         /// </summary>
         private void InsertRecordFromCsvLine(string tableName, string csvLine)
         {
+            //Debug.WriteLine($"Inserting record into table {tableName} from CSV line: {csvLine}");
             try
             {
                 var className = $"nonogram.DB.{tableName}";
@@ -185,6 +206,7 @@ namespace nonogram.DB
         /// </summary>
         public void ExecuteNonQuery(string query, Dictionary<string, object> parameters = null)
         {
+            //Debug.WriteLine($"Executing SQL: {query}");
             using (var connection = new MySqlConnection(ConnectionStringWithDb))
             {
                 connection.Open();
@@ -192,6 +214,14 @@ namespace nonogram.DB
                 {
                     cmd.CommandText = query;
                     AddParameters(cmd, parameters);
+
+                    //// Log query and parameters
+                    //Console.WriteLine($"Executing SQL: {cmd.CommandText}");
+                    //foreach (MySqlParameter param in cmd.Parameters)
+                    //{
+                    //    Console.WriteLine($"Param: {param.ParameterName} = {param.Value}");
+                    //}
+
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -253,15 +283,33 @@ namespace nonogram.DB
                     CategoryLogo = row["CategoryLogo"].ToString(),
                     Content = row["Content"].ToString(),
                     Score = Convert.ToInt32(row["Score"]),
-                    ColourType = Convert.ToInt32(row["ColourType"])
+                    ColourType = Convert.ToInt32(row["ColourType"]),
+                    RowFinished = row["RowFinished"].ToString(),
+                    ColumnFinished = row["ColumnFinished"].ToString()
                 };
             }
 
             return null;
         }
 
+        public void ExportTableToCsv(string tableName, string filePath)
+        {
+            string query = $"SELECT * FROM {tableName}";
+            DataTable table = ExecuteQuery(query);
 
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                // Write the header
+                var columnNames = table.Columns.Cast<DataColumn>().Select(column => column.ColumnName);
+                writer.WriteLine(string.Join(";", columnNames));
 
-
+                // Write the rows
+                foreach (DataRow row in table.Rows)
+                {
+                    var fields = row.ItemArray.Select(field => field.ToString());
+                    writer.WriteLine(string.Join(";", fields));
+                }
+            }
+        }
     }
 }

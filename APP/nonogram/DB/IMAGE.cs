@@ -11,6 +11,8 @@
         public string Content { get; set; }
         public int Score { get; set; }
         public int ColourType { get; set; }
+        public string RowFinished { get; set; }
+        public string ColumnFinished { get; set; }
 
         public IMAGE() { }
 
@@ -26,6 +28,8 @@
             Content = fields[6];
             Score = int.Parse(fields[7]);
             ColourType = int.Parse(fields[8]);
+            RowFinished = fields[9];
+            ColumnFinished = fields[10];
         }
     }
 }

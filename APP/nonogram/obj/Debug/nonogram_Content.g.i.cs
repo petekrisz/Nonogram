@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/no_icon_light.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/token_icon_light.png")]
 
 

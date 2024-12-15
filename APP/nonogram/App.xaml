@@ -15,7 +15,7 @@
                 <ResourceDictionary Source="Style/ScrollBarStyle.xaml"/>
                 <ResourceDictionary Source="Style/ExitSelectorWindowStyle.xaml"/>
                 <ResourceDictionary Source="Style/CustomScrollViewerStyle.xaml"/>
-
+                <ResourceDictionary Source="Style/ImageButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
 
@@ -30,7 +30,9 @@
             <DataTemplate DataType="{x:Type viewModel:BuyHelpViewModel}">
                 <view:BuyHelpView/>
             </DataTemplate>
-
+            <DataTemplate DataType="{x:Type viewModel:HelpTableViewModel}">
+                <view:HelpTableView />
+            </DataTemplate>
 
 
 
@@ -43,6 +45,7 @@
             <DataTemplate DataType="{x:Type viewModel:TitleGameViewModel}">
                 <view:TitleGameView/>
             </DataTemplate>
+
 
             <converters:ZeroToVisibilityConverter x:Key="ZeroToVisibilityConverter"/>
             <converters:BoolToBrushConverter x:Key="BoolToBrushConverter"/>

@@ -6,14 +6,15 @@ using System.Windows.Input;
 
 namespace nonogram.MVVM.ViewModel
 {
-    internal class MainViewModel : ObservableObject
+    public class MainViewModel : ObservableObject
     {
         public RelayCommand<object> ImageListViewCommand { get; set; }
         public RelayCommand<object> BuyHelpViewCommand { get; set; }
         public RelayCommand<IMAGE> GameViewCommand { get; set; }
 
 
-
+        public HelpTableViewModel HelpTableVM { get; set; }
+        public DummyViewModel DummyVM { get; set; }
 
         public ImageListViewModel ImageListVM { get; set; }
         public BuyHelpViewModel BuyHelpVM { get; set; }
@@ -40,7 +41,6 @@ namespace nonogram.MVVM.ViewModel
         }
         
         private object _currentViewTitle;
-
         public object CurrentViewTitle
         {
             get { return _currentViewTitle; }
@@ -55,6 +55,17 @@ namespace nonogram.MVVM.ViewModel
             }
         }
 
+        private object _currentViewHelp;
+        public object CurrentViewHelp
+        {
+            get => _currentViewHelp;
+            set
+            {
+                _currentViewHelp = value;
+                Debug.WriteLine($"CurrentViewTitle set to: {_currentViewTitle?.GetType().Name}");
+                OnPropertyChanged();
+            }
+        }
 
         private string _avatarUrl;
         public string AvatarUrl
@@ -81,18 +92,25 @@ namespace nonogram.MVVM.ViewModel
 
         public MainViewModel()
         {
-            ImageListViewModel ImageListVM = new ImageListViewModel();
+            ImageListVM = new ImageListViewModel();
             Debug.WriteLine($"Binding ImagesLeft to {ImageListVM.ImagesLeft.Count} items");
 
             SearchBarVM = new SearchBarViewModel();
             TitleBuyVM = new TitleBuyViewModel();
+            BuyHelpVM = new BuyHelpViewModel();
+            HelpTableVM = new HelpTableViewModel();
+            Debug.WriteLine($"MainViewModel initialized: HelpTableVM instance: {HelpTableVM.GetHashCode()}");
 
-            Debug.WriteLine("Subscribing SearchBarVM.SearchTermUpdated to ImageListVM.FilterImages.");
-            SearchBarVM.SearchTermUpdated += ImageListVM.FilterImages;
-            Debug.WriteLine("Subscription completed.");
+            DummyVM = new DummyViewModel();
+
+
+            //Debug.WriteLine("Subscribing SearchBarVM.SearchTermUpdated to ImageListVM.FilterImages.");
+            //SearchBarVM.SearchTermUpdated += ImageListVM.FilterImages;
+            //Debug.WriteLine("Subscription completed.");
 
             CurrentViewMain = ImageListVM;
             CurrentViewTitle = SearchBarVM;
+            CurrentViewHelp = null;
 
             Debug.WriteLine($"CurrentViewTitle assigned: {CurrentViewTitle?.GetType().Name}");
 
@@ -100,12 +118,14 @@ namespace nonogram.MVVM.ViewModel
             {
                 CurrentViewMain = ImageListVM;
                 CurrentViewTitle = SearchBarVM;
+                CurrentViewHelp = null;
                 Debug.WriteLine("ImageListViewCommand executed.");
             });
             BuyHelpViewCommand = new RelayCommand<object>(_ =>
             {
                 CurrentViewMain = BuyHelpVM;
                 CurrentViewTitle = TitleBuyVM;
+                CurrentViewHelp = null;
                 Debug.WriteLine("BuyHelpViewCommand executed.");
             });
             GameViewCommand = new RelayCommand<IMAGE>(OpenGameView);
@@ -123,6 +143,8 @@ namespace nonogram.MVVM.ViewModel
             gameView.SetViewModel(GameVM);
             CurrentViewMain = gameView;
             CurrentViewTitle = TitleGameVM;
+            CurrentViewHelp = HelpTableVM;
+            Debug.WriteLine($"HelpTableVM instance in OpenGameView: {HelpTableVM.GetHashCode()}");
         }
 
 

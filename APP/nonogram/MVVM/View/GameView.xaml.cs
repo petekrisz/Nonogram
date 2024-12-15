@@ -6,6 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Windows.Media;
 using System.Windows;
+using System.Linq;
 
 namespace nonogram.MVVM.View
 {
@@ -14,6 +15,8 @@ namespace nonogram.MVVM.View
     /// </summary>
     public partial class GameView : UserControl
     {
+        public string SelectedHelpOption { get; set; }
+
         public static readonly DependencyProperty ZoomLevelProperty =
             DependencyProperty.Register("ZoomLevel", typeof(double), typeof(GameView), new PropertyMetadata(1.0));
 
@@ -63,7 +66,7 @@ namespace nonogram.MVVM.View
         {
             if (sender is Border border && border.DataContext is GridElement element && DataContext is GameViewModel viewModel)
             {
-                Debug.WriteLine($"MouseEnter: Highlighting Row: {element.Row}, Column: {element.Column}");
+                //Debug.WriteLine($"MouseEnter: Highlighting Row: {element.Row}, Column: {element.Column}");
 
                 // Highlight the entire row and column
                 viewModel.HighlightRowAndColumn(element.Row, element.Column, true);
@@ -74,7 +77,7 @@ namespace nonogram.MVVM.View
         {
             if (sender is Border border && border.DataContext is GridElement element && DataContext is GameViewModel viewModel)
             {
-                Debug.WriteLine($"MouseLeave: Un-highlighting Row: {element.Row}, Column: {element.Column}");
+                //Debug.WriteLine($"MouseLeave: Un-highlighting Row: {element.Row}, Column: {element.Column}");
 
                 // Un-highlight the entire row and column
                 viewModel.HighlightRowAndColumn(element.Row, element.Column, false);
@@ -83,52 +86,60 @@ namespace nonogram.MVVM.View
 
         private void Cell_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            Debug.WriteLine("Cell_MouseLeftButtonDown");
+            Debug.WriteLine($"SelectedHelpOption: {SelectedHelpOption}");
             if (sender is Border border && border.DataContext is GridElement element && DataContext is GameViewModel viewModel)
             {
-                // Cycle through the click states
-                element.ClickState = (element.ClickState + 1) % 4;
-
-                // Update the element's properties to reflect the new state
-                switch (element.ClickState)
+                if (!string.IsNullOrEmpty(SelectedHelpOption))
                 {
-                    case 0: // Default state
-                        element.IsHighlighted = false; // Use IsHighlighted for default background
-                        if (border.Child is TextBlock textBlock)
-                        {
-                            textBlock.Visibility = Visibility.Hidden;
-                            textBlock.Text = viewModel.GameGrid.ImageCells[element.Row][element.Column].ToString();
-                        }
-                        break;
+                    Debug.WriteLine($"SelectedHelpOption: {SelectedHelpOption}");
+                    bool helpExecuted = false;
 
-                    case 1: // Black background
-                        element.IsHighlighted = false; // Ensure IsHighlighted doesn't affect this state
-                        if (border.Child is TextBlock textBlockHidden)
+                    if ((SelectedHelpOption == "H1" || SelectedHelpOption == "H13") && IsChildOf(border, ImageCellItemsControl))
+                    {
+                        // Call the method in GameViewModel with the coordinates of a GameGrid cell
+                        helpExecuted = viewModel.ExecuteHelpOption(element.Row, element.Column, SelectedHelpOption);
+                    }
+                    else if (SelectedHelpOption == "L1" || SelectedHelpOption == "L3" )
+                    {
+                        // Call the method in GameViewModel with the coordinates of a RowTableElements of ColumnTableElements cell
+                        if (IsChildOf(border, RowItemsControl))
                         {
-                            textBlockHidden.Visibility = Visibility.Hidden;
+                            Debug.WriteLine($"RowTableElement clicked at Row: {element.Row}");
+                            helpExecuted = viewModel.ExecuteHelpOption(element.Row, -1, SelectedHelpOption);
                         }
-                        break;
+                        else if (IsChildOf(border, ColumnItemsControl))
+                        {
+                            Debug.WriteLine($"ColumnTableElement clicked at Column: {element.Column}");
+                            helpExecuted = viewModel.ExecuteHelpOption(-1, element.Column, SelectedHelpOption);
+                        }
+                    }
 
-                    case 2: // Original background, show "X"
-                        element.IsHighlighted = true; // Enable highlighting
-                        if (border.Child is TextBlock textBlockX)
+                    if (helpExecuted)
+                    {
+                        // Call a method in HelpTableViewModel to decrease the value
+                        if (Application.Current.MainWindow is MainWindow mainWindow && mainWindow.DataContext is MainViewModel mainViewModel)
                         {
-                            textBlockX.Visibility = Visibility.Visible;
-                            textBlockX.Text = "X";
+                            Debug.WriteLine($"---> HelpTableVM accessed in GameView: {mainViewModel.HelpTableVM.GetHashCode()}");
+                            mainViewModel.HelpTableVM.DecreaseHelpOptionValue(SelectedHelpOption);
                         }
-                        break;
+                    }
 
-                    case 3: // Original background, show "?"
-                        element.IsHighlighted = true; // Enable highlighting
-                        if (border.Child is TextBlock textBlockQuestion)
-                        {
-                            textBlockQuestion.Visibility = Visibility.Visible;
-                            textBlockQuestion.Text = "?";
-                        }
-                        break;
+                    // Reset the SelectedHelpOption after use
+                    SelectedHelpOption = null;
+                }
+                else if (IsChildOf(border, ImageCellItemsControl))
+                {
+                    // Cycle through the click states
+                    element.ClickState = (element.ClickState + 1) % 4;
+
+                    // Call CheckRowsAndColumns method
+                    viewModel.CheckRowsAndColumns(element.Row, element.Column, element.ClickState);
+
+                    // Debugging log
+                    Debug.WriteLine($"Cell clicked at Row: {element.Row}, Column: {element.Column}, ClickState: {element.ClickState}");
                 }
 
-                // Debugging log
-                Debug.WriteLine($"Cell clicked at Row: {element.Row}, Column: {element.Column}, ClickState: {element.ClickState}");
 
                 // Reapply highlight if the mouse is still over the cell
                 if (border.IsMouseOver)
@@ -136,6 +147,17 @@ namespace nonogram.MVVM.View
                     viewModel.HighlightRowAndColumn(element.Row, element.Column, true);
                 }
             }
+        }
+
+        private bool IsChildOf(DependencyObject child, DependencyObject parent)
+        {
+            while (child != null)
+            {
+                if (child == parent)
+                    return true;
+                child = VisualTreeHelper.GetParent(child);
+            }
+            return false;
         }
     }
 }

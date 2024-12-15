@@ -77,3 +77,10 @@ D:\School\NoNo\Nonogram\APP\nonogram\bin\Debug\System.Numerics.Vectors.xml
 D:\School\NoNo\Nonogram\APP\nonogram\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\School\NoNo\Nonogram\APP\nonogram\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\nonogram.csproj.Up2Date
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\WonGameWindow.g.cs
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\WonGameWindow.baml
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\Style\ImageButtonStyle.baml
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\HelpTableView.g.cs
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\HelpTableView.baml
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\DummyView.g.cs
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\DummyView.baml

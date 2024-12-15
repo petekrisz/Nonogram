@@ -3,13 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:viewModel="clr-namespace:nonogram.MVVM.ViewModel"
+        xmlns:vm="clr-namespace:nonogram.MVVM.ViewModel"
+        xmlns:view="clr-namespace:nonogram.MVVM.View"
         xmlns:local="clr-namespace:nonogram"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:HelpTableViewModel}">
+            <view:HelpTableView />
+        </DataTemplate>
+    </Window.Resources>
+
 
     <Window.DataContext>
-        <viewModel:MainViewModel/>
+        <vm:MainViewModel/>
     </Window.DataContext>
 
     <Border Background="#1A0D00" CornerRadius="25">
@@ -40,6 +47,15 @@
                         <RadioButton x:Name="ExitButton" Content="  Exit" FontSize="20" Height="44" Margin="0,0,60,4" Style="{StaticResource MenuButton}" Click="ExitButton_Click"/>
                     </StackPanel>
                 </ContentControl>
+                <ContentControl Grid.Row="1" Grid.ColumnSpan="2">
+
+                </ContentControl>
+                <ContentControl Grid.Row="2" Grid.Column="0">
+
+                </ContentControl>
+                <!-- HelpTableView should be placed here -->
+                <ContentControl x:Name="HelpSlot" Grid.Row="2" Grid.Column="1" Content="{Binding CurrentViewHelp}">
+                </ContentControl>
             </Grid>
 
             <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
@@ -47,14 +63,11 @@
                 <Image x:Name="logo" Source="/Images/logo.png" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="5,18,0,10"/>
             </StackPanel>
             <ContentControl x:Name="TitleBar" Grid.Row="0" Grid.Column="1" Margin="10" Content="{Binding CurrentViewTitle}"/>
-            <Border BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="142" Height="140" Margin="0,10,1013,0" Grid.Row="1" Grid.ColumnSpan="2">
-                <Border.Background>
+            <Rectangle VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Height="140" Grid.Row="1" RadiusX="20" RadiusY="20" Margin="0,10,0,0">
+                <Rectangle.Fill>
                     <ImageBrush x:Name="avatar" ImageSource="{Binding AvatarUrl}" Stretch="None"/>
-                </Border.Background>
-                <Border.Clip>
-                    <EllipseGeometry Center="71,70" RadiusX="70" RadiusY="70"/>
-                </Border.Clip>
-            </Border>
+                </Rectangle.Fill>
+            </Rectangle>
 
             <ScrollViewer Grid.Row="1" Grid.Column="1" Margin="25"
                           HorizontalScrollBarVisibility="Auto" 

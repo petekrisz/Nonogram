@@ -24,7 +24,12 @@ namespace nonogram.Converters
 
                 // If highlighted, return highlight color
                 if (isHighlighted)
-                    return Brushes.WhiteSmoke;
+                {
+                        // Create a copy of the initial background brush with modified opacity
+                        Brush transparentBrush = initialBackground.Clone();
+                        transparentBrush.Opacity = 0.8;
+                        return transparentBrush;
+                }
 
                 // If not highlighted, return the initial background
                 return initialBackground ?? Brushes.Transparent;

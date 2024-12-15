@@ -27,7 +27,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- Column Hints -->
-            <ItemsControl Grid.Row="0" Grid.Column="1" ItemsSource="{Binding ColumnTableElements}">
+            <ItemsControl x:Name="ColumnItemsControl" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding ColumnTableElements}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <!-- Use a UniformGrid for consistent layout -->
@@ -41,7 +41,8 @@
                         <Border BorderBrush="Black"
                                 BorderThickness="0.5" 
                                 Width="20" 
-                                Height="20">
+                                Height="20"
+                                MouseLeftButtonDown="Cell_MouseLeftButtonDown">
                             <Border.Background>
                                 <MultiBinding Converter="{StaticResource BoolToBrushConverter}">
                                     <Binding Path="IsHighlighted"/>
@@ -62,7 +63,7 @@
             </ItemsControl>
 
             <!-- Row Hints -->
-            <ItemsControl Grid.Row="1" Grid.Column="0" ItemsSource="{Binding RowTableElements}">
+            <ItemsControl x:Name="RowItemsControl" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding RowTableElements}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Rows="{Binding GameGrid.Rows}" 
@@ -75,7 +76,8 @@
                         <Border BorderBrush="Black"
                                 BorderThickness="0.5" 
                                 Width="20" 
-                                Height="20">
+                                Height="20"
+                                MouseLeftButtonDown="Cell_MouseLeftButtonDown">
                             <Border.Background>
                                 <MultiBinding Converter="{StaticResource BoolToBrushConverter}">
                                     <Binding Path="IsHighlighted"/>
@@ -96,7 +98,7 @@
             </ItemsControl>
 
             <!-- Game Grid -->
-            <ItemsControl Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ImageCellTableElements}">
+            <ItemsControl x:Name="ImageCellItemsControl" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ImageCellTableElements}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Rows="{Binding GameGrid.Rows}" 
@@ -123,6 +125,7 @@
                                 </MultiBinding>
                             </Border.Background>
                             <TextBlock 
+                                        x:Name="TextBlock"
                                         Text="{Binding Element.Text}" 
                                         Visibility="{Binding Visibility}"
                                         FontSize="10" 
@@ -130,6 +133,29 @@
                                         VerticalAlignment="Center" 
                                         HorizontalAlignment="Center"/>
                         </Border>
+                        <DataTemplate.Triggers>
+                            <!-- Trigger for ClickState 1 -->
+                            <DataTrigger Binding="{Binding ClickState}" Value="1">
+                                <Setter TargetName="TextBlock" Property="Text" Value="" />
+                                <Setter Property="Border.Background" Value="Black" />
+                                <Setter TargetName="TextBlock" Property="Visibility" Value="Hidden" />
+                            </DataTrigger>
+                            <!-- Trigger for ClickState 2 -->
+                            <DataTrigger Binding="{Binding ClickState}" Value="2">
+                                <Setter TargetName="TextBlock" Property="Text" Value="X" />
+                                <Setter TargetName="TextBlock" Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                            <!-- Trigger for ClickState 3 -->
+                            <DataTrigger Binding="{Binding ClickState}" Value="3">
+                                <Setter TargetName="TextBlock" Property="Text" Value="?" />
+                                <Setter TargetName="TextBlock" Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                            <!-- Default State (ClickState 0) -->
+                            <DataTrigger Binding="{Binding ClickState}" Value="0">
+                                <Setter TargetName="TextBlock" Property="Text" Value="" />
+                                <Setter TargetName="TextBlock" Property="Visibility" Value="Hidden" />
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

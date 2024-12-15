@@ -1,7 +1,10 @@
-﻿using nonogram.MVVM.View;
+﻿using nonogram.DB;
+using nonogram.MVVM.View;
 using nonogram.MVVM.ViewModel;
+using Org.BouncyCastle.Ocsp;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,11 +25,10 @@ namespace nonogram
     /// </summary>
     public partial class MainWindow : Window
     {
+        //private string username = "netuddki"; // Hardcoded for now
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
-
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -37,7 +39,5 @@ namespace nonogram
             };
             exitSelector.ShowDialog();
         }
-
-
     }
 }

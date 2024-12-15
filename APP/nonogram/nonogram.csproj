@@ -107,6 +107,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MVVM\Model\HelpOption.cs" />
+    <Compile Include="MVVM\ViewModel\DummyViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\HelpTableViewModel.cs" />
+    <Compile Include="MVVM\View\DummyView.xaml.cs">
+      <DependentUpon>DummyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\HelpTableView.xaml.cs">
+      <DependentUpon>HelpTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WonGameWindow.xaml.cs">
+      <DependentUpon>WonGameWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="ExitSelectorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -148,7 +160,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\DummyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\GameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\HelpTableView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,6 +200,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Style\ImageButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Style\ImageListStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -193,6 +217,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Style\ScrollBarStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WonGameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -266,10 +294,10 @@
     <Resource Include="Fonts\Kabala Bold.otf" />
     <Resource Include="Fonts\Kabala Extra Bold.otf" />
     <None Include="DB\HELP.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="DB\IMAGE.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="DB\USER.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -315,6 +343,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\NO_icon_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\firework_icon_gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\firework_icon_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fireworks-animated.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\score_icon_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\token_icon_light.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
