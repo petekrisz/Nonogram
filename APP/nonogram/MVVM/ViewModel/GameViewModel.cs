@@ -117,11 +117,7 @@ namespace nonogram.MVVM.ViewModel
             if (dataTable.Rows.Count > 0)
             {
                 string content = dataTable.Rows[0]["Content"].ToString();
-                if (content == "x")
-                {
-                    MessageBox.Show("This image is already done by You. If you start to solve it again it will be removed from your solved image list.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                else
+                if (content.Length > 1)
                 {
                     var guessGrid = new List<List<char>>();
                     for (int i = 0; i < GameGrid.Rows; i++)

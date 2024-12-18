@@ -9,10 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800"
              DataContext="{Binding DataContext.ImageListVM, RelativeSource={RelativeSource AncestorType=Window}}"
              d:DataContext="{d:DesignInstance Type=vm:ImageListViewModel, IsDesignTimeCreatable=True}">
-    <!--<UserControl.DataContext>
-        <vm:ImageListViewModel/>
-    </UserControl.DataContext>-->
-    
+
     <Grid>
         
         <Grid.ColumnDefinitions>

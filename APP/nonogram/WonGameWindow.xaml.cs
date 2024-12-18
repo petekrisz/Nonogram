@@ -223,34 +223,16 @@ namespace nonogram
                     Debug.WriteLine("USERHELP table updated successfully.");
                 }
 
-                // Check if the combination of UserName and IMAGEId already exists in the USERIMAGE table
-                string checkUserImageQuery = "SELECT COUNT(*) FROM USERIMAGE WHERE UserName = @UserName AND IMAGEId = @IMAGEId";
-                var checkParameters = new Dictionary<string, object>
+                // Update USERHELP table
+                var userImageValues = new Dictionary<string, object>
                 {
-                        { "@UserName", userName },
-                        { "@IMAGEId", _imageId }
-                };
-                DataTable checkTable = dbManager.ExecuteQuery(checkUserImageQuery, checkParameters);
-
-                if (checkTable.Rows.Count > 0 && Convert.ToInt32(checkTable.Rows[0][0]) > 0)
-                {
-                    // If the combination exists, show a message and do nothing
-                    MessageBox.Show("It has been solved previously!", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-                    Debug.WriteLine("Combination already exists in USERIMAGE table. Nothing to insert.");
-                }
-                else
-                {
-                    // If the combination doesn't exist, proceed with the insert
-                    var userImageValues = new Dictionary<string, object>
-                    {
                         { "UserName", userName },
                         { "IMAGEId", _imageId },
                         { "Finished", true },
                         { "Content", "x" }
-                    };
-                    dbManager.ExecuteNonQuery("INSERT INTO USERIMAGE (UserName, IMAGEId, Finished, Content) VALUES (@UserName, @IMAGEId, @Finished, @Content)", userImageValues);
-                    Debug.WriteLine("USERIMAGE table updated successfully.");
-                }
+                };
+                dbManager.ExecuteNonQuery("INSERT INTO USERIMAGE (UserName, IMAGEId, Finished, Content) VALUES (@UserName, @IMAGEId, @Finished, @Content)", userImageValues);
+                Debug.WriteLine("USERIMAGE table updated successfully.");
             }
             catch (Exception ex)
             {
