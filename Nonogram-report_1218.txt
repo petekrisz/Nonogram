@@ -1,0 +1,23 @@
+Nos, Hétfőn Péternek megmutattam, mire jutottam az alkalmazással kapcsolatban. Számos új funkcióval bővült az app, most már lényegében végig lehet játszani egy játékot rajta:
+
+Minden, ami itt szerepel be van építve fő ágba a GitHubon: https://github.com/petekrisz/Nonogram/tree/main/APP/nonogram 
+Itt van egy project is hozzárendelve a repository-hoz, és többé kevésbé vezetve is volt az elmúlt időkben.
+
+Röviden mi is készült el:
+
+
+Implementálva lett az adatbázis, noha több helyen még hardcoded adatok vannak benne: csv-kben szerepel minden tábla, és az indítás után ellenőrzi, hogy van-e a localhoston nonogram adatbázis, ha nincs csinál egyet, majd beolvassa és létrehozza a táblákat, innentől ezekből dolgozik. Az exit gomb után letölt mindent az adatbázisból, és újraírja a csv-ket, így a következő indításkor a frissített adatokkal tud dolgozni.
+
+Amit én csináltam: betöltéskor végignézi a képet, ha jelezve van, hogy (adatbázis) hogy valamely sora vagy oszlopa teljesen kitöltött, vagy teljesen üres, vagy csak egyféleképp tölthető ki, akkor azt automatikusan kitöltve nyitja meg. Próbáltam úgy is, hogy ellenőrzi a képeket, de szignifikánas kapacitást foglal le, főleg egy nagyobb képnél, így úgy döntöttem, hogy egyszerűbb a rekordokban jelezni, melyik sorokat vagy oszlopokat nézze át, mert így sokkal kevesebb kapacitást közt le.
+
+Minden klikk operáció funkcionál, egy mezőre kattintva beleírja a találgatás listába, frissíti a cella clickstatejét, és lefuttat egy ellenőrzést ami megnézi, hogy 
+a.) minden '1'-es mező ki van-e jelölve a GuessGrid listában a sorban vagy oszlopban. Ha igen, akkor a nem 'x'-es mezőket 'x'-re változtatja (frissíti a clickstateket és a GuessGridet is ennek megfelelően), plusz jelöli a segítségtáblákoz, hogy az adott sor vagy oszlop kész (mármint megfelel az előírásoknak a belé helyezett '1'-esek száma és eloszlása) - ettől még nem feltétlenül egyezik meg a megoldással. 
+b.) Ha a klikk olyan helyzetet állít elő, hogy annak megfelelően a sor vagy oszlop nem is tud megfelelni a feltételeknek, akkor azt egy piros háttérrel jelzi a segítségtáblákon. 
+c.) Ha nem felel még meg teljesen a feltételeknek, de kompatibilis velük, akkor marad szürke a segítségtábla. Az utóbbi kettőhöz egy meglehetősen bonyolult függvény lett írva, ugyanis nem egyszerű megfelelést vizsgál, hanem azt, hogy meg tud-e felelni neki, és ezt nem elég szekvenciálisan csinálni, hanem próbálgatva kell, és ha nem megfelelő, akkor vissza kell törölni, majd újra nekifutni egy másik kiindulóponttal.
+d.) Ez a keresés futtat egy nyert vizsgálatot is, ti. hogy a GuessGrid '1'-esei megfelelnek-e az ImagCell '1'-einek. Ha igen, akkor új ablakban értesít a súlyozott véletlenszerű nyereményekről, és frissíti a USERHELP, USER és USERIMAGE táblákat.
+
+Implementáltam minden segítséget egy HelpTableViewModelbe, ami csak a GameView választásakor jelenik meg. Innen lehet kiválasztani a segítségeket, és felhasználni a játéktáblán, Mindhez külön függvény van, ami kitöltés után ellenőriz is (némelyiket nem volt olyan egyszerű megoldani, mert az egyik VM hívja meg a másik View-n keresztül a neki megfelelő másik VM-et, ami utána a View-n keresztül visszaadja, hogy a feladat elvégeztetett.folyt: Ezután a segítség levonásra kerül a USERHELP táblában, az érték-megjelenés frissítésre kerül. A segítségeknek lett mouseover és ischecked tulajdonságuk is, eltérő képekkel jelölve őket.
+
+A különböző VM-ekben hardkódolva van a username, mert még a bejelentkezés nem lett implementálva. Ha meglesz, akkor onnan tudja majd venni az azonosítót. Ennek megfelelően még több adatbázisművelet nem került implementálásra.
+
+Fájón hiányzik a searchbar funkció mert nem igazán sikerült összekötni az ImageListVM-mel, de azt hiszem sejtem mi a gond, ugyanis rengeteget szívtam a HelpTableVM és a GameVM összekötésével is (különböző VM-eket instanciált, többet is, emiatt nem frissített, és meg kellett oldani, hogy a DataContext mindig egyetlen istanciára hivatkozzon. Akkor ment. Talán ez a probléma a keresésnél is, és akkor valamikor a következő 2 hétben meg tudom oldani ezt is.

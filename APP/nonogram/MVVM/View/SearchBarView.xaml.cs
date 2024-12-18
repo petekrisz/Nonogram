@@ -21,6 +21,7 @@ namespace nonogram.MVVM.View
             {
                 var mainViewModel = Application.Current.MainWindow.DataContext as MainViewModel;
                 DataContext = mainViewModel?.SearchBarVM ?? throw new InvalidOperationException("MainWindow's DataContext is invalid.");
+                Debug.WriteLine($"SearchBarView DataContext: {DataContext?.GetType().Name ?? "null"}");
             }
             else
             {

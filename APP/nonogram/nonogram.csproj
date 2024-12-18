@@ -359,5 +359,14 @@
   <ItemGroup>
     <Resource Include="Images\token_icon_light.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Done_icon_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NO_IMAGE_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Done_icon_2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

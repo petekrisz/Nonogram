@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -19,6 +20,7 @@ namespace nonogram.MVVM.View
             Loaded += (s, e) =>
             {
                 Debug.WriteLine($"ImageListView DataContext: {DataContext?.GetType().Name}");
+                Debug.WriteLine($"---> ImageListView.DataContext: {DataContext?.GetHashCode()}");
             };
         }
 
@@ -41,11 +43,7 @@ namespace nonogram.MVVM.View
             }
         }
 
-        private void TestBindings()
-        {
-            Debug.WriteLine($"ItemsControlLeft has {ItemsControlLeft.Items.Count} items.");
-            Debug.WriteLine($"ItemsControlRight has {ItemsControlRight.Items.Count} items.");
-        }
+
 
     }
 }

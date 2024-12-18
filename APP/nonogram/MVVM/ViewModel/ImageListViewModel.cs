@@ -18,6 +18,7 @@ namespace nonogram.MVVM.ViewModel
     public class ImageListViewModel : INotifyPropertyChanged
     {
         private string _searchBar;
+        private string _username = "netuddki"; // Hardcoded for now
 
         // The property for the search term
         public string SearchBar
@@ -91,6 +92,7 @@ namespace nonogram.MVVM.ViewModel
             var newImagesLeft = new ObservableCollection<ListImage>();
             var newImagesRight = new ObservableCollection<ListImage>();
 
+            // Query IMAGE table for _username
             DbManager dbManager = new DbManager();
             string query = @"
                             SELECT IMAGEId, Title, IMAGERows, IMAGEColumns, Category, CategoryLogo, Score, ColourType
@@ -102,12 +104,50 @@ namespace nonogram.MVVM.ViewModel
             };
             var dataTable = dbManager.ExecuteQuery(query, parameters);
 
+            // Query USERIMAGE table for _username
+            string userImageQuery = @"
+            SELECT IMAGEId, Finished
+            FROM USERIMAGE
+            WHERE UserName = @UserName";
+            var userImageParameters = new Dictionary<string, object>
+            {
+                { "@UserName", _username }
+            };
+            var userImageTable = dbManager.ExecuteQuery(userImageQuery, userImageParameters);
+
+            // Create a dictionary to store the USERIMAGE data
+            var userImageDict = new Dictionary<int, bool>();
+            foreach (DataRow row in userImageTable.Rows)
+            {
+                int imageId = Convert.ToInt32(row["IMAGEId"]);
+                bool finished = Convert.ToBoolean(row["Finished"]);
+                userImageDict[imageId] = finished;
+            }
+
+
+
             foreach (DataRow row in dataTable.Rows)
             {
+                int imageId = Convert.ToInt32(row["IMAGEId"]);
+                string categoryLogo = row["CategoryLogo"].ToString();
+                string imageSource = $"/Images/{categoryLogo}";
+
+                // Check if the image is in the USERIMAGE table
+                if (userImageDict.TryGetValue(imageId, out bool finished))
+                {
+                    if (finished)
+                    {
+                        imageSource = "/Images/Done_icon_2.png";
+                    }
+                    else
+                    {
+                        imageSource = $"/Images/{categoryLogo.Replace("gold", "light")}";
+                    }
+                }
                 var item = new ListImage
                 {
-                    IMAGEId = Convert.ToInt32(row["IMAGEId"]),
-                    ImageSource = $"/Images/{row["CategoryLogo"]}",
+                    IMAGEId = imageId,
+                    ImageSource = imageSource,
                     ImageTitle = row["Title"].ToString(),
                     ImageDetails = $"Colour: {(Convert.ToInt32(row["ColourType"]) == 0 ? "BW" : "C")} / Size: {row["IMAGERows"]} * {row["IMAGEColumns"]} / Score: {row["Score"]}"
                 };
@@ -123,7 +163,7 @@ namespace nonogram.MVVM.ViewModel
                 var noImageItem = new ListImage
                 {
                     IMAGEId = -1,
-                    ImageSource = "/Images/No_icon_gold.png",
+                    ImageSource = "/Images/NO_IMAGE_icon.png",
                     ImageTitle = "No Image Found!",
                     ImageDetails = ""
                 };

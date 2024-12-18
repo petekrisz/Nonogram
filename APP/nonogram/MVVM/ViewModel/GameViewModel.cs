@@ -13,12 +13,15 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Xml.Linq;
 using System.Windows.Shell;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace nonogram.MVVM.ViewModel
 {
     public class GameViewModel : ObservableObject
     {
         public GameGrid GameGrid { get; private set; }
+        public int ImageId { get; private set; }
+        private string _username = "netuddki"; // Hardcoded for now 
 
 
         private ObservableCollection<GridElement> _columnTableElements;
@@ -62,6 +65,8 @@ namespace nonogram.MVVM.ViewModel
         public GameViewModel(IMAGE selectedImage)
         {
             GameGrid = new GameGrid(selectedImage);
+            ImageId = selectedImage.IMAGEId; // Store IMAGEId
+            Debug.WriteLine($"GameViewModel initialized with IMAGEId: {ImageId}");
 
             // Initialize collections
             ColumnTableElements = new ObservableCollection<GridElement>();
@@ -89,23 +94,98 @@ namespace nonogram.MVVM.ViewModel
             DrawTable(GameGrid.Rows, GameGrid.MaxRowHintCount, "RowHints");
             DrawTable(GameGrid.Rows, GameGrid.Columns, "ImageCells");
 
+            CheckUnfinishedImage();
 
-            //It takes to much time and capacity to run an initial check for all cells in the gamegrid therefore other methods must be applied. A good direction could be to initially draw these lines and columns by DrawTable method with clickstates accordingly.
 
-            //// Check all rows and columns at startup
-            //for (int row = 0; row < GameGrid.Rows; row++)
-            //{
-            //    for (int column = 0; column < GameGrid.Columns; column++)
-            //    {
-            //        CheckRowsAndColumns(row, column, GuessGrid[row][column] == '1' ? 1 : 0);
-            //    }
-            //}
 
-            // Apply background and click state changes if necessary
-            if (RowFinished.Any(r => r == 1) || ColumnFinished.Any(c => c == 1))
+        }
+
+        private void CheckUnfinishedImage()
+        {
+            DbManager dbManager = new DbManager();
+            string query = @"
+                            SELECT Content
+                            FROM USERIMAGE
+                            WHERE UserName = @UserName AND IMAGEId = @IMAGEId";
+            var parameters = new Dictionary<string, object>
             {
-                ApplyBackgroundAndClickState();
+                { "@UserName", _username },
+                { "@IMAGEId", ImageId }
+            };
+            var dataTable = dbManager.ExecuteQuery(query, parameters);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                string content = dataTable.Rows[0]["Content"].ToString();
+                if (content == "x")
+                {
+                    MessageBox.Show("This image is already done by You. If you start to solve it again it will be removed from your solved image list.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    var guessGrid = new List<List<char>>();
+                    for (int i = 0; i < GameGrid.Rows; i++)
+                    {
+                        var row = content.Substring(i * GameGrid.Columns, GameGrid.Columns).ToList();
+                        guessGrid.Add(row);
+                    }
+
+                    for (int r = 0; r < GameGrid.Rows; r++)
+                    {
+                        for (int c = 0; c < GameGrid.Columns; c++)
+                        {
+                            GuessGrid[r][c] = guessGrid[r][c];
+                            var element = ImageCellTableElements.FirstOrDefault(e => e.Row == r && e.Column == c);
+                            if (element != null)
+                            {
+                                switch (guessGrid[r][c])
+                                {
+                                    case 'x':
+                                        element.ClickState = 0;
+                                        break;
+                                    case '1':
+                                        element.ClickState = 1;
+                                        break;
+                                    case '0':
+                                        element.ClickState = 2;
+                                        break;
+                                    case '?':
+                                        element.ClickState = 3;
+                                        break;
+                                }
+                            }
+                        }
+                    }
+
+                    Debug.WriteLine($"Unfinished image with content: {content}");
+                }
             }
+            else
+            {
+                // Apply background and click state changes if necessary in the case of non-started, virgin image
+                if (RowFinished.Any(r => r == 1) || ColumnFinished.Any(c => c == 1))
+                {
+                    ApplyBackgroundAndClickState();
+                }
+            }
+        }
+
+        public void SaveGameState()
+        {
+            string content = string.Join("", GuessGrid.SelectMany(row => row));
+            DbManager dbManager = new DbManager();
+            string query = @"
+                            INSERT INTO USERIMAGE (UserName, IMAGEId, Finished, Content)
+                            VALUES (@UserName, @IMAGEId, false, @Content)
+                            ON DUPLICATE KEY UPDATE Finished = false, Content = @Content";
+            var parameters = new Dictionary<string, object>
+            {
+                { "@UserName", _username },
+                { "@IMAGEId", ImageId },
+                { "@Content", content }
+            };
+            dbManager.ExecuteNonQuery(query, parameters);
+            Debug.WriteLine($"Game state saved for IMAGEId: {ImageId} with content: {content}");
         }
 
         public void CheckRowsAndColumns(int row, int column, int clickState)
