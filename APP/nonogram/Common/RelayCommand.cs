@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace nonogram.Common
 {
-    class RelayCommand<T> : ICommand
+    public class RelayCommand<T> : ICommand
     {
         private Action<T> _execute;
         private Func<T, bool> _canExecute;

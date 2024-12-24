@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\
+C:\Users\User\Desktop\NONOGRAM_ujrakezdes\Nonogram-main\APP\nonogram\obj\Debug\
 nonogram
 none
 false
 DEBUG;TRACE
-D:\School\NoNo\Nonogram\APP\nonogram\App.xaml
-201380803982
+C:\Users\User\Desktop\NONOGRAM_ujrakezdes\Nonogram-main\APP\nonogram\App.xaml
+231618216829
 
-42-1470043328
-33-1568798751
-ExitSelectorWindow.xaml;LoginWindow.xaml;MainWindow.xaml;MVVM\View\BuyHelpView.xaml;MVVM\View\DummyView.xaml;MVVM\View\GameView.xaml;MVVM\View\HelpTableView.xaml;MVVM\View\ImageListView.xaml;MVVM\View\SearchBarView.xaml;MVVM\View\TitleBuyView.xaml;MVVM\View\TitleGameView.xaml;MVVM\View\UserMenuView.xaml;Style\CustomScrollViewerStyle.xaml;Style\ExitSelectorWindowStyle.xaml;Style\ImageButtonStyle.xaml;Style\ImageListStyle.xaml;Style\InputBoxStyle.xaml;Style\MenuButtons.xaml;Style\ScrollBarStyle.xaml;WonGameWindow.xaml;
+46-1340550738
+33-972663065
+ExitSelectorWindow.xaml;ForgotPasswordWindow.xaml;LoginWindow.xaml;MainWindow.xaml;MVVM\View\BuyHelpView.xaml;MVVM\View\DummyView.xaml;MVVM\View\GameView.xaml;MVVM\View\HelpTableView.xaml;MVVM\View\ImageListView.xaml;MVVM\View\SearchBarView.xaml;MVVM\View\TitleBuyView.xaml;MVVM\View\TitleGameView.xaml;MVVM\View\UserMenuView.xaml;RegistrationWindow.xaml;ResetPasswordWindow.xaml;Style\CustomScrollViewerStyle.xaml;Style\ExitSelectorWindowStyle.xaml;Style\ImageButtonStyle.xaml;Style\ImageListStyle.xaml;Style\InputBoxStyle.xaml;Style\MenuButtons.xaml;Style\ScrollBarStyle.xaml;WonGameWindow.xaml;
 
 True
 

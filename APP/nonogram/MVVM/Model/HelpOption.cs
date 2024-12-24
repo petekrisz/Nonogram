@@ -22,6 +22,8 @@ namespace nonogram.MVVM.Model
         }
         public string Description => GetHelpDescription(TypeOfHelp);
 
+        public int TokenValue { get; set; } // Hozzáadjuk a TokenValue tulajdonságot
+
         private string GetHelpDescription(string typeOfHelp)
         {
             switch (typeOfHelp)

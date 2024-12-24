@@ -31,7 +31,7 @@ namespace nonogram.MVVM.ViewModel
         {
             Debug.WriteLine($"HelpTableViewModel instance created (HelpTableView.cs): {GetHashCode()}");
 
-            CheckBoxCheckedCommand = new RelayCommand<HelpOption>(ExecuteCheckBoxCheckedCommand); CheckBoxCheckedCommand = new RelayCommand<HelpOption>(ExecuteCheckBoxCheckedCommand);
+            CheckBoxCheckedCommand = new RelayCommand<HelpOption>(ExecuteCheckBoxCheckedCommand);
             LoadHelpOptions();
         }
 
@@ -49,6 +49,7 @@ namespace nonogram.MVVM.ViewModel
                 helpOption.IsChecked = false;
             }
         }
+
         private async Task<bool> ExecuteHelpOptionCommand(string typeOfHelp, HelpOption helpOption)
         {
             Debug.WriteLine($"Executing HelpOptionCommand: {typeOfHelp}");
@@ -128,7 +129,6 @@ namespace nonogram.MVVM.ViewModel
             var helpOption = HelpOptions.FirstOrDefault(h => h.TypeOfHelp == typeOfHelp);
             if (helpOption != null && int.TryParse(helpOption.Value, out int currentValue) && currentValue > 0)
             {
-
                 Debug.WriteLine($"Before Update: {helpOption.TypeOfHelp} -> {helpOption.Value} (Instance: {helpOption.GetHashCode()})");
                 helpOption.Value = (currentValue - 1).ToString();
                 Debug.WriteLine($"After Update: {helpOption.TypeOfHelp} -> {helpOption.Value} (Instance: {helpOption.GetHashCode()})");
@@ -140,12 +140,5 @@ namespace nonogram.MVVM.ViewModel
                 dbManager.ExecuteNonQuery(updateQuery, parameters);
             }
         }
-
-        //public void RefreshHelpOptions()
-        //{
-        //    var temp = HelpOptions;
-        //    HelpOptions = null; // Break the binding temporarily
-        //    HelpOptions = temp; // Restore the binding
-        //}
     }
 }
