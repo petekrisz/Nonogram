@@ -107,21 +107,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ForgotPasswordWindow.xaml.cs" />
     <Compile Include="MVVM\Model\HelpOption.cs" />
     <Compile Include="MVVM\ViewModel\DummyViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HelpTableViewModel.cs" />
+    <Compile Include="MVVM\View\BuyHelpView.xaml.cs" />
     <Compile Include="MVVM\View\DummyView.xaml.cs">
       <DependentUpon>DummyView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\HelpTableView.xaml.cs">
       <DependentUpon>HelpTableView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RegistrationWindow.xaml.cs">
+      <DependentUpon>RegistrationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPasswordWindow.xaml.cs" />
+    <Compile Include="SmtpServer.cs" />
     <Compile Include="WonGameWindow.xaml.cs">
       <DependentUpon>WonGameWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="ExitSelectorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForgotPasswordWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
@@ -157,8 +168,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MVVM\View\BuyHelpView.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MVVM\View\DummyView.xaml">
       <SubType>Designer</SubType>
@@ -191,6 +202,14 @@
     <Page Include="MVVM\View\UserMenuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResetPasswordWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Style\CustomScrollViewerStyle.xaml">
       <SubType>Designer</SubType>
@@ -235,10 +254,7 @@
     <Compile Include="MVVM\ViewModel\SearchBarViewModel.cs" />
     <Compile Include="MVVM\ViewModel\TitleBuyViewModel.cs" />
     <Compile Include="MVVM\ViewModel\TitleGameViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\UserManuViewModel.cs" />
-    <Compile Include="MVVM\View\BuyHelpView.xaml.cs">
-      <DependentUpon>BuyHelpView.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="MVVM\ViewModel\UserMenuViewModel.cs" />
     <Compile Include="MVVM\View\GameView.xaml.cs">
       <DependentUpon>GameView.xaml</DependentUpon>
     </Compile>
