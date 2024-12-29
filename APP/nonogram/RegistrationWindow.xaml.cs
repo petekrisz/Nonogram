@@ -3,9 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Input;
 using nonogram.Common;
-using nonogram.MVVM.ViewModel;
 
 namespace nonogram
 {
@@ -36,9 +34,9 @@ namespace nonogram
                 return;
             }
 
-            // Assume username is derived from email by removing the domain part
+            // Feltételezzük, hogy a felhasználónév az e-mail cím domain része nélkül kerül megadásra
             string username = email.Split('@')[0];
-            int tokens = 50; // Bonus tokens
+            int tokens = 50; // Bónusz tokenek
             string hashedPassword = HashHelper.ComputeSha256Hash(password);
 
             string timeOfRegistration = DateTime.Now.ToString("yyyy. MM. dd. H:mm:ss");
@@ -52,7 +50,7 @@ namespace nonogram
 
         private bool IsValidPassword(string password)
         {
-            // Password must be at least 6 characters long and contain at least one number and one uppercase letter
+            // A jelszónak legalább 6 karakter hosszúnak kell lennie, és tartalmaznia kell legalább egy számot és egy nagybetűt
             return password.Length >= 6 &&
                    password.Any(char.IsDigit) &&
                    password.Any(char.IsUpper);

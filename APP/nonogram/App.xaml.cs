@@ -9,7 +9,6 @@ namespace nonogram
     /// </summary>
     public partial class App : Application
     {
-
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
@@ -25,23 +24,12 @@ namespace nonogram
             {
                 MessageBox.Show($"Database initialization failed: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Shutdown();
+                return;
             }
 
-        }
-
-
-
-
-
-        /* This will open up the login window first....
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            base.OnStartup(e);
+            // Open the LoginWindow on startup
             LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
-        }*/
-
-
-
+        }
     }
 }

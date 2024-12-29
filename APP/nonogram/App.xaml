@@ -4,8 +4,7 @@
              xmlns:local="clr-namespace:nonogram"
              xmlns:viewModel="clr-namespace:nonogram.MVVM.ViewModel"
              xmlns:view="clr-namespace:nonogram.MVVM.View"
-             xmlns:converters="clr-namespace:nonogram.Converters"
-             StartupUri="MainWindow.xaml">
+             xmlns:converters="clr-namespace:nonogram.Converters">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -17,10 +16,7 @@
                 <ResourceDictionary Source="Style/CustomScrollViewerStyle.xaml"/>
                 <ResourceDictionary Source="Style/ImageButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            
 
-
-            
             <DataTemplate DataType="{x:Type viewModel:ImageListViewModel}">
                 <view:ImageListView/>
             </DataTemplate>
@@ -33,9 +29,6 @@
             <DataTemplate DataType="{x:Type viewModel:HelpTableViewModel}">
                 <view:HelpTableView />
             </DataTemplate>
-
-
-
             <DataTemplate DataType="{x:Type viewModel:TitleBuyViewModel}">
                 <view:TitleBuyView/>
             </DataTemplate>
@@ -46,11 +39,8 @@
                 <view:TitleGameView/>
             </DataTemplate>
 
-
             <converters:ZeroToVisibilityConverter x:Key="ZeroToVisibilityConverter"/>
             <converters:BoolToBrushConverter x:Key="BoolToBrushConverter"/>
-
         </ResourceDictionary>
     </Application.Resources>
-
 </Application>

@@ -69,6 +69,15 @@
                     <TextBlock Text="Tokens:" Foreground="#998000" FontSize="16" Margin="0,0,0,10" Width="56" HorizontalAlignment="Left"/>
                     <TextBlock Text="{Binding UserTokens}" Foreground="#998000" FontSize="16" FontWeight="Bold" Margin="0,-30,0,22" Width="68"/>
                 </StackPanel>
+                <ContentControl Grid.Row="1" Grid.ColumnSpan="2">
+
+                </ContentControl>
+                <ContentControl Grid.Row="2" Grid.Column="0">
+
+                </ContentControl>
+                <!-- HelpTableView should be placed here -->
+                <ContentControl x:Name="HelpSlot" Grid.Row="2" Grid.Column="1" Content="{Binding CurrentViewHelp}">
+                </ContentControl>
             </Grid>
 
             <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Desktop\NONOGRAM_ujrakezdes\Nonogram-main\APP\nonogram\obj\Debug\
+C:\Users\User\Desktop\Nonogram--sszef-z-tt-j-t-k\APP\nonogram\obj\Debug\
 nonogram
 none
 false
 DEBUG;TRACE
-C:\Users\User\Desktop\NONOGRAM_ujrakezdes\Nonogram-main\APP\nonogram\App.xaml
+C:\Users\User\Desktop\Nonogram--sszef-z-tt-j-t-k\APP\nonogram\App.xaml
 231618216829
 
-46-1340550738
-33-972663065
+471651513302
+351496923955
 ExitSelectorWindow.xaml;ForgotPasswordWindow.xaml;LoginWindow.xaml;MainWindow.xaml;MVVM\View\BuyHelpView.xaml;MVVM\View\DummyView.xaml;MVVM\View\GameView.xaml;MVVM\View\HelpTableView.xaml;MVVM\View\ImageListView.xaml;MVVM\View\SearchBarView.xaml;MVVM\View\TitleBuyView.xaml;MVVM\View\TitleGameView.xaml;MVVM\View\UserMenuView.xaml;RegistrationWindow.xaml;ResetPasswordWindow.xaml;Style\CustomScrollViewerStyle.xaml;Style\ExitSelectorWindowStyle.xaml;Style\ImageButtonStyle.xaml;Style\ImageListStyle.xaml;Style\InputBoxStyle.xaml;Style\MenuButtons.xaml;Style\ScrollBarStyle.xaml;WonGameWindow.xaml;
 
-True
+False
 
