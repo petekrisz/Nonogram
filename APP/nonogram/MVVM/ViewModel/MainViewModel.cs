@@ -162,8 +162,7 @@ namespace nonogram.MVVM.ViewModel
             });
             GameViewCommand = new RelayCommand<IMAGE>(OpenGameView);
 
-            string email = "somethingratherdifferent@something.else"; //That should be acquired from DB
-            string hash = HashHelper.ComputeSha256Hash(email);
+            string hash = HashHelper.ComputeSha256Hash(User.Email.ToString());
             AvatarUrl = "https://www.gravatar.com/avatar/" + hash + "?s=140&d=identicon";
             
         }
@@ -183,6 +182,7 @@ namespace nonogram.MVVM.ViewModel
                     UserName = userRow["UserName"].ToString(),
                     Score = int.Parse(userRow["Score"].ToString()),
                     Tokens = int.Parse(userRow["Tokens"].ToString()),
+                    Email = userRow["Email"].ToString()
                 };
             }
         }

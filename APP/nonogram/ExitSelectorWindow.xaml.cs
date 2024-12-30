@@ -1,4 +1,5 @@
-﻿using nonogram.DB;
+﻿using nonogram.Common;
+using nonogram.DB;
 using System;
 using System.IO;
 using System.Windows;
@@ -50,10 +51,27 @@ namespace nonogram
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow loginWindow = new LoginWindow();    // That leads back to the LoginWindow
-            loginWindow.Show();
-            Application.Current.MainWindow.Close();         // After opening the LoginWindow it closes this one (MainWindow)
-            this.Close();
+            ExportAllTablesToCsv();                         // Export database tables to CSV files
+            Application.Current.MainWindow.Close();         // Close the MainWindow
+            this.Close();                                   // Close the ExitSelectorWindow
+
+
+            var viewModelFactory = new ViewModelFactory();
+            var loginWindow = new LoginWindow();
+            var loginViewModel = viewModelFactory.CreateLoginViewModel();
+            loginWindow.DataContext = loginViewModel;
+            loginWindow.ShowDialog();
+
+            if (loginViewModel != null && loginViewModel.IsLoginSuccessful)
+            {
+                var mainWindow = new MainWindow()
+                {
+                    DataContext = viewModelFactory.CreateMainViewModel(loginViewModel.UserName)
+                };
+                mainWindow.Show();
+            }
+
+
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

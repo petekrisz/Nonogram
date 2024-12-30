@@ -73,8 +73,8 @@ namespace nonogram.MVVM.ViewModel
 
             // Insert user into USER table
             var dbManager = new DbManager();
-            string queryUser = "INSERT INTO USER (UserName, Password, FirstName, LastName, Email, TimeOfRegistration, Score, Tokens, Avatar) " +
-                           "VALUES (@UserName, @Password, @FirstName, @LastName, @Email, @TimeOfRegistration, 0, @Tokens, @Avatar)";
+            string queryUser = "INSERT INTO USER (UserName, Password, FirstName, LastName, Email, TimeOfRegistration, Score, Tokens) " +
+                           "VALUES (@UserName, @Password, @FirstName, @LastName, @Email, @TimeOfRegistration, 0, @Tokens)";
             var parametersUser = new Dictionary<string, object>
             {
                 { "@UserName", userName },
@@ -83,8 +83,7 @@ namespace nonogram.MVVM.ViewModel
                 { "@LastName", lastName },
                 { "@Email", email },
                 { "@TimeOfRegistration", timeOfRegistration },
-                { "@Tokens", tokens },
-                { "@Avatar", $"Avatar_{userName}.png" }
+                { "@Tokens", tokens }
             };
             dbManager.ExecuteNonQuery(queryUser, parametersUser);
 
