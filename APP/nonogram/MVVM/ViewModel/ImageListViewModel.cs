@@ -15,12 +15,18 @@ using nonogram.MVVM.View;
 namespace nonogram.MVVM.ViewModel
 {
 
-    public class ImageListViewModel : INotifyPropertyChanged
+    public class ImageListViewModel : ObservableObject
     {
-        private string _searchBar;
-        private string _username = "netuddki"; // Hardcoded for now
+
+        private string _username;
+        public string Username
+        {
+            get => _username;
+            set => SetProperty(ref _username, value);
+        }
 
         // The property for the search term
+        private string _searchBar;
         public string SearchBar
         {
             get { return _searchBar; }
@@ -36,8 +42,8 @@ namespace nonogram.MVVM.ViewModel
         }
 
         // Notifies the UI when a property value changes.
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
+        public new event PropertyChangedEventHandler PropertyChanged;
+        protected new void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -72,8 +78,13 @@ namespace nonogram.MVVM.ViewModel
         }
         public ICommand ImageSelectedCommand { get; set; }
 
-        public ImageListViewModel()
+
+        // Parameterless constructor for design-time
+        public ImageListViewModel() : this("netuddki") { }
+
+        public ImageListViewModel(string username)
         {
+            Username = username;
             ImagesLeft = new ObservableCollection<ListImage>();
             ImagesRight = new ObservableCollection<ListImage>();
             SearchBar = string.Empty; // Initialize SearchBar to empty

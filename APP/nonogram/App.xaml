@@ -4,8 +4,8 @@
              xmlns:local="clr-namespace:nonogram"
              xmlns:viewModel="clr-namespace:nonogram.MVVM.ViewModel"
              xmlns:view="clr-namespace:nonogram.MVVM.View"
-             xmlns:converters="clr-namespace:nonogram.Converters"
-             StartupUri="MainWindow.xaml">
+             xmlns:converters="clr-namespace:nonogram.Converters">
+    
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -44,6 +44,16 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:TitleGameViewModel}">
                 <view:TitleGameView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+                <view:LoginView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:RegisterViewModel}">
+                <view:LoginView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ForgotPasswordViewModel}">
+                <view:LoginView />
             </DataTemplate>
 
 

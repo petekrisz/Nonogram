@@ -9,13 +9,20 @@ using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace nonogram.MVVM.ViewModel
 {
     public class HelpTableViewModel : ObservableObject
     {
-        public string Username { get; set; } = "netuddki"; // Hardcoded for now
+        private string _username;
+        public string Username
+        {
+            get => _username;
+            set => SetProperty(ref _username, value);
+        }
+
 
         private ObservableCollection<HelpOption> _helpOptions;
         public ObservableCollection<HelpOption> HelpOptions
@@ -27,8 +34,11 @@ namespace nonogram.MVVM.ViewModel
         public ICommand HelpOptionCommand { get; }
         public ICommand CheckBoxCheckedCommand { get; }
 
-        public HelpTableViewModel()
+        // Parameterless constructor for design-time
+        public HelpTableViewModel() : this("netuddki") { }
+        public HelpTableViewModel(string username)
         {
+            Username = username;
             Debug.WriteLine($"HelpTableViewModel instance created (HelpTableView.cs): {GetHashCode()}");
 
             CheckBoxCheckedCommand = new RelayCommand<HelpOption>(ExecuteCheckBoxCheckedCommand); CheckBoxCheckedCommand = new RelayCommand<HelpOption>(ExecuteCheckBoxCheckedCommand);
@@ -96,7 +106,7 @@ namespace nonogram.MVVM.ViewModel
             return performed;
         }
 
-        private void LoadHelpOptions()
+        public void LoadHelpOptions()
         {
             var dbManager = new DbManager();
             string helpQuery = "SELECT TypeOfHelp, HelpLogoG, HelpLogoL FROM HELP";
@@ -141,11 +151,5 @@ namespace nonogram.MVVM.ViewModel
             }
         }
 
-        //public void RefreshHelpOptions()
-        //{
-        //    var temp = HelpOptions;
-        //    HelpOptions = null; // Break the binding temporarily
-        //    HelpOptions = temp; // Restore the binding
-        //}
     }
 }

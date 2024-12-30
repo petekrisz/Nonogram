@@ -23,7 +23,12 @@
                         <CheckBox Style="{StaticResource ImageButtonStyle}" Click="CheckBox_Click" IsChecked="{Binding IsChecked, Mode=TwoWay}"                           Command="{Binding DataContext.CheckBoxCheckedCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" 
                           CommandParameter="{Binding}">
                             <StackPanel>
-                                <Image Width="50" Height="50" ToolTip="{Binding Description}">
+                                <Image Width="50" Height="50">
+                                    <Image.ToolTip>
+                                        <ToolTip Width="200">
+                                            <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
+                                        </ToolTip>
+                                    </Image.ToolTip>
                                     <Image.Style>
                                         <Style TargetType="Image">
                                             <Setter Property="Source" Value="{Binding HelpLogoG}"/>

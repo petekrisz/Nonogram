@@ -3,31 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:nonogram.MVVM.ViewModel"
         xmlns:local="clr-namespace:nonogram"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Text="NONO&#xA;GRAM" Foreground="#998000" FontSize="38" FontFamily="/Fonts/#Kabala" FontWeight="ExtraBold" TextWrapping="Wrap" Margin="281,60,389,277"/>
-        <Image x:Name="logo" Source="/Images/logo.png" Margin="417,61,281,277" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="1.303"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-1.16"/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
-        <Label x:Name="username" Content="User name or E-mail" HorizontalAlignment="Left" Margin="55,172,0,0" VerticalAlignment="Top" Height="35" Width="163" FontSize="16"/>
-        <Label x:Name="password" Content="Password" HorizontalAlignment="Left" Margin="139,213,0,0" VerticalAlignment="Top" FontSize="16" Height="39" Width="80"/>
-        <TextBox x:Name="username_tb" HorizontalAlignment="Center" Height="35" Margin="0,172,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="312" FontSize="16" Opacity="0.5"/>
-        <TextBox x:Name="password_tb" HorizontalAlignment="Center" Height="35" Margin="0,217,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="312" FontSize="16" Opacity="0.5"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="467,274,0,0" VerticalAlignment="Top" Height="32" Width="92" Background="#FF998000" FontSize="14"/>
-        <Button x:Name="registration" Content="Registration" HorizontalAlignment="Left" Margin="365,274,0,0" VerticalAlignment="Top" Height="32" Width="89" BorderBrush="#FF140808" Foreground="#FF998000" Background="#FF0E0606" FontSize="14"/>
-        <Label x:Name="forgot_password" Content="Forgot password" HorizontalAlignment="Left" Height="32" Margin="202,274,0,0" VerticalAlignment="Top" Width="144" Foreground="#FF998000" HorizontalContentAlignment="Center" FontSize="16"/>
-
-    </Grid>
+        Title="LoginWindow"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Border Background="#1A0D00" CornerRadius="25">
+        <ContentControl Content="{Binding CurrentViewModel}" />
+    </Border>
 </Window>

@@ -16,7 +16,7 @@ namespace nonogram.MVVM.View
     /// </summary>
     public partial class ImageListView : UserControl
     {
-        private string _username= "netuddki"; // Hardcoded for now
+
         public ImageListView()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace nonogram.MVVM.View
                     WHERE UserName = @UserName AND IMAGEId = @IMAGEId";
                     var parameters = new Dictionary<string, object>
                     {
-                        { "@UserName", _username },
+                        { "@UserName", viewModel.Username },
                         { "@IMAGEId", selectedImage.IMAGEId }
                     };
                     var dataTable = dbManager.ExecuteQuery(query, parameters);

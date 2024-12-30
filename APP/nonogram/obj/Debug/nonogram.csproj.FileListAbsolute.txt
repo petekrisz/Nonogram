@@ -82,5 +82,9 @@ D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\WonGameWindow.baml
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\Style\ImageButtonStyle.baml
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\HelpTableView.g.cs
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\HelpTableView.baml
-D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\DummyView.g.cs
-D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\DummyView.baml
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\LoginView.baml
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\LoginView.g.cs
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\ForgotPasswordView.g.cs
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\RegisterView.g.cs
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\ForgotPasswordView.baml
+D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\RegisterView.baml

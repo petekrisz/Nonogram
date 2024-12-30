@@ -2,6 +2,7 @@
 using nonogram.DB;
 using nonogram.MVVM.View;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Input;
 
@@ -9,13 +10,14 @@ namespace nonogram.MVVM.ViewModel
 {
     public class MainViewModel : ObservableObject
     {
+        public string UserName { get; set; }
+
         public RelayCommand<object> ImageListViewCommand { get; set; }
         public RelayCommand<object> BuyHelpViewCommand { get; set; }
         public RelayCommand<IMAGE> GameViewCommand { get; set; }
 
 
         public HelpTableViewModel HelpTableVM { get; set; }
-        public DummyViewModel DummyVM { get; set; }
 
         public ImageListViewModel ImageListVM { get; set; }
         public BuyHelpViewModel BuyHelpVM { get; set; }
@@ -106,19 +108,29 @@ namespace nonogram.MVVM.ViewModel
             }
         }
 
-
-        public MainViewModel()
+        private USER _user;
+        public USER User
         {
-            ImageListVM = new ImageListViewModel();
+            get => _user;
+            set => SetProperty(ref _user, value);
+        }
+
+
+        public MainViewModel(string userName)
+        {
+            LoadUserData(userName);
+
+            UserName = userName;
+
+            ImageListVM = new ImageListViewModel(userName);
             Debug.WriteLine($"MainViewModel initialized: ImageListVM instance: {ImageListVM.GetHashCode()}");
             SearchBarVM = new SearchBarViewModel();
 
             TitleBuyVM = new TitleBuyViewModel();
-            BuyHelpVM = new BuyHelpViewModel();
-            HelpTableVM = new HelpTableViewModel();
+            BuyHelpVM = new BuyHelpViewModel(userName);
+            HelpTableVM = new HelpTableViewModel(userName);
             //Debug.WriteLine($"MainViewModel initialized: HelpTableVM instance: {HelpTableVM.GetHashCode()}");
 
-            DummyVM = new DummyViewModel();
 
 
             //Debug.WriteLine("Subscribing SearchBarVM.SearchTermUpdated to ImageListVM.FilterImages.");
@@ -143,7 +155,7 @@ namespace nonogram.MVVM.ViewModel
             {
                 CurrentViewMain = BuyHelpVM;
                 CurrentViewTitle = TitleBuyVM;
-                CurrentViewHelp = null;
+                CurrentViewHelp = HelpTableVM;
                 Debug.WriteLine("BuyHelpViewCommand executed.");
             });
             GameViewCommand = new RelayCommand<IMAGE>(OpenGameView);
@@ -151,6 +163,26 @@ namespace nonogram.MVVM.ViewModel
             string email = "somethingratherdifferent@something.else"; //That should be acquired from DB
             string hash = HashHelper.ComputeSha256Hash(email);
             AvatarUrl = "https://www.gravatar.com/avatar/" + hash + "?s=140&d=identicon";
+            
+        }
+
+        public void LoadUserData(string userName)
+        {
+            var dbManager = new DbManager();
+            string query = "SELECT * FROM USER WHERE UserName = @UserName";
+            var parameters = new Dictionary<string, object> { { "@UserName", userName } };
+            var userTable = dbManager.ExecuteQuery(query, parameters);
+
+            if (userTable.Rows.Count > 0)
+            {
+                var userRow = userTable.Rows[0];
+                User = new USER
+                {
+                    UserName = userRow["UserName"].ToString(),
+                    Score = int.Parse(userRow["Score"].ToString()),
+                    Tokens = int.Parse(userRow["Tokens"].ToString()),
+                };
+            }
         }
 
         public void OpenGameView(IMAGE selectedImage)

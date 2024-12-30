@@ -11,5 +11,8 @@ namespace nonogram
         {
             InitializeComponent();
         }
+
+
+
     }
 }

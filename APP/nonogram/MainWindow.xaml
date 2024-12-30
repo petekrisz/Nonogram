@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:nonogram.MVVM.ViewModel"
         xmlns:view="clr-namespace:nonogram.MVVM.View"
-        xmlns:local="clr-namespace:nonogram"
+        xmlns:local="clr-namespace:nonogram" xmlns:sys="http://schemas.microsoft.com/winfx/2009/xaml"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True" HorizontalAlignment="Center" VerticalAlignment="Center">
     <Window.Resources>
@@ -13,11 +13,6 @@
             <view:HelpTableView />
         </DataTemplate>
     </Window.Resources>
-
-
-    <Window.DataContext>
-        <vm:MainViewModel/>
-    </Window.DataContext>
 
     <Border Background="#1A0D00" CornerRadius="25">
         <Grid>
@@ -47,13 +42,35 @@
                         <RadioButton x:Name="ExitButton" Content="  Exit" FontSize="20" Height="44" Margin="0,0,60,4" Style="{StaticResource MenuButton}" Click="ExitButton_Click"/>
                     </StackPanel>
                 </ContentControl>
-                <ContentControl Grid.Row="1" Grid.ColumnSpan="2">
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical">
+                    <TextBlock x:Name="UserNameTB" Text="{Binding User.UserName}" 
+                               FontSize="30" 
+                               FontWeight="ExtraBlack"
+                               HorizontalAlignment="Right"
+                               Margin="0,3,3,0"                               
+                               Foreground="#FFD500" FontFamily="/Fonts/#Kabala"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="TokensTB" Text="{Binding User.Tokens, StringFormat=' {0} &#xa4;'}" 
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Margin="0,0,10,0"
+                                   Width="85"
+                                   TextAlignment="Right"
+                                   VerticalAlignment="Top"
+                                   Foreground="#998000" FontFamily="/Fonts/#Kabala"/>
+                        <TextBlock x:Name="ScoreTB"  Text="{Binding User.Score}" 
+                                   FontSize="30"
+                                   FontWeight="ExtraBold"
+                                   Margin="0,0,5,8"
+                                   Width="150"
+                                   TextAlignment="Right"
+                                   Foreground="#FFF7CC" FontFamily="/Fonts/#Kabala"/>
 
-                </ContentControl>
+                    </StackPanel>
+                </StackPanel>
                 <ContentControl Grid.Row="2" Grid.Column="0">
 
                 </ContentControl>
-                <!-- HelpTableView should be placed here -->
                 <ContentControl x:Name="HelpSlot" Grid.Row="2" Grid.Column="1" Content="{Binding CurrentViewHelp}">
                 </ContentControl>
             </Grid>

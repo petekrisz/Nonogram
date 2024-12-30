@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using nonogram.MVVM.ViewModel;
+using System.Windows.Controls;
 
 namespace nonogram.MVVM.View
 {

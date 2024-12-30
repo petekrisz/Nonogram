@@ -6,8 +6,11 @@ namespace nonogram.MVVM.Model
     {
         private string _value;
         private bool _isChecked;
+        private int _amount;
+
 
         public string TypeOfHelp { get; set; }
+        public int Price { get; set; }
         public string HelpLogoG { get; set; }
         public string HelpLogoL { get; set; }
         public string Value
@@ -20,6 +23,11 @@ namespace nonogram.MVVM.Model
             get => _isChecked;
             set => SetProperty(ref _isChecked, value);
         }
+        public int Amount
+        {
+            get => _amount;
+            set => SetProperty(ref _amount, value);
+        }
         public string Description => GetHelpDescription(TypeOfHelp);
 
         private string GetHelpDescription(string typeOfHelp)
@@ -29,17 +37,17 @@ namespace nonogram.MVVM.Model
                 case "H1":
                     return "Reveals the selected cell.";
                 case "H3":
-                    return "Reveals 3 hidden or incorrectly\nmarked cells at random.";
+                    return "Reveals 3 hidden or incorrectly marked cells at random.";
                 case "H8":
-                    return "Reveals 8 hidden or incorrectly\nmarked cells at random.";
+                    return "Reveals 8 hidden or incorrectly marked cells at random.";
                 case "H13":
-                    return "Reveals 13 cells around the\nselected cell in diamond shape.";
+                    return "Reveals 13 cells around the selected cell in diamond shape.";
                 case "L1":
-                    return "Reveals all cells\nin the selected row or column.";
+                    return "Reveals all cells in the selected row or column.";
                 case "L3":
-                    return "Reveals all cells\nin the selected and neighbouring\nrows or columns.";
+                    return "Reveals all cells in the selected and neighbouring rows or columns.";
                 case "Check3H":
-                    return "Checks the whole grid,\nif it finds errors,\nit fixes up to 3 of them.";
+                    return "Checks the whole grid, if it finds errors, it fixes up to 3 of them.";
                 case "Erase":
                     return "Erases all wrong guesses.";
                 default:

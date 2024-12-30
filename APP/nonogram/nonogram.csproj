@@ -108,13 +108,21 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MVVM\Model\HelpOption.cs" />
-    <Compile Include="MVVM\ViewModel\DummyViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\ForgotPasswordViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HelpTableViewModel.cs" />
-    <Compile Include="MVVM\View\DummyView.xaml.cs">
-      <DependentUpon>DummyView.xaml</DependentUpon>
+    <Compile Include="MVVM\ViewModel\LoginViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\RegisterViewModel.cs" />
+    <Compile Include="MVVM\View\ForgotPasswordView.xaml.cs">
+      <DependentUpon>ForgotPasswordView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\HelpTableView.xaml.cs">
       <DependentUpon>HelpTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\RegisterView.xaml.cs">
+      <DependentUpon>RegisterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="WonGameWindow.xaml.cs">
       <DependentUpon>WonGameWindow.xaml</DependentUpon>
@@ -160,7 +168,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\DummyView.xaml">
+    <Page Include="MVVM\View\ForgotPasswordView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,6 +181,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\ImageListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\RegisterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -235,7 +251,7 @@
     <Compile Include="MVVM\ViewModel\SearchBarViewModel.cs" />
     <Compile Include="MVVM\ViewModel\TitleBuyViewModel.cs" />
     <Compile Include="MVVM\ViewModel\TitleGameViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\UserManuViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\UserMenuViewModel.cs" />
     <Compile Include="MVVM\View\BuyHelpView.xaml.cs">
       <DependentUpon>BuyHelpView.xaml</DependentUpon>
     </Compile>
