@@ -31,23 +31,30 @@ namespace nonogram
             }
 
 
-            // Show the login window
-            var loginWindow = new LoginWindow();
-            loginWindow.DataContext = new LoginViewModel();
-            loginWindow.ShowDialog();
-
-            // Retrieve the login view model
-            var loginViewModel = loginWindow.DataContext as LoginViewModel;
-
-            if (loginViewModel != null && loginViewModel.IsLoginSuccessful)
+            var loginWindow = new LoginWindow
             {
-                // Pass the username to the MainViewModel
-                var mainWindow = new MainWindow()
+                DataContext = new LoginViewModel() // Assign the initial ViewModel
+            };
+
+            if (loginWindow.ShowDialog() == true) // ShowDialog returns DialogResult
+            {
+                var loginViewModel = loginWindow.DataContext as LoginViewModel;
+                if (loginViewModel != null && loginViewModel.IsLoginSuccessful)
                 {
-                    DataContext = new MainViewModel(loginViewModel.UserName)
-                };
-                Debug.WriteLine("MainWindow is about to be shown.");
-                mainWindow.Show();
+                    Debug.WriteLine("Login successful. Instantiating MainWindow...");
+
+                    var mainWindow = new MainWindow
+                    {
+                        DataContext = new MainViewModel(loginViewModel.UserName)
+                    };
+
+                    mainWindow.Show(); // Display MainWindow
+                }
+            }
+            else
+            {
+                Debug.WriteLine("Login was cancelled or failed.");
+                Shutdown(); // Exit the application if login fails
             }
         }
     }

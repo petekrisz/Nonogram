@@ -50,10 +50,10 @@
                 <view:LoginView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:RegisterViewModel}">
-                <view:LoginView />
+                <view:RegisterView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:ForgotPasswordViewModel}">
-                <view:LoginView />
+                <view:ForgotPasswordView />
             </DataTemplate>
 
 

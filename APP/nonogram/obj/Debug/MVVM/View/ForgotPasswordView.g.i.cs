@@ -30,7 +30,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
 using nonogram.MVVM.View;
-using nonogram.MVVM.ViewModel;
 
 
 namespace nonogram.MVVM.View {

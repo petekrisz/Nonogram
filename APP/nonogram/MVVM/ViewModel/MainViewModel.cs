@@ -118,6 +118,8 @@ namespace nonogram.MVVM.ViewModel
 
         public MainViewModel(string userName)
         {
+            Debug.WriteLine($"Initializing MainViewModel with username: {userName}");
+
             LoadUserData(userName);
 
             UserName = userName;
