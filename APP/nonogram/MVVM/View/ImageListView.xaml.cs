@@ -67,6 +67,12 @@ namespace nonogram.MVVM.View
                             // Cancel the click
                             return;
                         }
+                        else
+                        {
+                            // Delete the record from USERIMAGE table
+                            string deleteQuery = "DELETE FROM USERIMAGE WHERE UserName = @UserName AND IMAGEId = @IMAGEId";
+                            dbManager.ExecuteNonQuery(deleteQuery, parameters);
+                        }
                     }
 
 

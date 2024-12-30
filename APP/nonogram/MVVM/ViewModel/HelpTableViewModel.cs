@@ -66,6 +66,15 @@ namespace nonogram.MVVM.ViewModel
             bool performed = false;
             int initialValue = int.Parse(helpOption.Value);
 
+
+            // Check if the help option is available
+            if (initialValue <= 0)
+            {
+                MessageBox.Show($"No helps of this type is available.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                helpOption.IsChecked = false;
+                return false;
+            }
+
             // Set the TypeOfHelp property in GameView.xaml.cs
             if (System.Windows.Application.Current.MainWindow is MainWindow mainWindow &&
                 mainWindow.DataContext is MainViewModel mainViewModel &&

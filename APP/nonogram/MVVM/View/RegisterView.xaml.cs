@@ -15,22 +15,18 @@ namespace nonogram.MVVM.View
         public RegisterView()
         {
             InitializeComponent();
-            DataContext = new RegisterViewModel();
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             var viewModel = DataContext as RegisterViewModel;
-            if (viewModel != null)
-            {
-                viewModel.RegisterCommand.Execute(this);
-            }
+            viewModel?.RegisterCommand.Execute(this);
         }
         private void Label_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             if (DataContext is RegisterViewModel viewModel)
             {
-                viewModel.NavigateToLoginWindow(this);
+                viewModel.NavigateToLoginCommand.Execute(null);
             }
         }
     }

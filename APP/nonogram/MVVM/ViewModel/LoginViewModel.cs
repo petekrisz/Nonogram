@@ -22,7 +22,13 @@ namespace nonogram.MVVM.ViewModel
         }
 
         public string UserName { get; private set; }
-        public bool IsLoginSuccessful { get; private set; }
+
+        private bool _isLoginSuccessful;
+        public bool IsLoginSuccessful
+        {
+            get => _isLoginSuccessful;
+            set => SetProperty(ref _isLoginSuccessful, value);
+        }
 
         public ICommand LoginCommand { get; }
         public ICommand RegisterCommand { get; }
@@ -34,13 +40,15 @@ namespace nonogram.MVVM.ViewModel
             ForgotPasswordCommand = new RelayCommand<object>(ShowForgotPasswordView);
             LoginCommand = new RelayCommand<object>(Login);
 
+            IsLoginSuccessful = false;
+
             // Set initial view to login
             CurrentViewModel = this; // LoginViewModel is the default
         }
 
         private void ShowRegisterView(object parameter)
         {
-            CurrentViewModel = new RegisterViewModel();
+            CurrentViewModel = new RegisterViewModel(this);
         }
 
         private void ShowForgotPasswordView(object parameter)
@@ -67,15 +75,16 @@ namespace nonogram.MVVM.ViewModel
                 var dbManager = new DbManager();
                 string query = "SELECT * FROM USER WHERE UserName = @Username OR Email = @Email";
                 var parameters = new Dictionary<string, object>
-            {
-                { "@Username", username },
-                { "@Email", username }
-            };
+                {
+                    { "@Username", username },
+                    { "@Email", username }
+                };
                 var userTable = dbManager.ExecuteQuery(query, parameters);
 
                 if (userTable.Rows.Count == 0)
                 {
                     MessageBox.Show("Invalid username or password.");
+                    IsLoginSuccessful = false;
                     return;
                 }
 
@@ -86,13 +95,14 @@ namespace nonogram.MVVM.ViewModel
                 if (storedPasswordHash != inputPasswordHash)
                 {
                     MessageBox.Show("Invalid username or password.");
+                    IsLoginSuccessful = false;
                     return;
                 }
 
                 // Successful login
                 UserName = userRow["UserName"].ToString();
                 IsLoginSuccessful = true;
-                Debug.WriteLine("Login successful.");
+                Debug.WriteLine($"Login successful for user: {UserName}");
 
                 // Close the login window
                 Application.Current.Windows.OfType<LoginWindow>().FirstOrDefault()?.Close();
@@ -101,6 +111,8 @@ namespace nonogram.MVVM.ViewModel
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
+                IsLoginSuccessful = false;
+                Debug.WriteLine("Login failed. Error.");
             }
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)

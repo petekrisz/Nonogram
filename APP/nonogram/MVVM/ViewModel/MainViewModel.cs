@@ -189,7 +189,7 @@ namespace nonogram.MVVM.ViewModel
 
         public void OpenGameView(IMAGE selectedImage)
         {
-            GameVM = new GameViewModel(selectedImage);
+            GameVM = new GameViewModel(selectedImage, UserName);
             TitleGameVM = new TitleGameViewModel(selectedImage.Title);
             var gameView = new GameView();
             gameView.SetViewModel(GameVM);
@@ -197,6 +197,17 @@ namespace nonogram.MVVM.ViewModel
             CurrentViewTitle = TitleGameVM;
             CurrentViewHelp = HelpTableVM;
             //Debug.WriteLine($"HelpTableVM instance in OpenGameView: {HelpTableVM.GetHashCode()}");
+
+            GameVM.GameWon += (sender, e) =>
+            {
+                var wonGameWindow = new WonGameWindow(selectedImage.IMAGEId, UserName);
+                wonGameWindow.Show();
+            };
+        }
+
+        public void RefreshImageListView()
+        {
+            ImageListVM.FilterImages(string.Empty);
         }
 
 

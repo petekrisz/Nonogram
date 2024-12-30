@@ -14,15 +14,18 @@ using System.Windows.Controls;
 
 namespace nonogram.MVVM.ViewModel
 {
-    internal class RegisterViewModel : ObservableObject
+    public class RegisterViewModel : ObservableObject
     {
         public ICommand RegisterCommand { get; }
         public ICommand NavigateToLoginCommand { get; }
 
-        public RegisterViewModel()
+        private readonly LoginViewModel _loginViewModel;
+
+        public RegisterViewModel(LoginViewModel loginViewModel)
         {
+            _loginViewModel = loginViewModel;
             RegisterCommand = new RelayCommand<object>(Register);
-            NavigateToLoginCommand = new RelayCommand<object>(parameter => NavigateToLoginWindow(parameter as RegisterView));
+            NavigateToLoginCommand = new RelayCommand<object>(parameter => NavigateToLoginWindow(_loginViewModel));
         }
 
         private void Register(object parameter)
@@ -59,7 +62,7 @@ namespace nonogram.MVVM.ViewModel
                 var result = MessageBox.Show("A player is already registered with this e-mail address. Please use a different e-mail address or select the forgot password option.Do you want to use the forgot password option?", "Registration", MessageBoxButton.YesNo, MessageBoxImage.Error);
                 if (result == MessageBoxResult.Yes)
                 {
-                    NavigateToLoginWindow(registerView);
+                    NavigateToLoginWindow(_loginViewModel);
                 }
                 return;
             }
@@ -68,10 +71,11 @@ namespace nonogram.MVVM.ViewModel
             string hashedPassword = HashHelper.ComputeSha256Hash(password);
             DateTime timeOfRegistration = DateTime.Now;
 
+            // Insert user into USER table
             var dbManager = new DbManager();
-            string query = "INSERT INTO USER (UserName, Password, FirstName, LastName, Email, TimeOfRegistration, Score, Tokens, Avatar) " +
+            string queryUser = "INSERT INTO USER (UserName, Password, FirstName, LastName, Email, TimeOfRegistration, Score, Tokens, Avatar) " +
                            "VALUES (@UserName, @Password, @FirstName, @LastName, @Email, @TimeOfRegistration, 0, @Tokens, @Avatar)";
-            var parameters = new Dictionary<string, object>
+            var parametersUser = new Dictionary<string, object>
             {
                 { "@UserName", userName },
                 { "@Password", hashedPassword },
@@ -82,19 +86,28 @@ namespace nonogram.MVVM.ViewModel
                 { "@Tokens", tokens },
                 { "@Avatar", $"Avatar_{userName}.png" }
             };
+            dbManager.ExecuteNonQuery(queryUser, parametersUser);
 
-            dbManager.ExecuteNonQuery(query, parameters);
+            // Insert user into USERHELP table
+            string queryUserHelp = "INSERT INTO USERHELP (UserName, H1, H3, H8, H13, L1, L3, Check3H, Erase) " +
+               "VALUES (@UserName, 0, 0, 0, 0, 0, 0, 0, 0)";
+            var parametersUserHelp = new Dictionary<string, object>
+            {
+                { "@UserName", userName }
+            };
+            dbManager.ExecuteNonQuery(queryUserHelp, parametersUserHelp);
 
             MessageBox.Show("Registration successful! You have received 50 bonus tokens.", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
             MessageBox.Show("You will be directed to the Login Window where you can log in with your newly registered account.", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            NavigateToLoginWindow(registerView);
+            var loginViewModel = new LoginViewModel();
+            NavigateToLoginWindow(_loginViewModel);
 
         }
 
-        public void NavigateToLoginWindow(RegisterView registerView)
+        public void NavigateToLoginWindow(LoginViewModel loginViewModel)
         {
-            var parentWindow = Window.GetWindow(registerView);
+            var parentWindow = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w is LoginWindow);
             if (parentWindow == null)
             {
                 Debug.WriteLine("Parent window is null.");
@@ -112,8 +125,9 @@ namespace nonogram.MVVM.ViewModel
             // Swap to LoginView
             var loginView = new LoginView
             {
-                DataContext = new LoginViewModel()
+                DataContext = loginViewModel
             };
+            Debug.WriteLine($"NavigateToLoginWindow: LoginView DataContext: {loginView.DataContext.GetHashCode()}");
             contentControl.Content = loginView;
         }
 

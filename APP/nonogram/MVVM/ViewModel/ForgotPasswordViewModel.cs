@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace nonogram.MVVM.ViewModel
 {
-    internal class ForgotPasswordViewModel : ObservableObject
+    public class ForgotPasswordViewModel : ObservableObject
     {
     }
 }

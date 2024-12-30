@@ -19,10 +19,10 @@ namespace nonogram.MVVM.ViewModel
 {
     public class GameViewModel : ObservableObject
     {
+        public event EventHandler GameWon;
+        private readonly string _username;
         public GameGrid GameGrid { get; private set; }
         public int ImageId { get; private set; }
-        private string _username = "netuddki"; // Hardcoded for now 
-
 
         private ObservableCollection<GridElement> _columnTableElements;
         public ObservableCollection<GridElement> ColumnTableElements
@@ -62,8 +62,9 @@ namespace nonogram.MVVM.ViewModel
         public List<List<char>> TempList { get; private set; }
 
 
-        public GameViewModel(IMAGE selectedImage)
+        public GameViewModel(IMAGE selectedImage, string username)
         {
+            _username = username;
             GameGrid = new GameGrid(selectedImage);
             ImageId = selectedImage.IMAGEId; // Store IMAGEId
             Debug.WriteLine($"GameViewModel initialized with IMAGEId: {ImageId}");
@@ -340,9 +341,7 @@ namespace nonogram.MVVM.ViewModel
 
             if (gridsMatch)
             {
-                int imageId = GameGrid.IMAGEId;
-                WonGameWindow wonGameWindow = new WonGameWindow(imageId);
-                wonGameWindow.Show();
+                GameWon?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -649,6 +648,7 @@ namespace nonogram.MVVM.ViewModel
         public bool ExecuteHelpOption(int row, int column, string typeOfHelp)
         {
             Debug.WriteLine($"ExecuteHelpOption is called: {typeOfHelp} at Row: {row}, Column: {column}");
+
             bool success = false;
             int r, c;
             List<int> rowList = new List<int>();
