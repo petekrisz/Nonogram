@@ -33,6 +33,9 @@
             <DataTemplate DataType="{x:Type viewModel:HelpTableViewModel}">
                 <view:HelpTableView />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UserMenuViewModel}">
+                <view:UserMenuView />
+            </DataTemplate>
 
 
 
@@ -45,6 +48,11 @@
             <DataTemplate DataType="{x:Type viewModel:TitleGameViewModel}">
                 <view:TitleGameView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:TitleUserMenuViewModel}">
+                <view:TitleUserMenuView/>
+            </DataTemplate>
+
+
 
             <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
                 <view:LoginView />

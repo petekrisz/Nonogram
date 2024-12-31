@@ -9,13 +9,13 @@
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
         <TextBlock Text="NONOGRAM" Foreground="#998000" FontSize="38" FontFamily="/Fonts/#Kabala" FontWeight="ExtraBold" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,20,0"/>
         <TextBlock Text="Registering new player" Foreground="#998000" FontSize="20" FontFamily="/Fonts/#Kabala" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,20,0"/>
-        <TextBox x:Name="UsernameTextBox" Width="300" Height="35" Margin="0,10" Text="Username" FontSize="16" Opacity="0.5"/>
+        <TextBox x:Name="UsernameTextBox" Width="300" Height="35" Margin="0,10" Text="Username" FontSize="16" FontFamily="Kabala" Opacity="0.5" VerticalContentAlignment="Center"/>
         <StackPanel Orientation="Horizontal">
-            <TextBox x:Name="FirstNameTextBox" Width="145" Height="35" Margin="0,10,10,10" Text="First Name" FontSize="16" Opacity="0.5"/>
-            <TextBox x:Name="LastNameTextBox" Width="145" Height="35" Margin="0,10" Text="Last Name" FontSize="16" Opacity="0.5"/>
+            <TextBox x:Name="FirstNameTextBox" Width="145" Height="35" Margin="0,10,10,10" Text="First Name" FontSize="16" FontFamily="Kabala" Opacity="0.5" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="LastNameTextBox" Width="145" Height="35" Margin="0,10" Text="Last Name" FontSize="16" FontFamily="Kabala" Opacity="0.5" VerticalContentAlignment="Center"/>
         </StackPanel>
         <Label Content="E-mail address:" Foreground="#998000" FontSize="12" FontFamily="/Fonts/#Kabala"/>
-        <TextBox x:Name="EmailTextBox" Width="300" Height="35" Margin="0,0,0,10" Text="E-mail address" FontSize="16" Opacity="0.5"/>
+        <TextBox x:Name="EmailTextBox" Width="300" Height="35" Margin="0,0,0,10" Text="E-mail address" FontSize="16" FontFamily="Kabala" Opacity="0.5" VerticalContentAlignment="Center"/>
         <Label Content="Password:" Foreground="#998000" FontSize="12" FontFamily="/Fonts/#Kabala"/>
         <PasswordBox x:Name="PasswordBox" Width="300" Height="35" Margin="0,0,0,10" Opacity="0.5"/>
         <StackPanel Orientation="Horizontal">

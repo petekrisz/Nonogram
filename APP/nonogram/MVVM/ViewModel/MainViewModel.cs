@@ -15,18 +15,21 @@ namespace nonogram.MVVM.ViewModel
         public RelayCommand<object> ImageListViewCommand { get; set; }
         public RelayCommand<object> BuyHelpViewCommand { get; set; }
         public RelayCommand<IMAGE> GameViewCommand { get; set; }
+        public RelayCommand<object> UserMenuViewCommand { get; set; }
 
 
         public HelpTableViewModel HelpTableVM { get; set; }
-
         public ImageListViewModel ImageListVM { get; set; }
         public BuyHelpViewModel BuyHelpVM { get; set; }
         public GameViewModel GameVM { get; set; }
+        public UserMenuViewModel UserMenuVM { get; set; }
 
 
         public SearchBarViewModel SearchBarVM { get; set; }
         public TitleBuyViewModel TitleBuyVM { get; set; }
         public TitleGameViewModel TitleGameVM { get; set; }
+        public TitleUserMenuViewModel TitleUserMenuVM { get; set; }
+
 
 
 
@@ -81,7 +84,7 @@ namespace nonogram.MVVM.ViewModel
             set
             {
                 _currentViewHelp = value;
-                Debug.WriteLine($"CurrentViewTitle set to: {_currentViewTitle?.GetType().Name}");
+                Debug.WriteLine($"CurrentViewHelp set to: {_currentViewHelp?.GetType().Name}");
                 OnPropertyChanged();
             }
         }
@@ -133,6 +136,9 @@ namespace nonogram.MVVM.ViewModel
             HelpTableVM = new HelpTableViewModel(userName);
             //Debug.WriteLine($"MainViewModel initialized: HelpTableVM instance: {HelpTableVM.GetHashCode()}");
 
+            UserMenuVM = new UserMenuViewModel(userName);
+            TitleUserMenuVM = new TitleUserMenuViewModel(userName);
+
 
 
             //Debug.WriteLine("Subscribing SearchBarVM.SearchTermUpdated to ImageListVM.FilterImages.");
@@ -145,12 +151,20 @@ namespace nonogram.MVVM.ViewModel
 
             Debug.WriteLine($"CurrentViewTitle assigned: {CurrentViewTitle?.GetType().Name}");
 
+            UserMenuViewCommand = new RelayCommand<object>(_ =>
+            {
+                CurrentViewMain = UserMenuVM;
+                CurrentViewTitle = TitleUserMenuVM;
+                CurrentViewHelp = null;
+                Debug.WriteLine("UserMenuViewCommand executed.");
+            });
+
             ImageListViewCommand = new RelayCommand<object>(_ =>
             {
                 CurrentViewMain = ImageListVM;
                 CurrentViewTitle = SearchBarVM;
                 CurrentViewHelp = null;
-                //Debug.WriteLine($"ImageListViewCommand executed. Instance: {ImageListVM.GetHashCode()}");
+                Debug.WriteLine($"ImageListViewCommand executed. Instance: {ImageListVM.GetHashCode()}");
 
             });
             BuyHelpViewCommand = new RelayCommand<object>(_ =>

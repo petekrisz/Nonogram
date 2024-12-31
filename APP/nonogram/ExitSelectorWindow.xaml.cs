@@ -20,33 +20,7 @@ namespace nonogram
 
             this.Deactivated += ExitSelectorWindow_Deactivated;
 
-            Application.Current.Exit += OnApplicationExit;
-        }
-
-        private void OnApplicationExit(object sender, ExitEventArgs e)
-        {
-            string sourceDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DB");
-
-            // Adjust the target directory to point to the correct nonogram.DB folder
-            string projectDirectory = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
-            string targetDirectory = Path.Combine(projectDirectory, "DB");
-
-            // Copy CSV files from source to target
-            foreach (var filePath in Directory.GetFiles(sourceDirectory, "*.csv"))
-            {
-                string fileName = Path.GetFileName(filePath);
-                string targetPath = Path.Combine(targetDirectory, fileName);
-
-                try
-                {
-                    File.Copy(filePath, targetPath, overwrite: true);
-                    Console.WriteLine($"Copied {fileName} to {targetPath}");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error copying {fileName}: {ex.Message}");
-                }
-            }
+            Application.Current.Exit += (sender, e) => CopyFileHelper.CopyCsvFilesOnExit();
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)

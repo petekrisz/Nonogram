@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace nonogram
 {
@@ -20,6 +21,14 @@ namespace nonogram
                 Owner = this // Set the owner to the main window
             };
             exitSelector.ShowDialog();
+        }
+
+        private void Avatar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (DataContext is MVVM.ViewModel.MainViewModel viewModel)
+            {
+                viewModel.UserMenuViewCommand.Execute(null);
+            }
         }
     }
 }

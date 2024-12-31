@@ -45,15 +45,21 @@ namespace nonogram.MVVM.ViewModel
                 return;
             }
 
-            if (!IsValidPassword(password))
+            if (!PasswordValidator.IsValidPassword(password))
             {
                 MessageBox.Show("Password must be at least 6 characters long and contain at least one number and one uppercase letter!", "Registration", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            if (IsUsernameTaken(userName))
+            if (UsernameValidator.IsUsernameTaken(userName))
             {
                 MessageBox.Show("This username is already taken. Please choose a different one!", "Registration", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (!EmailValidator.IsValidEmail(email))
+            {
+                MessageBox.Show("Please enter a valid email address.");
                 return;
             }
 
@@ -152,11 +158,29 @@ namespace nonogram.MVVM.ViewModel
             var result = dbManager.ExecuteQuery(query, parameters);
             return Convert.ToInt32(result.Rows[0][0]) > 0;
         }
-        private bool IsValidPassword(string password)
+    }
+    public static class PasswordValidator
+    {
+        public static bool IsValidPassword(string password)
         {
             return password.Length >= 6 &&
                    password.Any(char.IsDigit) &&
                    password.Any(char.IsUpper);
         }
     }
+    public static class UsernameValidator
+    {
+        public static bool IsUsernameTaken(string username)
+        {
+            var dbManager = new DbManager();
+            string query = "SELECT COUNT(*) FROM USER WHERE UserName = @UserName";
+            var parameters = new Dictionary<string, object>
+            {
+                { "@UserName", username }
+            };
+            var result = dbManager.ExecuteQuery(query, parameters);
+            return Convert.ToInt32(result.Rows[0][0]) > 0;
+        }
+    }
+
 }
