@@ -9,10 +9,25 @@
         Title="LoginWindow"
         SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True">
     <Border Background="#1A0D00" CornerRadius="25">
-        <ContentControl x:Name="MainContentControl" Content="{Binding CurrentViewModel}" />
+        <StackPanel>
+            <ContentControl x:Name="MainContentControl" Content="{Binding CurrentViewModel}" />
+            <Label Content="Exit Application"
+                   Foreground="#660000"
+                   Margin="10"
+                   Cursor="Hand"
+                   MouseEnter="Label_MouseEnter"
+                   MouseLeave="Label_MouseLeave"
+                   MouseLeftButtonUp="Label_MouseLeftButtonUp"
+                   FontFamily="Kabala"
+                   FontSize="10"
+                   FontWeight="Bold"
+                   HorizontalContentAlignment="Right"
+                   HorizontalAlignment="Right"/>
+        </StackPanel>
     </Border>
 </Window>

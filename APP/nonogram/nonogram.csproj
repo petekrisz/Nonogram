@@ -108,7 +108,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\CopyFileHelper.cs" />
+    <Compile Include="Common\SmtpServer.cs" />
     <Compile Include="Common\ViewModelFactory.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="MVVM\Model\HelpOption.cs" />
     <Compile Include="MVVM\ViewModel\ForgotPasswordViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HelpTableViewModel.cs" />

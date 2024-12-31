@@ -39,5 +39,20 @@ namespace nonogram.MVVM.View
         {
             (DataContext as LoginViewModel)?.LoginCommand.Execute(this);
         }
+
+        private void Label_MouseEnter(object sender, MouseEventArgs e)
+        {
+            (sender as Label).Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF7CC"));
+        }
+
+        private void Label_MouseLeave(object sender, MouseEventArgs e)
+        {
+            (sender as Label).Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#998000"));
+        }
+
+        private void ForgotPasswordLabel_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            (DataContext as LoginViewModel)?.ForgotPasswordCommand.Execute(null);
+        }
     }
 }
