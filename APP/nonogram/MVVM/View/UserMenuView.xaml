@@ -113,7 +113,7 @@
         <Button Content="DELETE ACCOUNT" Command="{Binding DeleteAccountCommand}" HorizontalAlignment="Right" Width="300" Height="40" Margin="5,20,100,0"  Style="{StaticResource ReddishButtonStyle}"/>
 
         <!-- Unfinished Images Section -->
-        <Label Content="Unfinished Images" FontSize="20" FontWeight="Bold" Margin="0,20,0,10" HorizontalAlignment="Center" FontFamily="Kabala" Foreground="#998000"/>
+        <Label Content="Unfinished Images" FontSize="34" FontWeight="ExtraBold" Margin="0,20,0,10" HorizontalAlignment="Left" FontFamily="Kabala" Foreground="#998000"/>
         <ItemsControl ItemsSource="{Binding UnfinishedImages}" ItemTemplate="{StaticResource ItemTemplate}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
