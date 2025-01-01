@@ -27,6 +27,22 @@ namespace nonogram.MVVM.View
             InitializeComponent();
         }
 
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender is TextBox textBox && textBox.Text == "Username or Email")
+            {
+                textBox.Text = string.Empty;
+            }
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.Text = "Username or Email";
+            }
+        }
+
         private void PasswordBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)

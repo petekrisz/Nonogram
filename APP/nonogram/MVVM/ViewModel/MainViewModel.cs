@@ -30,11 +30,14 @@ namespace nonogram.MVVM.ViewModel
         public TitleGameViewModel TitleGameVM { get; set; }
         public TitleUserMenuViewModel TitleUserMenuVM { get; set; }
 
-
-
+        private bool _isHelpEnabled;
+        public bool IsHelpEnabled
+        {
+            get => _isHelpEnabled;
+            set => SetProperty(ref _isHelpEnabled, value);
+        }
 
         private object _currentViewMain;
-
         public object CurrentViewMain
         {
             get { return _currentViewMain; }
@@ -50,6 +53,8 @@ namespace nonogram.MVVM.ViewModel
                     _currentViewMain = value;
                     Debug.WriteLine($"CurrentViewMain set to: {_currentViewMain?.GetType().Name}");
                     OnPropertyChanged(nameof(CurrentViewMain));
+
+                    IsHelpEnabled = _currentViewMain is GameView;
                 }
             }
         }
@@ -139,8 +144,6 @@ namespace nonogram.MVVM.ViewModel
 
             UserMenuVM = new UserMenuViewModel(userName);
             TitleUserMenuVM = new TitleUserMenuViewModel(userName);
-
-
 
             Debug.WriteLine("Subscribing SearchBarVM.SearchTermUpdated to ImageListVM.FilterImages.");
             SearchBarVM.SearchTermUpdated += ImageListVM.FilterImages;

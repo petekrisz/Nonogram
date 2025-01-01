@@ -17,6 +17,36 @@ namespace nonogram.MVVM.View
             InitializeComponent();
         }
 
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender is TextBox textBox && textBox.Opacity == 0.5)
+            {
+                textBox.Text = string.Empty;
+            }
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                switch (textBox.Name)
+                {
+                    case "UsernameTextBox":
+                        textBox.Text = "Username";
+                        break;
+                    case "FirstNameTextBox":
+                        textBox.Text = "First Name";
+                        break;
+                    case "LastNameTextBox":
+                        textBox.Text = "Last Name";
+                        break;
+                    case "EmailTextBox":
+                        textBox.Text = "E-mail address";
+                        break;
+                }
+            }
+        }
+
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             var viewModel = DataContext as RegisterViewModel;

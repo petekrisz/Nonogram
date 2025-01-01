@@ -40,18 +40,25 @@ namespace nonogram.MVVM.ViewModel
             var firstName = registerView.FirstNameTextBox.Text;
             var lastName = registerView.LastNameTextBox.Text;
             var email = registerView.EmailTextBox.Text;
-            var password = registerView.PasswordBox.Password;
+            var password_1 = registerView.PasswordBox_1.Password;
+            var password_2 = registerView.PasswordBox_2.Password;
 
             if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) ||
-                string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+                string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password_1) || string.IsNullOrWhiteSpace(password_2))
             {
                 MessageBox.Show("Please complete all input fields!", "Registration", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            if (!PasswordValidator.IsValidPassword(password))
+            if (!PasswordValidator.IsValidPassword(password_1) || !PasswordValidator.IsValidPassword(password_2))
             {
                 MessageBox.Show("Password must be at least 6 characters long and contain at least one number and one uppercase letter!", "Registration", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (password_1 != password_2)
+            {
+                MessageBox.Show("Entered passwords do not match", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -78,7 +85,7 @@ namespace nonogram.MVVM.ViewModel
             }
 
             int tokens = 50; // Bonus tokens
-            string hashedPassword = HashHelper.ComputeSha256Hash(password);
+            string hashedPassword = HashHelper.ComputeSha256Hash(password_1);
             DateTime timeOfRegistration = DateTime.Now;
 
             // Insert user into USER table

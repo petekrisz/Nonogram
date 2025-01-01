@@ -17,12 +17,12 @@ namespace nonogram
         }
         private void Label_MouseEnter(object sender, MouseEventArgs e)
         {
-            (sender as Label).Foreground = Brushes.DarkRed;
+            (sender as Label).Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF7CC"));
         }
 
         private void Label_MouseLeave(object sender, MouseEventArgs e)
         {
-            (sender as Label).Foreground = Brushes.Red;
+            (sender as Label).Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#660000"));
         }
 
         private void Label_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

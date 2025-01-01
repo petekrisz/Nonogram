@@ -20,7 +20,7 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <CheckBox Style="{StaticResource ImageButtonStyle}" Click="CheckBox_Click" IsChecked="{Binding IsChecked, Mode=TwoWay}"                           Command="{Binding DataContext.CheckBoxCheckedCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                        <CheckBox Style="{StaticResource ImageButtonStyle}" IsEnabled="{Binding DataContext.IsHelpEnabled, RelativeSource={RelativeSource AncestorType=Window}}" Click="CheckBox_Click" IsChecked="{Binding IsChecked, Mode=TwoWay}"                           Command="{Binding DataContext.CheckBoxCheckedCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" 
                           CommandParameter="{Binding}">
                             <StackPanel>
                                 <Image Width="50" Height="50">
