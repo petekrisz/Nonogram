@@ -1,8 +1,11 @@
 ﻿using nonogram.Common;
 using nonogram.DB;
+using nonogram.MVVM.Model;
 using nonogram.MVVM.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,12 +27,15 @@ namespace nonogram.MVVM.ViewModel
             set => SetProperty(ref _user, value);
         }
 
+        public ObservableCollection<ListImage> UnfinishedImages { get; set; }
+
         public ICommand ChangeUsernameCommand { get; }
         public ICommand ChangeFirstNameCommand { get; }
         public ICommand ChangeLastNameCommand { get; }
         public ICommand ChangeEmailCommand { get; }
         public ICommand ChangePasswordCommand { get; }
         public ICommand DeleteAccountCommand { get; }
+        public ICommand ImageSelectedCommand { get; }
 
         public UserMenuViewModel(string userName)
         {
@@ -41,10 +47,45 @@ namespace nonogram.MVVM.ViewModel
             ChangeLastNameCommand = new RelayCommand<object>(ChangeLastName);
             ChangePasswordCommand = new RelayCommand<object>(ChangePassword);
             DeleteAccountCommand = new RelayCommand<object>(DeleteAccount);
+            ImageSelectedCommand = new RelayCommand<ListImage>(OnImageSelected);
 
             // Load user details
             LoadUserData(UserName);
+            // Load unfinished images
+            LoadUnfinishedImages(UserName);
         }
+
+        private void LoadUnfinishedImages(string userName)
+        {
+            var dbManager = new DbManager();
+            string query = @"
+                SELECT IMAGE.IMAGEId, IMAGE.Title, IMAGE.IMAGERows, IMAGE.IMAGEColumns, IMAGE.Score, IMAGE.CategoryLogo, IMAGE.ColourType
+                FROM IMAGE
+                JOIN USERIMAGE ON IMAGE.IMAGEId = USERIMAGE.IMAGEId
+                WHERE USERIMAGE.UserName = @UserName AND USERIMAGE.Finished = false";
+            var parameters = new Dictionary<string, object> { { "@UserName", userName } };
+            var dataTable = dbManager.ExecuteQuery(query, parameters);
+
+            UnfinishedImages = new ObservableCollection<ListImage>(
+                dataTable.Rows.Cast<DataRow>().Select(row => new ListImage
+                {
+                    IMAGEId = Convert.ToInt32(row["IMAGEId"]),
+                    ImageTitle = row["Title"].ToString(),
+                    ImageSource = $"/Images/{row["CategoryLogo"].ToString().Replace("gold", "light")}",
+                    ImageDetails = $"Colour: {(Convert.ToInt32(row["ColourType"]) == 0 ? "BW" : "C")} / Size: {row["IMAGERows"]} * {row["IMAGEColumns"]} / Score: {row["Score"]}"
+                }).ToList());
+        }
+
+        private void OnImageSelected(ListImage selectedImage)
+        {
+            if (Application.Current.MainWindow.DataContext is MainViewModel mainViewModel)
+            {
+                var dbManager = new DbManager();
+                var image = dbManager.GetImageById(selectedImage.IMAGEId);
+                mainViewModel.GameViewCommand.Execute(image);
+            }
+        }
+
 
         private void DeleteAccount(object parameter)
         {

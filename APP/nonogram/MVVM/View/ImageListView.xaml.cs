@@ -25,6 +25,11 @@ namespace nonogram.MVVM.View
                 Debug.WriteLine($"ImageListView DataContext: {DataContext?.GetType().Name}");
                 Debug.WriteLine($"---> ImageListView.DataContext: {DataContext?.GetHashCode()}");
             };
+
+            if (DataContext is ImageListViewModel viewModel)
+            {
+                viewModel.RefreshView = RefreshItemsControls;
+            }
         }
 
         private void OnImageSelected(object sender, MouseButtonEventArgs e)
@@ -75,15 +80,16 @@ namespace nonogram.MVVM.View
                         }
                     }
 
-
-
                     // Pass the IMAGE object to the GameViewCommand
                     mainViewModel.GameViewCommand.Execute(selectedImage);
                 }
             }
         }
-
-
+        private void RefreshItemsControls()
+        {
+            ItemsControlLeft.Items.Refresh();
+            ItemsControlRight.Items.Refresh();
+        }
 
     }
 }

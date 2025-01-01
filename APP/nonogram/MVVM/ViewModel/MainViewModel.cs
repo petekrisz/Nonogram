@@ -59,6 +59,7 @@ namespace nonogram.MVVM.ViewModel
             if (GameVM != null)
             {
                 GameVM.SaveGameState();
+                RefreshImageListView();
             }
         }
 
@@ -141,9 +142,9 @@ namespace nonogram.MVVM.ViewModel
 
 
 
-            //Debug.WriteLine("Subscribing SearchBarVM.SearchTermUpdated to ImageListVM.FilterImages.");
+            Debug.WriteLine("Subscribing SearchBarVM.SearchTermUpdated to ImageListVM.FilterImages.");
             SearchBarVM.SearchTermUpdated += ImageListVM.FilterImages;
-            //Debug.WriteLine("Subscription completed.");
+            Debug.WriteLine("Subscription completed.");
 
             CurrentViewMain = ImageListVM;
             CurrentViewTitle = SearchBarVM;

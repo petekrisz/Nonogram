@@ -10,12 +10,12 @@
         <!-- Username Section -->
         <StackPanel Orientation="Horizontal" Margin="20">
             <Label Content="Username:" Width="100"
-                   HorizontalContentAlignment="Right"
+                   HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"
                    Foreground="#998000"
                    FontFamily="Kabala"
                    FontSize="18"/>
-            <TextBlock Text="{Binding User.UserName}" Width="200"
+            <TextBlock Text="{Binding User.UserName}" Width="300"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Foreground="#998000"
@@ -30,12 +30,12 @@
         <!-- Email Section -->
         <StackPanel Orientation="Horizontal" Margin="20">
             <Label Content="Email:" Width="100"
-                   HorizontalContentAlignment="Right"
+                   HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"
                    Foreground="#998000"
                    FontFamily="Kabala"
                    FontSize="18"/>
-            <TextBlock Text="{Binding User.Email}" Width="200"
+            <TextBlock Text="{Binding User.Email}" Width="300"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Foreground="#998000"
@@ -49,12 +49,12 @@
         <!-- FirstName Section -->
         <StackPanel Orientation="Horizontal" Margin="20">
             <Label Content="First name:" Width="100"
-                   HorizontalContentAlignment="Right"
+                   HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"
                    Foreground="#998000"
                    FontFamily="Kabala"
                    FontSize="18"/>
-            <TextBlock Text="{Binding User.FirstName}" Width="200"
+            <TextBlock Text="{Binding User.FirstName}" Width="300"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Foreground="#998000"
@@ -68,12 +68,12 @@
         <!-- LastName Section -->
         <StackPanel Orientation="Horizontal" Margin="20">
             <Label Content="Last name:" Width="100"
-                   HorizontalContentAlignment="Right"
+                   HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"
                    Foreground="#998000"
                    FontFamily="Kabala"
                    FontSize="18"/>
-            <TextBlock Text="{Binding User.LastName}" Width="200"
+            <TextBlock Text="{Binding User.LastName}" Width="300"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Foreground="#998000"
@@ -87,20 +87,22 @@
         <!-- Password Section -->
         <StackPanel Orientation="Horizontal" Margin="15">
             <StackPanel>
-                <Label Content="Password:" Width="100"
+                <Label Content="Password:" Width="175"
                    Height="30"
                    HorizontalContentAlignment="Right"
                    VerticalContentAlignment="Bottom"
                    Foreground="#998000"
                    FontFamily="Kabala"
-                   FontSize="18"/>
-                <Label Content="Enter two times!" Width="100"
+                   FontSize="18"
+                   Margin="0,0,30,0"/>
+                <Label Content="Enter two times!" Width="175"
                    Height="22"
                    HorizontalContentAlignment="Right"
                    VerticalContentAlignment="Top"
                    Foreground="#998000"
                    FontFamily="Kabala"
-                   FontSize="10"/>
+                   FontSize="10"
+                   Margin="0,0,30,0"/>
             </StackPanel>
             <PasswordBox x:Name="newPassword_1" Width="198" Height="35" Margin="5,0,0,0" FontSize="16" FontFamily="Kabala" Opacity="0.5" VerticalContentAlignment="Center"/>
             <PasswordBox x:Name="newPassword_2" Width="197" Height="35" Margin="5,0,0,0" FontSize="16" FontFamily="Kabala" Opacity="0.5" VerticalContentAlignment="Center"/>
@@ -109,5 +111,20 @@
 
         <!-- Delete Account Button -->
         <Button Content="DELETE ACCOUNT" Command="{Binding DeleteAccountCommand}" HorizontalAlignment="Right" Width="300" Height="40" Margin="5,20,100,0"  Style="{StaticResource ReddishButtonStyle}"/>
+
+        <!-- Unfinished Images Section -->
+        <Label Content="Unfinished Images" FontSize="20" FontWeight="Bold" Margin="0,20,0,10" HorizontalAlignment="Center" FontFamily="Kabala" Foreground="#998000"/>
+        <ItemsControl ItemsSource="{Binding UnfinishedImages}" ItemTemplate="{StaticResource ItemTemplate}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ContentPresenter">
+                    <EventSetter Event="MouseLeftButtonUp" Handler="OnImageSelected"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+        </ItemsControl>
     </StackPanel>
 </UserControl>

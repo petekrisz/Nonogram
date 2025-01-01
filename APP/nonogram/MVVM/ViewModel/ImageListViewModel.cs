@@ -10,13 +10,14 @@ using System.Diagnostics;
 using System.Windows;
 using nonogram.Common;
 using nonogram.MVVM.View;
+using System.Windows.Data;
 
 
 namespace nonogram.MVVM.ViewModel
 {
-
     public class ImageListViewModel : ObservableObject
     {
+        public Action RefreshView { get; set; }
 
         private string _username;
         public string Username
@@ -89,19 +90,19 @@ namespace nonogram.MVVM.ViewModel
             ImagesRight = new ObservableCollection<ListImage>();
             SearchBar = string.Empty; // Initialize SearchBar to empty
             FilterImages(SearchBar); // Load images based on the initial search term
+
         }
 
         public void FilterImages(string searchTerm)
         {
             Debug.WriteLine($"FilterImages called with searchTerm: '{searchTerm}'");
 
-
             ImagesLeft.Clear();
             ImagesRight.Clear();
 
-            // New temporary collections
-            var newImagesLeft = new ObservableCollection<ListImage>();
-            var newImagesRight = new ObservableCollection<ListImage>();
+            //// New temporary collections
+            //var newImagesLeft = new ObservableCollection<ListImage>();
+            //var newImagesRight = new ObservableCollection<ListImage>();
 
             // Query IMAGE table for _username
             DbManager dbManager = new DbManager();
@@ -163,10 +164,10 @@ namespace nonogram.MVVM.ViewModel
                     ImageDetails = $"Colour: {(Convert.ToInt32(row["ColourType"]) == 0 ? "BW" : "C")} / Size: {row["IMAGERows"]} * {row["IMAGEColumns"]} / Score: {row["Score"]}"
                 };
 
-                if (newImagesLeft.Count <= newImagesRight.Count)
-                    newImagesLeft.Add(item);
+                if (ImagesLeft.Count <= ImagesRight.Count)
+                    ImagesLeft.Add(item);
                 else
-                    newImagesRight.Add(item);
+                    ImagesRight.Add(item);
             }
 
             if (dataTable.Rows.Count == 0)
@@ -178,18 +179,20 @@ namespace nonogram.MVVM.ViewModel
                     ImageTitle = "No Image Found!",
                     ImageDetails = ""
                 };
-                newImagesLeft.Add(noImageItem);
+                ImagesLeft.Add(noImageItem);
             }
 
-            // Replace collections
-            ImagesLeft = newImagesLeft;
-            ImagesRight = newImagesRight;
+            //// Replace collections
+            //ImagesLeft = newImagesLeft;
+            //ImagesRight = newImagesRight;
 
             Debug.WriteLine($"ImagesLeft count: {ImagesLeft.Count}");
             Debug.WriteLine($"ImagesRight count: {ImagesRight.Count}");
 
             OnPropertyChanged(nameof(ImagesLeft));
             OnPropertyChanged(nameof(ImagesRight));
+
+            RefreshView?.Invoke();
         }
 
     }

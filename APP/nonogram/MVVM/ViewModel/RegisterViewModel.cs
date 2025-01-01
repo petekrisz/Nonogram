@@ -19,16 +19,20 @@ namespace nonogram.MVVM.ViewModel
         public ICommand RegisterCommand { get; }
         public ICommand NavigateToLoginCommand { get; }
 
+        private readonly SmtpServer _smtpServer;
+
         private readonly LoginViewModel _loginViewModel;
 
         public RegisterViewModel(LoginViewModel loginViewModel)
         {
             _loginViewModel = loginViewModel;
+            _smtpServer = new SmtpServer("smtp.mailersend.net", 587, "MS_GfqEet@trial-0r83ql3z0om4zw1j.mlsender.net", "rBibxwfIKwMybJBF");
+
             RegisterCommand = new RelayCommand<object>(Register);
             NavigateToLoginCommand = new RelayCommand<object>(parameter => NavigationHelper.NavigateToLoginWindow(_loginViewModel));
         }
 
-        private void Register(object parameter)
+        private async void Register(object parameter)
         {
             Debug.WriteLine(parameter == null ? "Parameter is null." : $"Parameter type: {parameter.GetType()}");
             var registerView = parameter as RegisterView;
@@ -105,10 +109,21 @@ namespace nonogram.MVVM.ViewModel
             MessageBox.Show("Registration successful! You have received 50 bonus tokens.", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
             MessageBox.Show("You will be directed to the Login Window where you can log in with your newly registered account.", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
 
+            // Send welcome email
+            await SendWelcomeEmail(firstName, email);
+
             var loginViewModel = new LoginViewModel();
             NavigationHelper.NavigateToLoginWindow(_loginViewModel);
 
         }
+
+        private async Task SendWelcomeEmail(string firstName, string email)
+        {
+            string subject = "Welcome to NonoGram!";
+            string body = $"Dear {firstName},\n\nWe are pleased to welcome you to the NonoGram game and hope you're going to enjoy playing with us.\n\nThe Nonogram team.";
+            await _smtpServer.SendEmailAsync(email, subject, body);
+        }
+
         private bool IsEmailTaken(string email)
         {
             var dbManager = new DbManager();

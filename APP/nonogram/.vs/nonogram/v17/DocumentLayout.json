@@ -3,12 +3,72 @@
   "WorkspaceRootPath": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\usermenuviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\usermenuviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\usermenuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\usermenuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\usermenuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\usermenuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\imagelistview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\imagelistview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\imagelistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\imagelistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\style\\imageliststyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:style\\imageliststyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\imagelistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\imagelistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|d:\\school\\nono\\nonogram\\app\\nonogram\\mvvm\\model\\listimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\model\\listimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|d:\\school\\nono\\nonogram\\app\\nonogram\\db\\image.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:db\\image.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|d:\\school\\nono\\nonogram\\app\\nonogram\\mvvm\\view\\forgotpasswordview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\forgotpasswordview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\searchbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\searchbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\searchbarview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\searchbarview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\searchbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\searchbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\gameviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\gameviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +77,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\forgotpasswordview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\forgotpasswordview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|d:\\school\\nono\\nonogram\\app\\nonogram\\mvvm\\view\\forgotpasswordview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\forgotpasswordview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\converters\\booleantovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,20 +91,8 @@
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:common\\smtpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\usermenuviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\usermenuviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\usermenuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\usermenuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\common\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:common\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\common\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -67,16 +111,8 @@
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\usermenuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\usermenuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\buyhelpview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\buyhelpview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\wongamewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:wongamewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\wongamewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -113,10 +149,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\titlebuyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\titlebuyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\imagelistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\imagelistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\helptableviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -195,32 +227,8 @@
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\titlegameview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\searchbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\searchbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\viewmodel\\gameviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\viewmodel\\gameviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\titlebuyview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\titlebuyview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\searchbarview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\searchbarview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\searchbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\searchbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\imagelistview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\imagelistview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\imagelistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:mvvm\\view\\imagelistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\mvvm\\view\\gameview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -256,10 +264,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\style\\customscrollviewerstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:style\\customscrollviewerstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\style\\imageliststyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00651C2A-4490-4274-B200-9FB2A3A81E52}|nonogram.csproj|solutionrelative:style\\imageliststyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -269,7 +273,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -280,64 +284,161 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserMenuView.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\UserMenuView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\UserMenuView.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\UserMenuView.xaml",
+              "RelativeToolTip": "MVVM\\View\\UserMenuView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-30T22:26:54.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ImageListView.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ImageListView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\ImageListView.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ImageListView.xaml",
+              "RelativeToolTip": "MVVM\\View\\ImageListView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-11T21:26:05.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserMenuViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\UserMenuViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\UserMenuViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\UserMenuViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\UserMenuViewModel.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAwD0AAACJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T17:59:38.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserMenuView.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\UserMenuView.xaml.cs",
+              "RelativeDocumentMoniker": "MVVM\\View\\UserMenuView.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\UserMenuView.xaml.cs",
+              "RelativeToolTip": "MVVM\\View\\UserMenuView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T09:42:02.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ImageListViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\ImageListViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\ImageListViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\ImageListViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\ImageListViewModel.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAAwJsAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T20:03:32.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ListImage.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\Model\\ListImage.cs",
+              "RelativeDocumentMoniker": "MVVM\\Model\\ListImage.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\Model\\ListImage.cs",
+              "RelativeToolTip": "MVVM\\Model\\ListImage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T18:42:43.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ImageListStyle.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ImageListStyle.xaml",
+              "RelativeDocumentMoniker": "Style\\ImageListStyle.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ImageListStyle.xaml",
+              "RelativeToolTip": "Style\\ImageListStyle.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-18T17:43:25.269Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\RegisterViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\RegisterViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\RegisterViewModel.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAIwHAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T11:57:32.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ImageListView.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ImageListView.xaml.cs",
+              "RelativeDocumentMoniker": "MVVM\\View\\ImageListView.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ImageListView.xaml.cs",
+              "RelativeToolTip": "MVVM\\View\\ImageListView.xaml.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAowFgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T22:24:25.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IMAGE.csv",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\IMAGE.csv",
+              "RelativeDocumentMoniker": "DB\\IMAGE.csv",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\IMAGE.csv",
+              "RelativeToolTip": "DB\\IMAGE.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2025-01-01T21:32:03.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SearchBarViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\SearchBarViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\SearchBarViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\SearchBarViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\SearchBarViewModel.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAIwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T20:04:36.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "ForgotPasswordViewModel.cs",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\ForgotPasswordViewModel.cs",
               "RelativeDocumentMoniker": "MVVM\\ViewModel\\ForgotPasswordViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\ForgotPasswordViewModel.cs*",
-              "RelativeToolTip": "MVVM\\ViewModel\\ForgotPasswordViewModel.cs*",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAowGIAAAANAAAAAAAAAA==",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\ForgotPasswordViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\ForgotPasswordViewModel.cs",
+              "ViewState": "AgIAALUAAAAAAAAAAAAAANUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-29T11:58:16.155Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\LoginViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\LoginViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\LoginViewModel.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAqwIEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T11:12:05.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ViewModelFactory.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\ViewModelFactory.cs",
-              "RelativeDocumentMoniker": "Common\\ViewModelFactory.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\ViewModelFactory.cs",
-              "RelativeToolTip": "Common\\ViewModelFactory.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAswBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T19:04:41.757Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BooleanToVisibilityConverter.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Converters\\BooleanToVisibilityConverter.cs",
-              "RelativeDocumentMoniker": "Converters\\BooleanToVisibilityConverter.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Converters\\BooleanToVisibilityConverter.cs",
-              "RelativeToolTip": "Converters\\BooleanToVisibilityConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T15:44:50.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "ForgotPasswordView.xaml",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ForgotPasswordView.xaml",
               "RelativeDocumentMoniker": "MVVM\\View\\ForgotPasswordView.xaml",
@@ -349,85 +450,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ForgotPasswordView.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ForgotPasswordView.xaml.cs",
-              "RelativeDocumentMoniker": "MVVM\\View\\ForgotPasswordView.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ForgotPasswordView.xaml.cs",
-              "RelativeToolTip": "MVVM\\View\\ForgotPasswordView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T12:18:33.861Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RegisterViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\RegisterViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\RegisterViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\RegisterViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\RegisterViewModel.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAADwv7EAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T11:57:32.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SmtpServer.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\SmtpServer.cs",
-              "RelativeDocumentMoniker": "Common\\SmtpServer.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\SmtpServer.cs",
-              "RelativeToolTip": "Common\\SmtpServer.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwBcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T14:22:53.613Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserMenuViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\UserMenuViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\UserMenuViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\UserMenuViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\UserMenuViewModel.cs",
-              "ViewState": "AgIAAPkAAAAAAAAAAAAAANYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T17:59:38.754Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserMenuView.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\UserMenuView.xaml.cs",
-              "RelativeDocumentMoniker": "MVVM\\View\\UserMenuView.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\UserMenuView.xaml.cs",
-              "RelativeToolTip": "MVVM\\View\\UserMenuView.xaml.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T09:42:02.804Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "HashHelper.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\HashHelper.cs",
-              "RelativeDocumentMoniker": "Common\\HashHelper.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\HashHelper.cs",
-              "RelativeToolTip": "Common\\HashHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\MainViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\MainViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\MainViewModel.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAIwI4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T12:43:28.647Z",
+              "WhenOpened": "2024-11-18T07:15:46.647Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 23,
               "Title": "RelayCommand.cs",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\RelayCommand.cs",
               "RelativeDocumentMoniker": "Common\\RelayCommand.cs",
@@ -440,7 +476,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T11:16:16.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "ObservableObject.cs",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\ObservableObject.cs",
               "RelativeDocumentMoniker": "Common\\ObservableObject.cs",
@@ -453,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 27,
               "Title": "BuyHelpView.xaml",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\BuyHelpView.xaml",
               "RelativeDocumentMoniker": "MVVM\\View\\BuyHelpView.xaml",
@@ -465,20 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MainViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\MainViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\MainViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\MainViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\MainViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T07:15:46.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 25,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -490,395 +525,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T11:16:16.232Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UserMenuView.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\UserMenuView.xaml",
-              "RelativeDocumentMoniker": "MVVM\\View\\UserMenuView.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\UserMenuView.xaml",
-              "RelativeToolTip": "MVVM\\View\\UserMenuView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-30T22:26:54.556Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ExitSelectorWindow.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\ExitSelectorWindow.xaml.cs",
-              "RelativeDocumentMoniker": "ExitSelectorWindow.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\ExitSelectorWindow.xaml.cs",
-              "RelativeToolTip": "ExitSelectorWindow.xaml.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAUwEwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T22:11:53.145Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "WonGameWindow.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\WonGameWindow.xaml.cs",
-              "RelativeDocumentMoniker": "WonGameWindow.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\WonGameWindow.xaml.cs",
-              "RelativeToolTip": "WonGameWindow.xaml.cs",
-              "ViewState": "AgIAAPQAAAAAAAAAAAAAABUBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T19:36:30.455Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "WonGameWindow.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\WonGameWindow.xaml",
-              "RelativeDocumentMoniker": "WonGameWindow.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\WonGameWindow.xaml",
-              "RelativeToolTip": "WonGameWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-29T11:05:22.763Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "LoginWindow.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\LoginWindow.xaml.cs",
-              "RelativeDocumentMoniker": "LoginWindow.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\LoginWindow.xaml.cs",
-              "RelativeToolTip": "LoginWindow.xaml.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAswCgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T08:49:01.316Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "LoginWindow.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\LoginWindow.xaml",
-              "RelativeDocumentMoniker": "LoginWindow.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\LoginWindow.xaml",
-              "RelativeToolTip": "LoginWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-14T17:25:36.18Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ExitSelectorWindow.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\ExitSelectorWindow.xaml",
-              "RelativeDocumentMoniker": "ExitSelectorWindow.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\ExitSelectorWindow.xaml",
-              "RelativeToolTip": "ExitSelectorWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-30T00:55:27.221Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAADwvyIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T19:36:58.892Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-24T17:20:09.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "HelpOption.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\Model\\HelpOption.cs",
-              "RelativeDocumentMoniker": "MVVM\\Model\\HelpOption.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\Model\\HelpOption.cs",
-              "RelativeToolTip": "MVVM\\Model\\HelpOption.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAuwCwAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T18:24:54.231Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "ExitSelectorWindowStyle.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ExitSelectorWindowStyle.xaml",
-              "RelativeDocumentMoniker": "Style\\ExitSelectorWindowStyle.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ExitSelectorWindowStyle.xaml",
-              "RelativeToolTip": "Style\\ExitSelectorWindowStyle.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-30T22:11:42.043Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "TitleUserMenuViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\TitleUserMenuViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\TitleUserMenuViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\TitleUserMenuViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\TitleUserMenuViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T08:27:09.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "TitleBuyViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\TitleBuyViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\TitleBuyViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\TitleBuyViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\TitleBuyViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T21:24:01.239Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "GameView.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\GameView.xaml",
-              "RelativeDocumentMoniker": "MVVM\\View\\GameView.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\GameView.xaml",
-              "RelativeToolTip": "MVVM\\View\\GameView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-25T08:43:51.755Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "CopyFileHelper.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\CopyFileHelper.cs",
-              "RelativeDocumentMoniker": "Common\\CopyFileHelper.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\CopyFileHelper.cs",
-              "RelativeToolTip": "Common\\CopyFileHelper.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAiwCMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T12:30:52.838Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "ImageListViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\ImageListViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\ImageListViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\ImageListViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\ImageListViewModel.cs",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAAAMYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T20:03:32.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "HelpTableViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\HelpTableViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\HelpTableViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\HelpTableViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\HelpTableViewModel.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAqwKQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T11:59:50.73Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "LoginView.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\LoginView.xaml.cs",
-              "RelativeDocumentMoniker": "MVVM\\View\\LoginView.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\LoginView.xaml.cs",
-              "RelativeToolTip": "MVVM\\View\\LoginView.xaml.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAswDoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T11:07:50.552Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "LoginView.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\LoginView.xaml",
-              "RelativeDocumentMoniker": "MVVM\\View\\LoginView.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\LoginView.xaml",
-              "RelativeToolTip": "MVVM\\View\\LoginView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-29T11:01:43.59Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "BuyHelpViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\BuyHelpViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\BuyHelpViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\BuyHelpViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\BuyHelpViewModel.cs",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAqwK8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T21:23:42.871Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "TitleUserMenuView.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleUserMenuView.xaml.cs",
-              "RelativeDocumentMoniker": "MVVM\\View\\TitleUserMenuView.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleUserMenuView.xaml.cs",
-              "RelativeToolTip": "MVVM\\View\\TitleUserMenuView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T08:39:50.113Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "TitleUserMenuView.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleUserMenuView.xaml",
-              "RelativeDocumentMoniker": "MVVM\\View\\TitleUserMenuView.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleUserMenuView.xaml",
-              "RelativeToolTip": "MVVM\\View\\TitleUserMenuView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-31T08:28:18.367Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "HelpTableView.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\HelpTableView.xaml.cs",
-              "RelativeDocumentMoniker": "MVVM\\View\\HelpTableView.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\HelpTableView.xaml.cs",
-              "RelativeToolTip": "MVVM\\View\\HelpTableView.xaml.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAiwEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T18:46:40.992Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "HelpTableView.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\HelpTableView.xaml",
-              "RelativeDocumentMoniker": "MVVM\\View\\HelpTableView.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\HelpTableView.xaml",
-              "RelativeToolTip": "MVVM\\View\\HelpTableView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-29T18:02:14.938Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "RegisterView.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\RegisterView.xaml.cs",
-              "RelativeDocumentMoniker": "MVVM\\View\\RegisterView.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\RegisterView.xaml.cs",
-              "RelativeToolTip": "MVVM\\View\\RegisterView.xaml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAADwvyEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T12:20:18.716Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "RegisterView.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\RegisterView.xaml",
-              "RelativeDocumentMoniker": "MVVM\\View\\RegisterView.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\RegisterView.xaml",
-              "RelativeToolTip": "MVVM\\View\\RegisterView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-29T12:15:46.243Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 14,
               "Title": "SearchBarView.xaml.cs",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\SearchBarView.xaml.cs",
               "RelativeDocumentMoniker": "MVVM\\View\\SearchBarView.xaml.cs",
               "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\SearchBarView.xaml.cs",
               "RelativeToolTip": "MVVM\\View\\SearchBarView.xaml.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAqwDwAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAqwDwAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T15:02:36.424Z"
+              "WhenOpened": "2024-12-18T15:02:36.424Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "ImageListView.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ImageListView.xaml",
-              "RelativeDocumentMoniker": "MVVM\\View\\ImageListView.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ImageListView.xaml",
-              "RelativeToolTip": "MVVM\\View\\ImageListView.xaml",
+              "DocumentIndex": 15,
+              "Title": "SearchBarView.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\SearchBarView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\SearchBarView.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\SearchBarView.xaml",
+              "RelativeToolTip": "MVVM\\View\\SearchBarView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-11T21:26:05.198Z"
+              "WhenOpened": "2024-12-18T15:02:29.673Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "DbManager.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\DbManager.cs",
-              "RelativeDocumentMoniker": "DB\\DbManager.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\DbManager.cs",
-              "RelativeToolTip": "DB\\DbManager.cs",
-              "ViewState": "AgIAANEAAAAAAAAAAAAewOAAAAAUAAAAAAAAAA==",
+              "DocumentIndex": 16,
+              "Title": "GameViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\GameViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\GameViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\GameViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\GameViewModel.cs",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAmwOsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T15:24:05.83Z"
+              "WhenOpened": "2024-10-25T09:38:45.185Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "USER.csv",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\USER.csv",
-              "RelativeDocumentMoniker": "DB\\USER.csv",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\USER.csv",
-              "RelativeToolTip": "DB\\USER.csv",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAACEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2024-12-29T15:47:13.728Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "TitleGameViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\TitleGameViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\TitleGameViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\TitleGameViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\TitleGameViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T21:24:10.487Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "BuyHelpView.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\BuyHelpView.xaml.cs",
-              "RelativeDocumentMoniker": "MVVM\\View\\BuyHelpView.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\BuyHelpView.xaml.cs",
-              "RelativeToolTip": "MVVM\\View\\BuyHelpView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T19:38:36.586Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 53,
               "Title": "ImageButtonStyle.xaml",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ImageButtonStyle.xaml",
               "RelativeDocumentMoniker": "Style\\ImageButtonStyle.xaml",
@@ -890,7 +575,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 56,
+              "Title": "TitleBuyView.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleBuyView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\TitleBuyView.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleBuyView.xaml",
+              "RelativeToolTip": "MVVM\\View\\TitleBuyView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-30T22:26:40.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
               "Title": "TitleGameView.xaml",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleGameView.xaml",
               "RelativeDocumentMoniker": "MVVM\\View\\TitleGameView.xaml",
@@ -901,7 +597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 55,
               "Title": "TitleGameView.xaml.cs",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleGameView.xaml.cs",
               "RelativeDocumentMoniker": "MVVM\\View\\TitleGameView.xaml.cs",
@@ -913,19 +609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "GameViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\GameViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\GameViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\GameViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\GameViewModel.cs",
-              "ViewState": "AgIAAMUDAAAAAAAAAAAUwOQDAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T09:38:45.185Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 57,
               "Title": "GameView.xaml.cs",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\GameView.xaml.cs",
               "RelativeDocumentMoniker": "MVVM\\View\\GameView.xaml.cs",
@@ -937,65 +621,404 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "SearchBarViewModel.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\SearchBarViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\ViewModel\\SearchBarViewModel.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\SearchBarViewModel.cs",
-              "RelativeToolTip": "MVVM\\ViewModel\\SearchBarViewModel.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAUwCcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 41,
+              "Title": "HelpTableView.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\HelpTableView.xaml.cs",
+              "RelativeDocumentMoniker": "MVVM\\View\\HelpTableView.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\HelpTableView.xaml.cs",
+              "RelativeToolTip": "MVVM\\View\\HelpTableView.xaml.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAiwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T20:04:36.683Z"
+              "WhenOpened": "2024-12-29T18:46:40.992Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "TitleBuyView.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleBuyView.xaml",
-              "RelativeDocumentMoniker": "MVVM\\View\\TitleBuyView.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleBuyView.xaml",
-              "RelativeToolTip": "MVVM\\View\\TitleBuyView.xaml",
+              "DocumentIndex": 42,
+              "Title": "HelpTableView.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\HelpTableView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\HelpTableView.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\HelpTableView.xaml",
+              "RelativeToolTip": "MVVM\\View\\HelpTableView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-30T22:26:40.614Z"
+              "WhenOpened": "2024-12-29T18:02:14.938Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "SearchBarView.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\SearchBarView.xaml",
-              "RelativeDocumentMoniker": "MVVM\\View\\SearchBarView.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\SearchBarView.xaml",
-              "RelativeToolTip": "MVVM\\View\\SearchBarView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-18T15:02:29.673Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "ImageListView.xaml.cs",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ImageListView.xaml.cs",
-              "RelativeDocumentMoniker": "MVVM\\View\\ImageListView.xaml.cs",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ImageListView.xaml.cs",
-              "RelativeToolTip": "MVVM\\View\\ImageListView.xaml.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 43,
+              "Title": "RegisterView.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\RegisterView.xaml.cs",
+              "RelativeDocumentMoniker": "MVVM\\View\\RegisterView.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\RegisterView.xaml.cs",
+              "RelativeToolTip": "MVVM\\View\\RegisterView.xaml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvyEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T22:24:25.687Z"
+              "WhenOpened": "2024-12-29T12:20:18.716Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
-              "Title": "ImageListStyle.xaml",
-              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ImageListStyle.xaml",
-              "RelativeDocumentMoniker": "Style\\ImageListStyle.xaml",
-              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ImageListStyle.xaml",
-              "RelativeToolTip": "Style\\ImageListStyle.xaml",
+              "DocumentIndex": 44,
+              "Title": "RegisterView.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\RegisterView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\RegisterView.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\RegisterView.xaml",
+              "RelativeToolTip": "MVVM\\View\\RegisterView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-18T17:43:25.269Z",
+              "WhenOpened": "2024-12-29T12:15:46.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ForgotPasswordView.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ForgotPasswordView.xaml.cs",
+              "RelativeDocumentMoniker": "MVVM\\View\\ForgotPasswordView.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\ForgotPasswordView.xaml.cs",
+              "RelativeToolTip": "MVVM\\View\\ForgotPasswordView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T12:18:33.861Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 19,
+              "Title": "BooleanToVisibilityConverter.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Converters\\BooleanToVisibilityConverter.cs",
+              "RelativeDocumentMoniker": "Converters\\BooleanToVisibilityConverter.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Converters\\BooleanToVisibilityConverter.cs",
+              "RelativeToolTip": "Converters\\BooleanToVisibilityConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T15:44:50.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ViewModelFactory.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\ViewModelFactory.cs",
+              "RelativeDocumentMoniker": "Common\\ViewModelFactory.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\ViewModelFactory.cs",
+              "RelativeToolTip": "Common\\ViewModelFactory.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T19:04:41.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\LoginViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\LoginViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\LoginViewModel.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAqwIEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T11:12:05.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SmtpServer.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\SmtpServer.cs",
+              "RelativeDocumentMoniker": "Common\\SmtpServer.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\SmtpServer.cs",
+              "RelativeToolTip": "Common\\SmtpServer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwBcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T14:22:53.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "HashHelper.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\HashHelper.cs",
+              "RelativeDocumentMoniker": "Common\\HashHelper.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\HashHelper.cs",
+              "RelativeToolTip": "Common\\HashHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T12:43:28.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ExitSelectorWindow.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\ExitSelectorWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ExitSelectorWindow.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\ExitSelectorWindow.xaml.cs",
+              "RelativeToolTip": "ExitSelectorWindow.xaml.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAUwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T22:11:53.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "WonGameWindow.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\WonGameWindow.xaml",
+              "RelativeDocumentMoniker": "WonGameWindow.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\WonGameWindow.xaml",
+              "RelativeToolTip": "WonGameWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-29T11:05:22.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LoginWindow.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "LoginWindow.xaml.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAswCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T08:49:01.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "LoginWindow.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\LoginWindow.xaml",
+              "RelativeToolTip": "LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-14T17:25:36.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ExitSelectorWindow.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\ExitSelectorWindow.xaml",
+              "RelativeDocumentMoniker": "ExitSelectorWindow.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\ExitSelectorWindow.xaml",
+              "RelativeToolTip": "ExitSelectorWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-30T00:55:27.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAADwvyIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T19:36:58.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-24T17:20:09.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "HelpOption.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\Model\\HelpOption.cs",
+              "RelativeDocumentMoniker": "MVVM\\Model\\HelpOption.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\Model\\HelpOption.cs",
+              "RelativeToolTip": "MVVM\\Model\\HelpOption.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAuwCwAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T18:24:54.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ExitSelectorWindowStyle.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ExitSelectorWindowStyle.xaml",
+              "RelativeDocumentMoniker": "Style\\ExitSelectorWindowStyle.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\ExitSelectorWindowStyle.xaml",
+              "RelativeToolTip": "Style\\ExitSelectorWindowStyle.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-30T22:11:42.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "TitleUserMenuViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\TitleUserMenuViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\TitleUserMenuViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\TitleUserMenuViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\TitleUserMenuViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T08:27:09.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "TitleBuyViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\TitleBuyViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\TitleBuyViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\TitleBuyViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\TitleBuyViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T21:24:01.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "GameView.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\GameView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\GameView.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\GameView.xaml",
+              "RelativeToolTip": "MVVM\\View\\GameView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-25T08:43:51.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "CopyFileHelper.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\CopyFileHelper.cs",
+              "RelativeDocumentMoniker": "Common\\CopyFileHelper.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Common\\CopyFileHelper.cs",
+              "RelativeToolTip": "Common\\CopyFileHelper.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAiwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T12:30:52.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "HelpTableViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\HelpTableViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\HelpTableViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\HelpTableViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\HelpTableViewModel.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAqwKQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T11:59:50.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "LoginView.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\LoginView.xaml.cs",
+              "RelativeDocumentMoniker": "MVVM\\View\\LoginView.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\LoginView.xaml.cs",
+              "RelativeToolTip": "MVVM\\View\\LoginView.xaml.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAswDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T11:07:50.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\LoginView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\LoginView.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\LoginView.xaml",
+              "RelativeToolTip": "MVVM\\View\\LoginView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-29T11:01:43.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "BuyHelpViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\BuyHelpViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\BuyHelpViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\BuyHelpViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\BuyHelpViewModel.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAqwK8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T21:23:42.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "TitleUserMenuView.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleUserMenuView.xaml.cs",
+              "RelativeDocumentMoniker": "MVVM\\View\\TitleUserMenuView.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleUserMenuView.xaml.cs",
+              "RelativeToolTip": "MVVM\\View\\TitleUserMenuView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T08:39:50.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "TitleUserMenuView.xaml",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleUserMenuView.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\TitleUserMenuView.xaml",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\TitleUserMenuView.xaml",
+              "RelativeToolTip": "MVVM\\View\\TitleUserMenuView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-31T08:28:18.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "DbManager.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\DbManager.cs",
+              "RelativeDocumentMoniker": "DB\\DbManager.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\DbManager.cs",
+              "RelativeToolTip": "DB\\DbManager.cs",
+              "ViewState": "AgIAANEAAAAAAAAAAAAewOAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T15:24:05.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "USER.csv",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\USER.csv",
+              "RelativeDocumentMoniker": "DB\\USER.csv",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\USER.csv",
+              "RelativeToolTip": "DB\\USER.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAACEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2024-12-29T15:47:13.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "TitleGameViewModel.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\TitleGameViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\TitleGameViewModel.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\ViewModel\\TitleGameViewModel.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\TitleGameViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T21:24:10.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "BuyHelpView.xaml.cs",
+              "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\BuyHelpView.xaml.cs",
+              "RelativeDocumentMoniker": "MVVM\\View\\BuyHelpView.xaml.cs",
+              "ToolTip": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\MVVM\\View\\BuyHelpView.xaml.cs",
+              "RelativeToolTip": "MVVM\\View\\BuyHelpView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T19:38:36.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
               "Title": "InputBoxStyle.xaml",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\InputBoxStyle.xaml",
               "RelativeDocumentMoniker": "Style\\InputBoxStyle.xaml",
@@ -1007,7 +1030,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 65,
               "Title": "CustomScrollViewerStyle.xaml",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\Style\\CustomScrollViewerStyle.xaml",
               "RelativeDocumentMoniker": "Style\\CustomScrollViewerStyle.xaml",
@@ -1019,7 +1042,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 59,
               "Title": "USER.cs",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\USER.cs",
               "RelativeDocumentMoniker": "DB\\USER.cs",
@@ -1031,7 +1054,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 61,
               "Title": "DefaultBinder.cs",
               "DocumentMoniker": "C:\\Users\\petek\\AppData\\Local\\Temp\\.vsdbgsrc\\f4601b571e4559842a6661e54ae192176ae8f83790b6c41ea5cba73e6087663e\\DefaultBinder.cs",
               "ToolTip": "C:\\Users\\petek\\AppData\\Local\\Temp\\.vsdbgsrc\\f4601b571e4559842a6661e54ae192176ae8f83790b6c41ea5cba73e6087663e\\DefaultBinder.cs [Read Only]",
@@ -1042,7 +1065,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 62,
               "Title": "HELP.csv",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\HELP.csv",
               "RelativeDocumentMoniker": "DB\\HELP.csv",
@@ -1054,7 +1077,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 63,
               "Title": "USERHELP.csv",
               "DocumentMoniker": "D:\\School\\NoNo\\Nonogram\\APP\\nonogram\\DB\\USERHELP.csv",
               "RelativeDocumentMoniker": "DB\\USERHELP.csv",
