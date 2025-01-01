@@ -53,7 +53,7 @@ namespace nonogram.MVVM.ViewModel
 
         private void ShowForgotPasswordView(object parameter)
         {
-            CurrentViewModel = new ForgotPasswordViewModel();
+            CurrentViewModel = new ForgotPasswordViewModel(this);
         }
 
         private void Login(object parameter)

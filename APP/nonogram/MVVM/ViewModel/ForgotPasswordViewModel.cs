@@ -18,8 +18,6 @@ namespace nonogram.MVVM.ViewModel
         private string _email;
         private string _verificationCode;
         private string _enteredCode;
-        private string _newPassword;
-        private string _confirmPassword;
         private Timer _timer;
         private DateTime _codeExpirationTime;
         private readonly SmtpServer _smtpServer;
@@ -39,18 +37,6 @@ namespace nonogram.MVVM.ViewModel
         {
             get => _enteredCode;
             set => SetProperty(ref _enteredCode, value);
-        }
-
-        public string NewPassword
-        {
-            get => _newPassword;
-            set => SetProperty(ref _newPassword, value);
-        }
-
-        public string ConfirmPassword
-        {
-            get => _confirmPassword;
-            set => SetProperty(ref _confirmPassword, value);
         }
 
         public bool IsEmailInputVisible
@@ -77,22 +63,28 @@ namespace nonogram.MVVM.ViewModel
             set => SetProperty(ref _timerText, value);
         }
 
+        private readonly LoginViewModel _loginViewModel;
+
         public ICommand RequestNewPasswordCommand { get; }
         public ICommand VerifyCodeCommand { get; }
         public ICommand ChangePasswordCommand { get; }
+        public ICommand NavigateToLoginCommand { get; }
 
-        public ForgotPasswordViewModel()
+        public ForgotPasswordViewModel(LoginViewModel loginViewModel)
         {
-            _smtpServer = new SmtpServer("smtp.mailtrap.io", 587, "your-username", "your-password");
+            _loginViewModel = loginViewModel;
+            _smtpServer = new SmtpServer("smtp.mailersend.net", 587, "MS_GfqEet@trial-0r83ql3z0om4zw1j.mlsender.net", "rBibxwfIKwMybJBF");
             RequestNewPasswordCommand = new RelayCommand<object>(RequestNewPassword);
             VerifyCodeCommand = new RelayCommand<object>(VerifyCode);
             ChangePasswordCommand = new RelayCommand<object>(ChangePassword);
+            NavigateToLoginCommand = new RelayCommand<object>(parameter => NavigationHelper.NavigateToLoginWindow(_loginViewModel));
         }
 
         private async void RequestNewPassword(object parameter)
         {
             var forgotPasswordView = parameter as ForgotPasswordView;
             var Email = forgotPasswordView.EmailAddress.Text;
+            Debug.WriteLine($"Email: {Email}");
 
             if (string.IsNullOrWhiteSpace(Email))
             {
@@ -106,6 +98,7 @@ namespace nonogram.MVVM.ViewModel
                 return;
             }
 
+            _email = Email;
             _verificationCode = GenerateVerificationCode();
             await _smtpServer.SendEmailAsync(Email, "Password Reset Code", $"Your password reset code is: {_verificationCode}");
             MessageBox.Show("A verification code has been sent to your email.", "Forgot Password", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -156,16 +149,20 @@ namespace nonogram.MVVM.ViewModel
             else
             {
                 TimerText = $"{remainingTime.Minutes:D2}:{remainingTime.Seconds:D2}";
-                Console.WriteLine($"Timer updated: {TimerText}"); // Debug statement
+                //Console.WriteLine($"Timer updated: {TimerText}"); // Debug statement
             }
         }
 
         private void VerifyCode(object parameter)
         {
+            var forgotPasswordView = parameter as ForgotPasswordView;
+            var EnteredCode = forgotPasswordView.CodeBox.Text;
+
             if (EnteredCode == _verificationCode)
             {
                 MessageBox.Show("The code is correct. You can now change your password.", "Forgot Password", MessageBoxButton.OK, MessageBoxImage.Information);
-                ShowPasswordChangeFields();
+                IsVerificationCodeVisible = false;
+                IsPasswordChangeVisible = true;
             }
             else
             {
@@ -174,36 +171,43 @@ namespace nonogram.MVVM.ViewModel
             }
         }
 
-        private void ShowPasswordChangeFields()
-        {
-            // Logic to show password change fields
-        }
-
         private void ChangePassword(object parameter)
         {
-            if (NewPassword != ConfirmPassword)
+            var forgotPasswordView = parameter as ForgotPasswordView;
+            var newPassword_1 = forgotPasswordView.PasswordBox_1.Password;
+            var newPassword_2 = forgotPasswordView.PasswordBox_2.Password;
+
+            if (string.IsNullOrWhiteSpace(newPassword_1) || string.IsNullOrWhiteSpace(newPassword_2))
             {
-                MessageBox.Show("Passwords do not match.", "Forgot Password", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please enter password twice!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (newPassword_1 != newPassword_2)
+            {
+                MessageBox.Show("Entered passwords do not match", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (!PasswordValidator.IsValidPassword(newPassword_1) || !PasswordValidator.IsValidPassword(newPassword_2))
+            {
+                MessageBox.Show("Password must be at least 6 characters long and contain at least one number and one uppercase letter!", "Password Change", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            var dbManager = new DbManager();
-            string hashedPassword = HashHelper.ComputeSha256Hash(NewPassword);
+            Debug.WriteLine($"ChangePassword Email: {_email}");
+
+            var hashedPassword = HashHelper.ComputeSha256Hash(newPassword_1);
             string query = "UPDATE USER SET Password = @Password WHERE Email = @Email";
             var parameters = new Dictionary<string, object>
             {
                 { "@Password", hashedPassword },
-                { "@Email", Email }
+                { "@Email", _email } // Use the _email field instead of Email
             };
+
+            var dbManager = new DbManager();
             dbManager.ExecuteNonQuery(query, parameters);
 
             MessageBox.Show("Your password has been changed successfully.", "Forgot Password", MessageBoxButton.OK, MessageBoxImage.Information);
-            NavigateToLogin();
-        }
-
-        private void NavigateToLogin()
-        {
-            // Logic to navigate back to LoginViewModel
+            NavigationHelper.NavigateToLoginWindow(_loginViewModel);
         }
     }
 }

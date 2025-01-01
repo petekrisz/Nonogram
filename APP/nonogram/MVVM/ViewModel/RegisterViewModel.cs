@@ -25,7 +25,7 @@ namespace nonogram.MVVM.ViewModel
         {
             _loginViewModel = loginViewModel;
             RegisterCommand = new RelayCommand<object>(Register);
-            NavigateToLoginCommand = new RelayCommand<object>(parameter => NavigateToLoginWindow(_loginViewModel));
+            NavigateToLoginCommand = new RelayCommand<object>(parameter => NavigationHelper.NavigateToLoginWindow(_loginViewModel));
         }
 
         private void Register(object parameter)
@@ -68,7 +68,7 @@ namespace nonogram.MVVM.ViewModel
                 var result = MessageBox.Show("A player is already registered with this e-mail address. Please use a different e-mail address or select the forgot password option.Do you want to use the forgot password option?", "Registration", MessageBoxButton.YesNo, MessageBoxImage.Error);
                 if (result == MessageBoxResult.Yes)
                 {
-                    NavigateToLoginWindow(_loginViewModel);
+                    NavigationHelper.NavigateToLoginWindow(_loginViewModel);
                 }
                 return;
             }
@@ -106,36 +106,9 @@ namespace nonogram.MVVM.ViewModel
             MessageBox.Show("You will be directed to the Login Window where you can log in with your newly registered account.", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
 
             var loginViewModel = new LoginViewModel();
-            NavigateToLoginWindow(_loginViewModel);
+            NavigationHelper.NavigateToLoginWindow(_loginViewModel);
 
         }
-
-        public void NavigateToLoginWindow(LoginViewModel loginViewModel)
-        {
-            var parentWindow = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w is LoginWindow);
-            if (parentWindow == null)
-            {
-                Debug.WriteLine("Parent window is null.");
-                return;
-            }
-
-            // Find the named ContentControl
-            var contentControl = parentWindow.FindName("MainContentControl") as ContentControl;
-            if (contentControl == null)
-            {
-                Debug.WriteLine("ContentControl is null.");
-                return;
-            }
-
-            // Swap to LoginView
-            var loginView = new LoginView
-            {
-                DataContext = loginViewModel
-            };
-            Debug.WriteLine($"NavigateToLoginWindow: LoginView DataContext: {loginView.DataContext.GetHashCode()}");
-            contentControl.Content = loginView;
-        }
-
         private bool IsEmailTaken(string email)
         {
             var dbManager = new DbManager();
@@ -143,17 +116,6 @@ namespace nonogram.MVVM.ViewModel
             var parameters = new Dictionary<string, object>
             {
                 { "@Email", email }
-            };
-            var result = dbManager.ExecuteQuery(query, parameters);
-            return Convert.ToInt32(result.Rows[0][0]) > 0;
-        }
-        private bool IsUsernameTaken(string username)
-        {
-            var dbManager = new DbManager();
-            string query = "SELECT COUNT(*) FROM USER WHERE UserName = @UserName";
-            var parameters = new Dictionary<string, object>
-            {
-                { "@UserName", username }
             };
             var result = dbManager.ExecuteQuery(query, parameters);
             return Convert.ToInt32(result.Rows[0][0]) > 0;
@@ -180,6 +142,35 @@ namespace nonogram.MVVM.ViewModel
             };
             var result = dbManager.ExecuteQuery(query, parameters);
             return Convert.ToInt32(result.Rows[0][0]) > 0;
+        }
+    }
+
+    public static class NavigationHelper
+    {
+        public static void NavigateToLoginWindow(LoginViewModel loginViewModel)
+        {
+            var parentWindow = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w is LoginWindow);
+            if (parentWindow == null)
+            {
+                Debug.WriteLine("Parent window is null.");
+                return;
+            }
+
+            // Find the named ContentControl
+            var contentControl = parentWindow.FindName("MainContentControl") as ContentControl;
+            if (contentControl == null)
+            {
+                Debug.WriteLine("ContentControl is null.");
+                return;
+            }
+
+            // Swap to LoginView
+            var loginView = new LoginView
+            {
+                DataContext = loginViewModel
+            };
+            Debug.WriteLine($"NavigateToLoginWindow: LoginView DataContext: {loginView.DataContext.GetHashCode()}");
+            contentControl.Content = loginView;
         }
     }
 

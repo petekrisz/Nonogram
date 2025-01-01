@@ -23,7 +23,7 @@ namespace nonogram.Common
 
         public ForgotPasswordViewModel CreateForgotPasswordViewModel()
         {
-            return new ForgotPasswordViewModel();
+            return new ForgotPasswordViewModel(CreateLoginViewModel());
         }
 
         public MainViewModel CreateMainViewModel(string username)
