@@ -16,7 +16,7 @@ namespace nonogram.MVVM.View
     /// </summary>
     public partial class ImageListView : UserControl
     {
-        private string _username= "netuddki"; // Hardcoded for now
+
         public ImageListView()
         {
             InitializeComponent();
@@ -25,6 +25,11 @@ namespace nonogram.MVVM.View
                 Debug.WriteLine($"ImageListView DataContext: {DataContext?.GetType().Name}");
                 Debug.WriteLine($"---> ImageListView.DataContext: {DataContext?.GetHashCode()}");
             };
+
+            if (DataContext is ImageListViewModel viewModel)
+            {
+                viewModel.RefreshView = RefreshItemsControls;
+            }
         }
 
         private void OnImageSelected(object sender, MouseButtonEventArgs e)
@@ -48,7 +53,7 @@ namespace nonogram.MVVM.View
                     WHERE UserName = @UserName AND IMAGEId = @IMAGEId";
                     var parameters = new Dictionary<string, object>
                     {
-                        { "@UserName", _username },
+                        { "@UserName", viewModel.Username },
                         { "@IMAGEId", selectedImage.IMAGEId }
                     };
                     var dataTable = dbManager.ExecuteQuery(query, parameters);
@@ -67,17 +72,24 @@ namespace nonogram.MVVM.View
                             // Cancel the click
                             return;
                         }
+                        else
+                        {
+                            // Delete the record from USERIMAGE table
+                            string deleteQuery = "DELETE FROM USERIMAGE WHERE UserName = @UserName AND IMAGEId = @IMAGEId";
+                            dbManager.ExecuteNonQuery(deleteQuery, parameters);
+                        }
                     }
-
-
 
                     // Pass the IMAGE object to the GameViewCommand
                     mainViewModel.GameViewCommand.Execute(selectedImage);
                 }
             }
         }
-
-
+        private void RefreshItemsControls()
+        {
+            ItemsControlLeft.Items.Refresh();
+            ItemsControlRight.Items.Refresh();
+        }
 
     }
 }

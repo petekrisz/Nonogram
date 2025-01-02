@@ -89,7 +89,7 @@ namespace nonogram.DB
             TimeOfRegistration DATETIME,
             Score INT,
             Tokens INT,
-            Avatar VARCHAR(255)
+            Avatar VARCHAR(255) NULL
         );
 
         CREATE TABLE IF NOT EXISTS IMAGE (

@@ -20,6 +20,7 @@ namespace nonogram.MVVM.View
         }
         private void CheckBox_Click(object sender, RoutedEventArgs e)
         {
+
             if (sender is CheckBox clickedCheckBox && clickedCheckBox.IsChecked == true)
             {
                 foreach (var checkBox in FindVisualChildren<CheckBox>(this))

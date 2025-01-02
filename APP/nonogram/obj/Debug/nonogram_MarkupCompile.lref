@@ -4,13 +4,14 @@ FD:\School\NoNo\Nonogram\APP\nonogram\ExitSelectorWindow.xaml;;
 FD:\School\NoNo\Nonogram\APP\nonogram\LoginWindow.xaml;;
 FD:\School\NoNo\Nonogram\APP\nonogram\MainWindow.xaml;;
 FD:\School\NoNo\Nonogram\APP\nonogram\MVVM\View\BuyHelpView.xaml;;
-FD:\School\NoNo\Nonogram\APP\nonogram\MVVM\View\DummyView.xaml;;
+FD:\School\NoNo\Nonogram\APP\nonogram\MVVM\View\ForgotPasswordView.xaml;;
 FD:\School\NoNo\Nonogram\APP\nonogram\MVVM\View\GameView.xaml;;
 FD:\School\NoNo\Nonogram\APP\nonogram\MVVM\View\HelpTableView.xaml;;
 FD:\School\NoNo\Nonogram\APP\nonogram\MVVM\View\ImageListView.xaml;;
+FD:\School\NoNo\Nonogram\APP\nonogram\MVVM\View\RegisterView.xaml;;
 FD:\School\NoNo\Nonogram\APP\nonogram\MVVM\View\SearchBarView.xaml;;
 FD:\School\NoNo\Nonogram\APP\nonogram\MVVM\View\TitleBuyView.xaml;;
 FD:\School\NoNo\Nonogram\APP\nonogram\MVVM\View\TitleGameView.xaml;;
-FD:\School\NoNo\Nonogram\APP\nonogram\MVVM\View\UserMenuView.xaml;;
+FD:\School\NoNo\Nonogram\APP\nonogram\MVVM\View\TitleUserMenuView.xaml;;
 FD:\School\NoNo\Nonogram\APP\nonogram\WonGameWindow.xaml;;
 

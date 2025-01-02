@@ -19,16 +19,16 @@ namespace nonogram
     /// </summary>
     public partial class WonGameWindow : Window
     {
-        private string userName = "netuddki"; // Hardcoded for now
-        private int score;
-        private int token;
-        private Dictionary<string, double> helpDictionary;
+        private string _userName;
+        private int _score;
+        private int _token;
+        private Dictionary<string, double> _helpDictionary;
         private int _imageId;
 
         private readonly BitmapImage _firework_g;
         private readonly BitmapImage _firework_l;
         private bool _showFirstImage;
-        public WonGameWindow(int imageId)
+        public WonGameWindow(int imageId, string username)
         {
             InitializeComponent();
 
@@ -53,43 +53,44 @@ namespace nonogram
             Storyboard growShrinkAnimation = (Storyboard)FindResource("GrowShrinkAnimation");
             growShrinkAnimation.Begin();
 
+            _userName = username;
             _imageId = imageId;
             var dbManager = new DbManager();
             var image = dbManager.GetImageById(imageId);
-            this.score = image.Score;
-            this.token = (int)Math.Floor((double)image.Score / 50);
+            _score = image.Score;
+            _token = (int)Math.Floor((double)image.Score / 50);
 
             // Step 1: Query the HELP table
             string query = "SELECT TypeOfHelp, Weight, HelpLogoG, HelpLogoL FROM HELP";
             DataTable helpTable = dbManager.ExecuteQuery(query);
 
             // Step 2: Fill the dictionary
-            helpDictionary = new Dictionary<string, double>();
+            _helpDictionary = new Dictionary<string, double>();
             foreach (DataRow row in helpTable.Rows)
             {
                 string typeOfHelp = row["TypeOfHelp"].ToString();
                 double weight = Convert.ToDouble(row["Weight"]);
-                helpDictionary[typeOfHelp] = weight;
+                _helpDictionary[typeOfHelp] = weight;
             }
 
             // Step 3: Modify the dictionary values
             Random random = new Random();
-            foreach (var key in helpDictionary.Keys.ToList())
+            foreach (var key in _helpDictionary.Keys.ToList())
             {
-                double weight = helpDictionary[key];
+                double weight = _helpDictionary[key];
                 int randomNumber = random.Next(150, 501);
-                int newValue = (int)Math.Floor(weight * score / randomNumber);
-                helpDictionary[key] = newValue;
+                int newValue = (int)Math.Floor(weight * _score / randomNumber);
+                _helpDictionary[key] = newValue;
             }
             // Remove key-value pairs where the value is 0
-            helpDictionary = helpDictionary.Where(kvp => kvp.Value > 0).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+            _helpDictionary = _helpDictionary.Where(kvp => kvp.Value > 0).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
 
             // Step 4: Create the first two StackPanels for Score and Tokens
-            CreatePrizeStackPanelWithImage("/Images/score_icon_light.png", score.ToString());
-            CreatePrizeStackPanelWithImage("/Images/token_icon_light.png", Math.Floor((double)score / 50).ToString());
+            CreatePrizeStackPanelWithImage("/Images/score_icon_light.png", _score.ToString());
+            CreatePrizeStackPanelWithImage("/Images/token_icon_light.png", Math.Floor((double)_score / 50).ToString());
 
             // Step 5: Create the remaining StackPanels for the help
-            foreach (var kvp in helpDictionary)
+            foreach (var kvp in _helpDictionary)
             {
                 string typeOfHelp = kvp.Key;
                 int value = (int)kvp.Value;
@@ -156,8 +157,15 @@ namespace nonogram
                 // Execute an insert to the database
                 InsertToUserImageAndUserHelp();
 
+                // Refresh the ImageListView
+                mainViewModel.RefreshImageListView();
+
                 // Close the current window
                 this.Close();
+
+                //Refresh Userdetails and HelpTable
+                mainViewModel.LoadUserData(_userName);
+                mainViewModel.HelpTableVM.LoadHelpOptions();
             }
             else
             {
@@ -175,15 +183,15 @@ namespace nonogram
             {
                 // Update USER table
                 string userQuery = "SELECT Score, Tokens FROM USER WHERE UserName = @UserName";
-                var userParameters = new Dictionary<string, object> { { "@UserName", userName } };
+                var userParameters = new Dictionary<string, object> { { "@UserName", _userName } };
                 DataTable userTable = dbManager.ExecuteQuery(userQuery, userParameters);
                 if (userTable.Rows.Count > 0)
                 {
                     DataRow userRow = userTable.Rows[0];
                     int currentScore = Convert.ToInt32(userRow["Score"]);
                     int currentTokens = Convert.ToInt32(userRow["Tokens"]);
-                    int newScore = currentScore + score;
-                    int newTokens = currentTokens + token;
+                    int newScore = currentScore + _score;
+                    int newTokens = currentTokens + _token;
 
                     Debug.WriteLine($"Current score: {currentScore} - {newScore}, Current tokens: {currentTokens} - {newTokens}");
 
@@ -192,7 +200,7 @@ namespace nonogram
                     {
                             { "@Score", newScore },
                             { "@Tokens", newTokens },
-                            { "@UserName", userName }
+                            { "@UserName", _userName }
                     };
 
                     dbManager.ExecuteNonQuery(updateUserQuery, updateUserParameters);
@@ -201,14 +209,14 @@ namespace nonogram
 
                 // Update USERHELP table
                 string userHelpQuery = "SELECT * FROM USERHELP WHERE UserName = @UserName";
-                var userHelpParameters = new Dictionary<string, object> { { "@UserName", userName } };
+                var userHelpParameters = new Dictionary<string, object> { { "@UserName", _userName } };
                 DataTable userHelpTable = dbManager.ExecuteQuery(userHelpQuery, userHelpParameters);
                 if (userHelpTable.Rows.Count > 0)
                 {
                     DataRow userHelpRow = userHelpTable.Rows[0];
-                    var updateHelpValues = new Dictionary<string, object> { { "@UserName", userName } };
+                    var updateHelpValues = new Dictionary<string, object> { { "@UserName", _userName } };
                     string updateHelpQuery = "UPDATE USERHELP SET ";
-                    foreach (var kvp in helpDictionary)
+                    foreach (var kvp in _helpDictionary)
                     {
                         string column = kvp.Key;
                         int value = (int)kvp.Value;
@@ -223,16 +231,41 @@ namespace nonogram
                     Debug.WriteLine("USERHELP table updated successfully.");
                 }
 
-                // Update USERHELP table
-                var userImageValues = new Dictionary<string, object>
+                // Check if the combination of UserName and IMAGEId already exists in the USERIMAGE table
+                string checkUserImageQuery = "SELECT COUNT(*) FROM USERIMAGE WHERE UserName = @UserName AND IMAGEId = @IMAGEId";
+                var checkParameters = new Dictionary<string, object>
                 {
-                        { "UserName", userName },
-                        { "IMAGEId", _imageId },
-                        { "Finished", true },
-                        { "Content", "x" }
+                    { "@UserName", _userName },
+                    { "@IMAGEId", _imageId }
                 };
-                dbManager.ExecuteNonQuery("INSERT INTO USERIMAGE (UserName, IMAGEId, Finished, Content) VALUES (@UserName, @IMAGEId, @Finished, @Content)", userImageValues);
-                Debug.WriteLine("USERIMAGE table updated successfully.");
+                DataTable checkTable = dbManager.ExecuteQuery(checkUserImageQuery, checkParameters);
+                if (checkTable.Rows.Count > 0 && Convert.ToInt32(checkTable.Rows[0][0]) > 0)
+                {
+                    // If the combination exists, update the record
+                    string updateUserImageQuery = "UPDATE USERIMAGE SET Finished = @Finished, Content = @Content WHERE UserName = @UserName AND IMAGEId = @IMAGEId";
+                    var updateUserImageParameters = new Dictionary<string, object>
+            {
+                { "@Finished", true },
+                { "@Content", "x" },
+                { "@UserName", _userName },
+                { "@IMAGEId", _imageId }
+            };
+                    dbManager.ExecuteNonQuery(updateUserImageQuery, updateUserImageParameters);
+                    Debug.WriteLine("USERIMAGE table updated successfully.");
+                }
+                else
+                {
+                    // If the combination doesn't exist, insert a new record
+                    var userImageValues = new Dictionary<string, object>
+            {
+                { "UserName", _userName },
+                { "IMAGEId", _imageId },
+                { "Finished", true },
+                { "Content", "x" }
+            };
+                    dbManager.ExecuteNonQuery("INSERT INTO USERIMAGE (UserName, IMAGEId, Finished, Content) VALUES (@UserName, @IMAGEId, @Finished, @Content)", userImageValues);
+                    Debug.WriteLine("USERIMAGE table updated successfully.");
+                }
             }
             catch (Exception ex)
             {

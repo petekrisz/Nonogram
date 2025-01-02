@@ -1,22 +1,5 @@
-﻿using nonogram.DB;
-using nonogram.MVVM.View;
-using nonogram.MVVM.ViewModel;
-using Org.BouncyCastle.Ocsp;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace nonogram
 {
@@ -25,7 +8,7 @@ namespace nonogram
     /// </summary>
     public partial class MainWindow : Window
     {
-        //private string username = "netuddki"; // Hardcoded for now
+
         public MainWindow()
         {
             InitializeComponent();
@@ -38,6 +21,14 @@ namespace nonogram
                 Owner = this // Set the owner to the main window
             };
             exitSelector.ShowDialog();
+        }
+
+        private void Avatar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (DataContext is MVVM.ViewModel.MainViewModel viewModel)
+            {
+                viewModel.UserMenuViewCommand.Execute(null);
+            }
         }
     }
 }

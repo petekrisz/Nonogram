@@ -4,8 +4,8 @@
              xmlns:local="clr-namespace:nonogram"
              xmlns:viewModel="clr-namespace:nonogram.MVVM.ViewModel"
              xmlns:view="clr-namespace:nonogram.MVVM.View"
-             xmlns:converters="clr-namespace:nonogram.Converters"
-             StartupUri="MainWindow.xaml">
+             xmlns:converters="clr-namespace:nonogram.Converters">
+    
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -33,6 +33,9 @@
             <DataTemplate DataType="{x:Type viewModel:HelpTableViewModel}">
                 <view:HelpTableView />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UserMenuViewModel}">
+                <view:UserMenuView />
+            </DataTemplate>
 
 
 
@@ -45,10 +48,26 @@
             <DataTemplate DataType="{x:Type viewModel:TitleGameViewModel}">
                 <view:TitleGameView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:TitleUserMenuViewModel}">
+                <view:TitleUserMenuView/>
+            </DataTemplate>
+
+
+
+            <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+                <view:LoginView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:RegisterViewModel}">
+                <view:RegisterView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ForgotPasswordViewModel}">
+                <view:ForgotPasswordView />
+            </DataTemplate>
 
 
             <converters:ZeroToVisibilityConverter x:Key="ZeroToVisibilityConverter"/>
             <converters:BoolToBrushConverter x:Key="BoolToBrushConverter"/>
+            <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
 
         </ResourceDictionary>
     </Application.Resources>

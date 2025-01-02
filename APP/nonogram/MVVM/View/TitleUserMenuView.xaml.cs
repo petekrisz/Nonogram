@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace nonogram.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for DummyView.xaml
+    /// Interaction logic for TitleUserMenuView.xaml
     /// </summary>
-    public partial class DummyView : UserControl
+    public partial class TitleUserMenuView : UserControl
     {
-        public DummyView()
+        public TitleUserMenuView()
         {
             InitializeComponent();
         }
