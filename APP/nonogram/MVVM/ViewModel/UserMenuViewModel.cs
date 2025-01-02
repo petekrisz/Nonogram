@@ -87,7 +87,7 @@ namespace nonogram.MVVM.ViewModel
         }
 
 
-        private void DeleteAccount(object parameter)
+        private async void DeleteAccount(object parameter)
         {
             var result = MessageBox.Show("Are you sure you want to delete your account? This action cannot be undone.", "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Warning);
             if (result == MessageBoxResult.Yes)
@@ -114,6 +114,9 @@ namespace nonogram.MVVM.ViewModel
                     // Export tables to CSV
                     ExportAllTablesToCsv();
 
+                    // Send account deletion email
+                    await SendAccountDeletionEmail(User.Email, User.UserName);
+
                     // Close the MainWindow and ExitSelectorWindow
                     Application.Current.MainWindow.Close();
                     (parameter as Window)?.Close();
@@ -139,6 +142,14 @@ namespace nonogram.MVVM.ViewModel
                     MessageBox.Show($"An error occurred while deleting the account: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+        }
+
+        private async Task SendAccountDeletionEmail(string email, string userName)
+        {
+            var smtpServer = new SmtpServer("smtp.mailersend.net", 587, "MS_GfqEet@trial-0r83ql3z0om4zw1j.mlsender.net", "rBibxwfIKwMybJBF");
+            string subject = "Account Deletion Confirmation";
+            string body = $"Dear {userName},<br><br>Thank you for the time spent together and we hope to see you again. In addition, we would like to assure you that all your account details are hereby deleted from our database.<br><br>The Nonogram team.";
+            await smtpServer.SendEmailAsync(email, subject, body);
         }
 
         private void ChangeUsername(object parameter)

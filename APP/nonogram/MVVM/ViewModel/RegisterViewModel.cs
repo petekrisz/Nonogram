@@ -117,17 +117,17 @@ namespace nonogram.MVVM.ViewModel
             MessageBox.Show("You will be directed to the Login Window where you can log in with your newly registered account.", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
 
             // Send welcome email
-            await SendWelcomeEmail(firstName, email);
+            await SendWelcomeEmail(firstName, userName, email);
 
             var loginViewModel = new LoginViewModel();
             NavigationHelper.NavigateToLoginWindow(_loginViewModel);
 
         }
 
-        private async Task SendWelcomeEmail(string firstName, string email)
+        private async Task SendWelcomeEmail(string firstName, string userName, string email)
         {
             string subject = "Welcome to NonoGram!";
-            string body = $"Dear {firstName},\n\nWe are pleased to welcome you to the NonoGram game and hope you're going to enjoy playing with us.\n\nThe Nonogram team.";
+            string body = $"Dear {firstName},<br><br>We are pleased to welcome you to the NonoGram game and hope you're going to enjoy playing with us. Your username is: {userName}.<br><br>The Nonogram team.";
             await _smtpServer.SendEmailAsync(email, subject, body);
         }
 
