@@ -175,6 +175,8 @@ namespace nonogram.MVVM.ViewModel
                     mainViewModel.LoadUserData(newUsername);
                     mainViewModel.UserMenuVM.LoadUserData(newUsername);
                 }
+
+                userMenuView.ClearInputFields();
             }
             catch (Exception ex)
             {
@@ -220,6 +222,7 @@ namespace nonogram.MVVM.ViewModel
             }
             UpdateUserData("Email", newEmail);
             LoadUserData(UserName);
+            userMenuView.ClearInputFields();
 
         }
 
@@ -234,6 +237,7 @@ namespace nonogram.MVVM.ViewModel
             }
             UpdateUserData("FirstName", newFirstName);
             LoadUserData(UserName);
+            userMenuView.ClearInputFields();
 
         }
 
@@ -248,6 +252,7 @@ namespace nonogram.MVVM.ViewModel
             }
             UpdateUserData("LastName", newLastName);
             LoadUserData(UserName);
+            userMenuView.ClearInputFields();
 
         }
 
@@ -276,6 +281,7 @@ namespace nonogram.MVVM.ViewModel
 
             UpdateUserData("Password", hashedPassword);
             LoadUserData(UserName);
+            userMenuView.ClearInputFields();
 
         }
 

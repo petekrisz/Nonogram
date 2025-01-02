@@ -13,8 +13,8 @@ namespace nonogram.MVVM.ViewModel
 {
     public class LoginViewModel : ObservableObject
     {
-        private ObservableObject _currentViewModel;
 
+        private ObservableObject _currentViewModel;
         public ObservableObject CurrentViewModel
         {
             get => _currentViewModel;

@@ -21,5 +21,15 @@ namespace nonogram.MVVM.View
                 viewModel.ImageSelectedCommand.Execute(listImage);
             }
         }
+
+        public void ClearInputFields()
+        {
+            newUsername.Text = string.Empty;
+            newEmail.Text = string.Empty;
+            newFirstName.Text = string.Empty;
+            newLastName.Text = string.Empty;
+            newPassword_1.Password = string.Empty;
+            newPassword_2.Password = string.Empty;
+        }
     }
 }
