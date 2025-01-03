@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 using nonogram.Common;
+using nonogram.MVVM.View;
 
 namespace nonogram
 {
@@ -32,34 +33,35 @@ namespace nonogram
             }
 
             var viewModelFactory = new ViewModelFactory();
-            var loginWindow = new LoginWindow();
             var loginViewModel = viewModelFactory.CreateLoginViewModel();
-            loginWindow.DataContext = loginViewModel;
-            loginWindow.ShowDialog();
+            var loginWindow = new LoginWindow();
+            var loginView = new LoginView
+            {
+                DataContext = loginViewModel
+            };
+            loginWindow.MainContentControl.Content = loginView;
+            loginWindow.Show();
 
             Debug.WriteLine(loginViewModel == null ? "--loginViewModel is null" : "--loginViewModel is not null");
             Debug.WriteLine($"App.xaml.cs: LoginViewModel DataContext: {loginViewModel.GetHashCode()}");
 
-            if (loginViewModel != null)
+            loginViewModel.PropertyChanged += (sender, args) =>
             {
-                Debug.WriteLine("LoginViewModel is not null.");
-                Debug.WriteLine($"IsLoginSuccessful: {loginViewModel.IsLoginSuccessful}");
-                if (loginViewModel.IsLoginSuccessful)
+                if (args.PropertyName == nameof(LoginViewModel.IsLoginSuccessful) && loginViewModel.IsLoginSuccessful)
                 {
-                    Debug.WriteLine("LoginVM in not null & Login is successful.");
+                    Debug.WriteLine("LoginVM is not null & Login is successful.");
+                    // Close the login window
+                    loginWindow.Close();
+
                     // Pass the username to the MainViewModel
-                    var mainWindow = new MainWindow()
+                    var mainWindow = new MainWindow
                     {
                         DataContext = viewModelFactory.CreateMainViewModel(loginViewModel.UserName)
                     };
                     Debug.WriteLine("MainWindow is about to be shown.");
                     mainWindow.Show();
                 }
-            }
-            else
-            {
-                Debug.WriteLine("LoginViewModel is null.");
-            }
+            };
         }
     }
 }

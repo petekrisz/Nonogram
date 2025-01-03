@@ -13,17 +13,14 @@ namespace nonogram.MVVM.ViewModel
 {
     public class LoginViewModel : ObservableObject
     {
-
-        private ObservableObject _currentViewModel;
-        public ObservableObject CurrentViewModel
-        {
-            get => _currentViewModel;
-            set => SetProperty(ref _currentViewModel, value);
-        }
-
-        public string UserName { get; private set; }
-
+        private string _userName;
         private bool _isLoginSuccessful;
+
+        public string UserName
+        {
+            get => _userName;
+            private set => SetProperty(ref _userName, value);
+        }
         public bool IsLoginSuccessful
         {
             get => _isLoginSuccessful;
@@ -34,26 +31,28 @@ namespace nonogram.MVVM.ViewModel
         public ICommand RegisterCommand { get; }
         public ICommand ForgotPasswordCommand { get; }
 
-        public LoginViewModel()
+        private readonly ViewModelFactory _viewModelFactory;
+
+        public LoginViewModel(ViewModelFactory viewModelFactory)
         {
+            _viewModelFactory = viewModelFactory;
             RegisterCommand = new RelayCommand<object>(ShowRegisterView);
             ForgotPasswordCommand = new RelayCommand<object>(ShowForgotPasswordView);
             LoginCommand = new RelayCommand<object>(Login);
 
             IsLoginSuccessful = false;
-
-            // Set initial view to login
-            CurrentViewModel = this; // LoginViewModel is the default
         }
 
         private void ShowRegisterView(object parameter)
         {
-            CurrentViewModel = new RegisterViewModel(this);
+            var registerViewModel = _viewModelFactory.CreateRegisterViewModel();
+            LoginNavigationHelper.NavigateToRegisterWindow(registerViewModel);
         }
 
         private void ShowForgotPasswordView(object parameter)
         {
-            CurrentViewModel = new ForgotPasswordViewModel(this);
+            var forgotPasswordViewModel = _viewModelFactory.CreateForgotPasswordViewModel();
+            LoginNavigationHelper.NavigateToForgotPasswordWindow(forgotPasswordViewModel);
         }
 
         private void Login(object parameter)

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:nonogram.MVVM.ViewModel"
+        xmlns:view="clr-namespace:nonogram.MVVM.View"
         xmlns:local="clr-namespace:nonogram"
         mc:Ignorable="d"
         Title="LoginWindow"
@@ -15,7 +16,9 @@
         AllowsTransparency="True">
     <Border Background="#1A0D00" CornerRadius="25">
         <StackPanel>
-            <ContentControl x:Name="MainContentControl" Content="{Binding CurrentViewModel}" />
+            <ContentControl x:Name="MainContentControl">
+                <view:LoginView />
+            </ContentControl>
             <Label Content="Exit Application"
                    Foreground="#660000"
                    Margin="10"

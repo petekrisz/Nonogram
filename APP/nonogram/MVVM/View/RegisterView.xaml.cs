@@ -107,6 +107,7 @@ namespace nonogram.MVVM.View
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("Register button clicked.");
             var viewModel = DataContext as RegisterViewModel;
             viewModel?.RegisterCommand.Execute(this);
             if (viewModel.IsPrivacyChecked)

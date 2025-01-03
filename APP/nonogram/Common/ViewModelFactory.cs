@@ -1,29 +1,33 @@
 ﻿using nonogram.MVVM.ViewModel;
+using System.Diagnostics;
 
 namespace nonogram.Common
 {
     public class ViewModelFactory
     {
         private string _username;
+        private LoginViewModel _loginViewModel;
 
         public ViewModelFactory(string username = null)
         {
             _username = username;
+            _loginViewModel = new LoginViewModel(this);
         }
 
         public LoginViewModel CreateLoginViewModel()
         {
-            return new LoginViewModel();
+            Debug.WriteLine($"CreateLoginViewModel called in ViewModelFactory: {_username}");
+            return _loginViewModel;
         }
 
         public RegisterViewModel CreateRegisterViewModel()
         {
-            return new RegisterViewModel(CreateLoginViewModel());
+            return new RegisterViewModel(_loginViewModel);
         }
 
         public ForgotPasswordViewModel CreateForgotPasswordViewModel()
         {
-            return new ForgotPasswordViewModel(CreateLoginViewModel());
+            return new ForgotPasswordViewModel(_loginViewModel);
         }
 
         public MainViewModel CreateMainViewModel(string username)

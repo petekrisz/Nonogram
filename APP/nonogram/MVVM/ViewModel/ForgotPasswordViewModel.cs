@@ -2,9 +2,6 @@
 using nonogram.DB;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Input;
 using System.Windows;
@@ -75,9 +72,10 @@ namespace nonogram.MVVM.ViewModel
             _loginViewModel = loginViewModel;
             _smtpServer = new SmtpServer("smtp.mailersend.net", 587, "MS_GfqEet@trial-0r83ql3z0om4zw1j.mlsender.net", "rBibxwfIKwMybJBF");
             RequestNewPasswordCommand = new RelayCommand<object>(RequestNewPassword);
+            Debug.WriteLine($"ForgotPasswordViewModel: RequestNewPasswordCommand: {RequestNewPasswordCommand.GetHashCode()}");
             VerifyCodeCommand = new RelayCommand<object>(VerifyCode);
             ChangePasswordCommand = new RelayCommand<object>(ChangePassword);
-            NavigateToLoginCommand = new RelayCommand<object>(parameter => NavigationHelper.NavigateToLoginWindow(_loginViewModel));
+            NavigateToLoginCommand = new RelayCommand<object>(parameter => LoginNavigationHelper.NavigateToLoginWindow(_loginViewModel));
         }
 
         private async void RequestNewPassword(object parameter)
@@ -207,7 +205,7 @@ namespace nonogram.MVVM.ViewModel
             dbManager.ExecuteNonQuery(query, parameters);
 
             MessageBox.Show("Your password has been changed successfully.", "Forgot Password", MessageBoxButton.OK, MessageBoxImage.Information);
-            NavigationHelper.NavigateToLoginWindow(_loginViewModel);
+            LoginNavigationHelper.NavigateToLoginWindow(_loginViewModel);
         }
     }
 }

@@ -108,6 +108,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\CopyFileHelper.cs" />
+    <Compile Include="Common\LoginNavigationHelper.cs" />
     <Compile Include="Common\SmtpServer.cs" />
     <Compile Include="Common\ViewModelFactory.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />

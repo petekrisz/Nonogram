@@ -84,6 +84,9 @@
                 <Rectangle.Fill>
                     <ImageBrush x:Name="avatar" ImageSource="{Binding AvatarUrl}" Stretch="None"/>
                 </Rectangle.Fill>
+                <Rectangle.ToolTip>
+                    <ToolTip Content="Click on the avatar image to access the user menu."/>
+                </Rectangle.ToolTip>
             </Rectangle>
 
             <ScrollViewer Grid.Row="1" Grid.Column="1" Margin="25"

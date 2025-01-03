@@ -1,4 +1,5 @@
-﻿using System;
+﻿using nonogram.MVVM.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -68,6 +69,14 @@ namespace nonogram.MVVM.View
                         }
                         break;
                 }
+            }
+        }
+
+        private void Label_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (DataContext is ForgotPasswordViewModel viewModel)
+            {
+                viewModel.NavigateToLoginCommand.Execute(null);
             }
         }
     }
