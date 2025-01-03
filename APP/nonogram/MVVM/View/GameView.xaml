@@ -38,7 +38,7 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="Black"
+                        <Border BorderBrush="#3b312f"
                                 BorderThickness="0.5" 
                                 Width="20" 
                                 Height="20"
@@ -73,7 +73,7 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="Black"
+                        <Border BorderBrush="#3b312f"
                                 BorderThickness="0.5" 
                                 Width="20" 
                                 Height="20"
@@ -109,7 +109,7 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="Black" 
+                        <Border BorderBrush="#3b312f" 
                                 BorderThickness="0.5" 
                                 Width="20" 
                                 Height="20" 
@@ -131,7 +131,8 @@
                                         FontSize="10" 
                                         TextAlignment="Center" 
                                         VerticalAlignment="Center" 
-                                        HorizontalAlignment="Center"/>
+                                        HorizontalAlignment="Center"
+                                        Foreground="#3b312f"/>
                         </Border>
                         <DataTemplate.Triggers>
                             <!-- Trigger for ClickState 1 -->

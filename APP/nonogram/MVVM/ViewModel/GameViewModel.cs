@@ -155,6 +155,14 @@ namespace nonogram.MVVM.ViewModel
                     }
 
                     Debug.WriteLine($"Unfinished image with content: {content}");
+                    for (int r = 0; r < GameGrid.Rows; r++)
+                    {
+                        CheckRow(r);
+                    }
+                    for (int c = 0; c < GameGrid.Columns; c++)
+                    {
+                        CheckColumn(c);
+                    }
                 }
             }
             else
