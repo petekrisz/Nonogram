@@ -16,6 +16,12 @@ namespace nonogram.MVVM.ViewModel
 {
     public class RegisterViewModel : ObservableObject
     {
+        private bool _isPrivacyChecked;
+        public bool IsPrivacyChecked
+        {
+            get => _isPrivacyChecked;
+            set => SetProperty(ref _isPrivacyChecked, value);
+        }
         public ICommand RegisterCommand { get; }
         public ICommand NavigateToLoginCommand { get; }
 
@@ -28,7 +34,7 @@ namespace nonogram.MVVM.ViewModel
             _loginViewModel = loginViewModel;
             _smtpServer = new SmtpServer("smtp.mailersend.net", 587, "MS_GfqEet@trial-0r83ql3z0om4zw1j.mlsender.net", "rBibxwfIKwMybJBF");
 
-            RegisterCommand = new RelayCommand<object>(Register);
+            RegisterCommand = new RelayCommand<object>(Register, CanRegister);
             NavigateToLoginCommand = new RelayCommand<object>(parameter => NavigationHelper.NavigateToLoginWindow(_loginViewModel));
         }
 
@@ -122,6 +128,10 @@ namespace nonogram.MVVM.ViewModel
             var loginViewModel = new LoginViewModel();
             NavigationHelper.NavigateToLoginWindow(_loginViewModel);
 
+        }
+        private bool CanRegister(object parameter)
+        {
+            return IsPrivacyChecked;
         }
 
         private async Task SendWelcomeEmail(string firstName, string userName, string email)

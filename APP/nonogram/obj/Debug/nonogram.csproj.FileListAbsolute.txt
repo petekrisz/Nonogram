@@ -90,3 +90,4 @@ D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\ForgotPasswordView.baml
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\RegisterView.baml
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\TitleUserMenuView.g.cs
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\MVVM\View\TitleUserMenuView.baml
+D:\School\NoNo\Nonogram\APP\nonogram\bin\Debug\DB\Adatkezelési Tájékoztató.pdf

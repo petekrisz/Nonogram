@@ -321,6 +321,9 @@
     <Resource Include="Fonts\Kabala Regular.otf" />
     <Resource Include="Fonts\Kabala Bold.otf" />
     <Resource Include="Fonts\Kabala Extra Bold.otf" />
+    <None Include="DB\Adatkezelési Tájékoztató.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="DB\HELP.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
