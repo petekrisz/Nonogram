@@ -93,7 +93,7 @@ namespace nonogram.DB
         );
 
         CREATE TABLE IF NOT EXISTS IMAGE (
-            IMAGEId INT PRIMARY KEY,
+            IMAGEId INT PRIMARY KEY AUTO_INCREMENT,
             Title VARCHAR(50),
             IMAGERows INT,
             IMAGEColumns INT,

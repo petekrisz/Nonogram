@@ -19,17 +19,16 @@
         public IMAGE(string csvLine)
         {
             var fields = csvLine.Split(';');
-            IMAGEId = int.Parse(fields[0]);
-            Title = fields[1];
-            IMAGERows = int.Parse(fields[2]);
-            IMAGEColumns = int.Parse(fields[3]);
-            Category = fields[4];
-            CategoryLogo = fields[5];
-            Content = fields[6];
-            Score = int.Parse(fields[7]);
-            ColourType = int.Parse(fields[8]);
-            RowFinished = fields[9];
-            ColumnFinished = fields[10];
+            Title = fields[0];
+            IMAGERows = int.Parse(fields[1]);
+            IMAGEColumns = int.Parse(fields[2]);
+            Category = fields[3];
+            CategoryLogo = fields[4];
+            Content = fields[5];
+            Score = int.Parse(fields[6]);
+            ColourType = int.Parse(fields[7]);
+            RowFinished = fields[8];
+            ColumnFinished = fields[9];
         }
     }
 }
