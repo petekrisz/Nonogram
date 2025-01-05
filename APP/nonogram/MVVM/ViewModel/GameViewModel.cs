@@ -279,8 +279,8 @@ namespace nonogram.MVVM.ViewModel
         private void CheckRow(int row)
         {
             string guessRowString = new string(GuessGrid[row].ToArray());
-            //Debug.WriteLine($"GuessRowString: {guessRowString}");
-            //Debug.WriteLine(GameGrid.RowHints[row].ToArray().ToString());
+            Debug.WriteLine($"GuessRowString: {guessRowString}");
+            Debug.WriteLine(GameGrid.RowHints[row].ToArray().ToString());
 
             string rowString = new string(guessRowString.Select(c => c == 'x' || c == '?' ? '0' : c).ToArray());
             //Debug.WriteLine($"RowString: {rowString}");
@@ -355,13 +355,9 @@ namespace nonogram.MVVM.ViewModel
 
         private bool CheckString(string input, List<int> hints)
         {
-            //Debug.WriteLine($"CheckString called. Input: {input}, Substrings: {string.Join(", ", hints)}");
+            Debug.WriteLine($"CheckString called. Input: {input}, Substrings: {string.Join(", ", hints)}");
 
-            //Transform the list of integers into the required list of '1's
             List<string> patterns = hints.Select(n => new string('1', n)).ToList();
-
-
-            // Replace 'x' with '?'
             input = input.Replace('x', '?');
 
             int totalOnes = 0;
@@ -370,17 +366,14 @@ namespace nonogram.MVVM.ViewModel
                 totalOnes += pattern.Length;
             }
 
-            // Checking if input contains enough '?'s and '1's. If not then input is not compatible with hints.
             int availableOnes = 0;
             foreach (var c in input)
             {
                 if (c == '?' || c == '1') availableOnes++;
             }
 
-            //Console.WriteLine($"Total required 1's: {totalOnes}, Available 1's (including ?): {availableOnes}");
+            Debug.WriteLine($"Total required 1's: {totalOnes}, Available 1's (including ?): {availableOnes}");
             if (availableOnes < totalOnes) return false;
-
-            //Checking if Patterns fit into the input string starting at index 0 in both of them (the input string and the pattern list)
             return CanPlacePatterns(input.ToCharArray(), patterns, 0, 0, totalOnes);
         }
 
@@ -388,41 +381,30 @@ namespace nonogram.MVVM.ViewModel
         {
             if (patternIndex >= patterns.Count)
             {
-                // Checking if the final transformed input string contains exactly as many '1's as patterns combined. If not then transformed input is not compatible with hints.
                 int currentOnes = 0;
                 foreach (var c in input)
                 {
                     if (c == '1') currentOnes++;
                 }
-                //Console.WriteLine($"Final check: Current 1's in string: {currentOnes}, Remaining 1's: {remainingOnes}");
+                Debug.WriteLine($"Final check: Current 1's in string: {currentOnes}, Remaining 1's: {remainingOnes}");
                 return currentOnes == remainingOnes;
             }
 
             string currentPattern = patterns[patternIndex];
             for (int i = startIndex; i <= input.Length - currentPattern.Length; i++)
             {
-                // Checking whether patter is compatible with input string.
                 if (CanPlacePatternAt(input, currentPattern, i))
                 {
-                    // Saving the current input string for further checks.
                     char[] originalState = (char[])input.Clone();
-                   // Console.WriteLine($"Trying to place pattern '{currentPattern}' at position {i}: {new string(input)}");
+                    Debug.WriteLine($"Trying to place pattern '{currentPattern}' at position {i}: {new string(input)}");
 
-                    // Placing pattern.
                     PlacePattern(input, currentPattern, i);
+                    Debug.WriteLine($"Placed pattern '{currentPattern}' at position {i}: {new string(input)}");
 
-                    // Debug output: state of input string after placement.
-                    //Console.WriteLine($"Placed pattern '{currentPattern}' at position {i}: {new string(input)}");
-
-                    // Recursive call of the next pattern ensuring that there must be at least a one char long gap between the patterns.
                     if (CanPlacePatterns(input, patterns, patternIndex + 1, i + currentPattern.Length + 1, remainingOnes))
                         return true;
-
-                    // Restoring the original state of input.
                     Array.Copy(originalState, input, input.Length);
-
-                    // Debug output: the string after restoration.
-                    //Console.WriteLine($"Reverted to previous state after trying '{currentPattern}' at position {i}: {new string(input)}");
+                    Debug.WriteLine($"Reverted to previous state after trying '{currentPattern}' at position {i}: {new string(input)}");
                 }
             }
             return false;
@@ -432,7 +414,7 @@ namespace nonogram.MVVM.ViewModel
         {
             for (int j = 0; j < pattern.Length; j++)
             {
-                if (input[position + j] == '0') return false; // Cannot be placed if it covers a '0'.
+                if (input[position + j] == '0') return false;
             }
             return true;
         }

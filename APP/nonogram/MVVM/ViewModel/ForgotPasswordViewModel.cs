@@ -1,12 +1,12 @@
 ﻿using nonogram.Common;
 using nonogram.DB;
+using nonogram.MVVM.View;
 using System;
 using System.Collections.Generic;
-using System.Timers;
-using System.Windows.Input;
-using System.Windows;
-using nonogram.MVVM.View;
 using System.Diagnostics;
+using System.Timers;
+using System.Windows;
+using System.Windows.Input;
 
 namespace nonogram.MVVM.ViewModel
 {
@@ -14,7 +14,6 @@ namespace nonogram.MVVM.ViewModel
     {
         private string _email;
         private string _verificationCode;
-        private string _enteredCode;
         private Timer _timer;
         private DateTime _codeExpirationTime;
         private readonly SmtpServer _smtpServer;
@@ -28,12 +27,6 @@ namespace nonogram.MVVM.ViewModel
         {
             get => _email;
             set => SetProperty(ref _email, value);
-        }
-
-        public string EnteredCode
-        {
-            get => _enteredCode;
-            set => SetProperty(ref _enteredCode, value);
         }
 
         public bool IsEmailInputVisible
@@ -75,7 +68,7 @@ namespace nonogram.MVVM.ViewModel
             Debug.WriteLine($"ForgotPasswordViewModel: RequestNewPasswordCommand: {RequestNewPasswordCommand.GetHashCode()}");
             VerifyCodeCommand = new RelayCommand<object>(VerifyCode);
             ChangePasswordCommand = new RelayCommand<object>(ChangePassword);
-            NavigateToLoginCommand = new RelayCommand<object>(parameter => LoginNavigationHelper.NavigateToLoginWindow(_loginViewModel));
+            NavigateToLoginCommand = new RelayCommand<object>(_ => LoginNavigationHelper.NavigateToLoginWindow(_loginViewModel));
         }
 
         private async void RequestNewPassword(object parameter)
@@ -113,7 +106,7 @@ namespace nonogram.MVVM.ViewModel
         private bool UserExists(string email)
         {
             var dbManager = new DbManager();
-            string query = "SELECT COUNT(*) FROM USER WHERE Email = @Email";
+            const string query = "SELECT COUNT(*) FROM USER WHERE Email = @Email";
             var parameters = new Dictionary<string, object> { { "@Email", email } };
             var result = dbManager.ExecuteQuery(query, parameters);
             return Convert.ToInt32(result.Rows[0][0]) > 0;
@@ -154,9 +147,9 @@ namespace nonogram.MVVM.ViewModel
         private void VerifyCode(object parameter)
         {
             var forgotPasswordView = parameter as ForgotPasswordView;
-            var EnteredCode = forgotPasswordView.CodeBox.Text;
+            var enteredCode = forgotPasswordView.CodeBox.Text;
 
-            if (EnteredCode == _verificationCode)
+            if (enteredCode == _verificationCode)
             {
                 MessageBox.Show("The code is correct. You can now change your password.", "Forgot Password", MessageBoxButton.OK, MessageBoxImage.Information);
                 IsVerificationCodeVisible = false;
@@ -165,7 +158,7 @@ namespace nonogram.MVVM.ViewModel
             else
             {
                 MessageBox.Show("The provided code is incorrect.", "Forgot Password", MessageBoxButton.OK, MessageBoxImage.Error);
-                EnteredCode = string.Empty;
+                forgotPasswordView.CodeBox.Text = string.Empty;
             }
         }
 
@@ -194,7 +187,7 @@ namespace nonogram.MVVM.ViewModel
             Debug.WriteLine($"ChangePassword Email: {_email}");
 
             var hashedPassword = HashHelper.ComputeSha256Hash(newPassword_1);
-            string query = "UPDATE USER SET Password = @Password WHERE Email = @Email";
+            const string query = "UPDATE USER SET Password = @Password WHERE Email = @Email";
             var parameters = new Dictionary<string, object>
             {
                 { "@Password", hashedPassword },

@@ -34,7 +34,7 @@ namespace nonogram.MVVM.ViewModel
 
             RegisterCommand = new RelayCommand<object>(Register, CanRegister);
             Debug.WriteLine($"RegisterViewModel: RegisterCommand: {RegisterCommand.GetHashCode()}");
-            NavigateToLoginCommand = new RelayCommand<object>(parameter => LoginNavigationHelper.NavigateToLoginWindow(_loginViewModel));
+            NavigateToLoginCommand = new RelayCommand<object>(_ => LoginNavigationHelper.NavigateToLoginWindow(_loginViewModel));
         }
 
         private async void Register(object parameter)
@@ -105,15 +105,17 @@ namespace nonogram.MVVM.ViewModel
                     return;
                 }
 
-                int tokens = 50; // Bonus tokens
+                const int tokens = 50; // Bonus tokens
+                const string queryUser = "INSERT INTO USER (UserName, Password, FirstName, LastName, Email, TimeOfRegistration, Score, Tokens) " +
+                               "VALUES (@UserName, @Password, @FirstName, @LastName, @Email, @TimeOfRegistration, 0, @Tokens)";
+                const string queryUserHelp = "INSERT INTO USERHELP (UserName, H1, H3, H8, H13, L1, L3, Check3H, Erase) " +
+                   "VALUES (@UserName, 0, 0, 0, 0, 0, 0, 0, 0)";
                 string hashedPassword = HashHelper.ComputeSha256Hash(password_1);
                 DateTime timeOfRegistration = DateTime.Now;
 
                 Debug.WriteLine("Inserting user into USER table...");
                 // Insert user into USER table
                 var dbManager = new DbManager();
-                string queryUser = "INSERT INTO USER (UserName, Password, FirstName, LastName, Email, TimeOfRegistration, Score, Tokens) " +
-                               "VALUES (@UserName, @Password, @FirstName, @LastName, @Email, @TimeOfRegistration, 0, @Tokens)";
                 var parametersUser = new Dictionary<string, object>
                     {
                         { "@UserName", userName },
@@ -128,8 +130,6 @@ namespace nonogram.MVVM.ViewModel
 
                 Debug.WriteLine("Inserting user into USERHELP table...");
                 // Insert user into USERHELP table
-                string queryUserHelp = "INSERT INTO USERHELP (UserName, H1, H3, H8, H13, L1, L3, Check3H, Erase) " +
-                   "VALUES (@UserName, 0, 0, 0, 0, 0, 0, 0, 0)";
                 var parametersUserHelp = new Dictionary<string, object>
                     {
                         { "@UserName", userName }
@@ -164,7 +164,7 @@ namespace nonogram.MVVM.ViewModel
 
         private async Task SendWelcomeEmail(string firstName, string userName, string email)
         {
-            string subject = "Welcome to NonoGram!";
+            const string subject = "Welcome to NonoGram!";
             string body = $"Dear {firstName},<br><br>We are pleased to welcome you to the NonoGram game and hope you're going to enjoy playing with us. Your username is: {userName}.<br><br>The Nonogram team.";
             await _smtpServer.SendEmailAsync(email, subject, body);
         }
@@ -172,7 +172,7 @@ namespace nonogram.MVVM.ViewModel
         private bool IsEmailTaken(string email)
         {
             var dbManager = new DbManager();
-            string query = "SELECT COUNT(*) FROM USER WHERE Email = @Email";
+            const string query = "SELECT COUNT(*) FROM USER WHERE Email = @Email";
             var parameters = new Dictionary<string, object>
                 {
                     { "@Email", email }
@@ -202,7 +202,7 @@ namespace nonogram.MVVM.ViewModel
         {
             Debug.WriteLine($"Checking if username '{username}' is taken...");
             var dbManager = new DbManager();
-            string query = "SELECT COUNT(*) FROM USER WHERE UserName = @UserName";
+            const string query = "SELECT COUNT(*) FROM USER WHERE UserName = @UserName";
             var parameters = new Dictionary<string, object>
                 {
                     { "@UserName", username }
@@ -213,5 +213,4 @@ namespace nonogram.MVVM.ViewModel
             return isTaken;
         }
     }
-
 }

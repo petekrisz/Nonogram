@@ -49,8 +49,7 @@ namespace nonogram.MVVM.View
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-            if (textBox != null)
+            if (sender is TextBox textBox)
             {
                 switch (textBox.Name)
                 {

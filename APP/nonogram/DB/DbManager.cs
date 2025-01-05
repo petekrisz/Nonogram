@@ -137,8 +137,6 @@ namespace nonogram.DB
             FOREIGN KEY (IMAGEId) REFERENCES IMAGE(IMAGEId)
         );";
         }
-
-
         /// <summary>
         /// Populates tables from corresponding CSV files in the DB folder.
         /// </summary>
@@ -166,7 +164,6 @@ namespace nonogram.DB
             return result.Rows.Count > 0 && Convert.ToInt32(result.Rows[0][0]) > 0;
         }
 
-
         /// <summary>
         /// Inserts a record into the specified table from a CSV line.
         /// </summary>
@@ -176,9 +173,7 @@ namespace nonogram.DB
             try
             {
                 var className = $"nonogram.DB.{tableName}";
-                var type = Assembly.GetExecutingAssembly().GetType(className);
-                if (type == null)
-                    throw new Exception($"Class {className} not found for table {tableName}.");
+                var type = Assembly.GetExecutingAssembly().GetType(className) ?? throw new Exception($"Class {className} not found for table {tableName}.");
 
                 var record = Activator.CreateInstance(type, csvLine);
 
@@ -199,7 +194,6 @@ namespace nonogram.DB
                 Console.WriteLine($"Error inserting record into table {tableName}: {ex.Message}");
             }
         }
-
 
         /// <summary>
         /// Executes a non-query SQL command.
@@ -299,14 +293,18 @@ namespace nonogram.DB
 
             using (StreamWriter writer = new StreamWriter(filePath))
             {
-                // Write the header
-                var columnNames = table.Columns.Cast<DataColumn>().Select(column => column.ColumnName);
+                // Write the header, excluding ImageId for the IMAGE table, since it has been changed to AUTO_INCREMENT in the meantime
+                var columnNames = table.Columns.Cast<DataColumn>()
+                    .Where(column => !(tableName == "IMAGE" && column.ColumnName == "IMAGEId"))
+                    .Select(column => column.ColumnName);
                 writer.WriteLine(string.Join(";", columnNames));
 
-                // Write the rows
+                // Write the rows, excluding ImageId for the IMAGE table
                 foreach (DataRow row in table.Rows)
                 {
-                    var fields = row.ItemArray.Select(field => field.ToString());
+                    var fields = row.ItemArray
+                        .Where((field, index) => !(tableName == "IMAGE" && table.Columns[index].ColumnName == "IMAGEId"))
+                        .Select(field => field.ToString());
                     writer.WriteLine(string.Join(";", fields));
                 }
             }

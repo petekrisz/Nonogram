@@ -1,9 +1,6 @@
 ﻿using nonogram.Common;
 using nonogram.DB;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 
 namespace nonogram.MVVM.Model
@@ -36,9 +33,6 @@ namespace nonogram.MVVM.Model
             InitializeGrid(image.Content);
             CalculateHints();
         }
-
-
-
 
         private void InitializeGrid(string content)
         {
@@ -117,59 +111,4 @@ namespace nonogram.MVVM.Model
             return HorizontalColumnHints;
         }
     }
-
-        public class GameCell : ObservableObject
-        {
-            private string _content;
-            public string Content
-            {
-                get => _content;
-                set
-                {
-                    _content = value;
-                    OnPropertyChanged();
-                }
-            }
-
-            private string _displayText;
-            public string DisplayText
-            {
-                get => _displayText;
-                set
-                {
-                    _displayText = value;
-                    OnPropertyChanged();
-                }
-            }
-
-            private string _background;
-            public string Background
-            {
-                get => _background;
-                set
-                {
-                    _background = value;
-                    OnPropertyChanged();
-                }
-            }
-
-            private int _state;
-            public int State
-            {
-                get => _state;
-                set
-                {
-                    _state = value;
-                    OnPropertyChanged();
-                }
-            }
-
-        public GameCell()
-        {
-            Background = "#FFF7CC"; // Original background color
-            DisplayText = string.Empty;
-            State = 0; // Initial state
-        }
-    }
-
 }
