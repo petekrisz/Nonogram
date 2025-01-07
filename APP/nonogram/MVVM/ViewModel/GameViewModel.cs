@@ -1,5 +1,4 @@
 ﻿using nonogram.MVVM.Model;
-using nonogram.MVVM.View;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -11,9 +10,6 @@ using System.Linq;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Xml.Linq;
-using System.Windows.Shell;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace nonogram.MVVM.ViewModel
 {
@@ -21,6 +17,7 @@ namespace nonogram.MVVM.ViewModel
     {
         public event EventHandler GameWon;
         private readonly string _username;
+        private readonly Window _mainWindow;
         public GameGrid GameGrid { get; private set; }
         public int ImageId { get; private set; }
 
@@ -62,12 +59,13 @@ namespace nonogram.MVVM.ViewModel
         public List<List<char>> TempList { get; private set; }
 
 
-        public GameViewModel(IMAGE selectedImage, string username)
+        public GameViewModel(IMAGE selectedImage, string username, Window mainWindow)
         {
             _username = username;
+            _mainWindow = mainWindow;
             GameGrid = new GameGrid(selectedImage);
             ImageId = selectedImage.IMAGEId; // Store IMAGEId
-            Debug.WriteLine($"GameViewModel initialized with IMAGEId: {ImageId}");
+            //Debug.WriteLine($"GameViewModel initialized with IMAGEId: {ImageId}");
 
             // Initialize collections
             ColumnTableElements = new ObservableCollection<GridElement>();
@@ -77,9 +75,9 @@ namespace nonogram.MVVM.ViewModel
             // Initialize RowFinished, ColumnFinished, and GuessGrid
             RowFinished = GameGrid.RowFinished.Select(c => int.Parse(c.ToString())).ToArray();
             ColumnFinished = GameGrid.ColumnFinished.Select(c => int.Parse(c.ToString())).ToArray();
-            // Debugging: Print the arrays to verify initialization
-            Debug.WriteLine("RowFinished: " + string.Join(",", RowFinished));
-            Debug.WriteLine("ColumnFinished: " + string.Join(",", ColumnFinished));
+            //Debugging: Print the arrays to verify initialization
+            //Debug.WriteLine("RowFinished: " + string.Join(",", RowFinished));
+            //Debug.WriteLine("ColumnFinished: " + string.Join(",", ColumnFinished));
 
 
             GuessGrid = new List<List<char>>();
@@ -96,9 +94,6 @@ namespace nonogram.MVVM.ViewModel
             DrawTable(GameGrid.Rows, GameGrid.Columns, "ImageCells");
 
             CheckUnfinishedImage();
-
-
-
         }
 
         private void CheckUnfinishedImage()
@@ -154,7 +149,7 @@ namespace nonogram.MVVM.ViewModel
                         }
                     }
 
-                    Debug.WriteLine($"Unfinished image with content: {content}");
+                    //Debug.WriteLine($"Unfinished image with content: {content}");
                     for (int r = 0; r < GameGrid.Rows; r++)
                     {
                         CheckRow(r);
@@ -190,7 +185,7 @@ namespace nonogram.MVVM.ViewModel
                 { "@Content", content }
             };
             dbManager.ExecuteNonQuery(query, parameters);
-            Debug.WriteLine($"Game state saved for IMAGEId: {ImageId} with content: {content}");
+            //Debug.WriteLine($"Game state saved for IMAGEId: {ImageId} with content: {content}");
         }
 
         public void CheckRowsAndColumns(int row, int column, int clickState)
@@ -279,8 +274,8 @@ namespace nonogram.MVVM.ViewModel
         private void CheckRow(int row)
         {
             string guessRowString = new string(GuessGrid[row].ToArray());
-            Debug.WriteLine($"GuessRowString: {guessRowString}");
-            Debug.WriteLine(GameGrid.RowHints[row].ToArray().ToString());
+            //Debug.WriteLine($"GuessRowString: {guessRowString}");
+            //Debug.WriteLine(GameGrid.RowHints[row].ToArray().ToString());
 
             string rowString = new string(guessRowString.Select(c => c == 'x' || c == '?' ? '0' : c).ToArray());
             //Debug.WriteLine($"RowString: {rowString}");
@@ -355,7 +350,7 @@ namespace nonogram.MVVM.ViewModel
 
         private bool CheckString(string input, List<int> hints)
         {
-            Debug.WriteLine($"CheckString called. Input: {input}, Substrings: {string.Join(", ", hints)}");
+            //Debug.WriteLine($"CheckString called. Input: {input}, Substrings: {string.Join(", ", hints)}");
 
             List<string> patterns = hints.Select(n => new string('1', n)).ToList();
             input = input.Replace('x', '?');
@@ -372,7 +367,7 @@ namespace nonogram.MVVM.ViewModel
                 if (c == '?' || c == '1') availableOnes++;
             }
 
-            Debug.WriteLine($"Total required 1's: {totalOnes}, Available 1's (including ?): {availableOnes}");
+            //Debug.WriteLine($"Total required 1's: {totalOnes}, Available 1's (including ?): {availableOnes}");
             if (availableOnes < totalOnes) return false;
             return CanPlacePatterns(input.ToCharArray(), patterns, 0, 0, totalOnes);
         }
@@ -386,7 +381,7 @@ namespace nonogram.MVVM.ViewModel
                 {
                     if (c == '1') currentOnes++;
                 }
-                Debug.WriteLine($"Final check: Current 1's in string: {currentOnes}, Remaining 1's: {remainingOnes}");
+                //Debug.WriteLine($"Final check: Current 1's in string: {currentOnes}, Remaining 1's: {remainingOnes}");
                 return currentOnes == remainingOnes;
             }
 
@@ -396,15 +391,15 @@ namespace nonogram.MVVM.ViewModel
                 if (CanPlacePatternAt(input, currentPattern, i))
                 {
                     char[] originalState = (char[])input.Clone();
-                    Debug.WriteLine($"Trying to place pattern '{currentPattern}' at position {i}: {new string(input)}");
+                    //Debug.WriteLine($"Trying to place pattern '{currentPattern}' at position {i}: {new string(input)}");
 
                     PlacePattern(input, currentPattern, i);
-                    Debug.WriteLine($"Placed pattern '{currentPattern}' at position {i}: {new string(input)}");
+                    //Debug.WriteLine($"Placed pattern '{currentPattern}' at position {i}: {new string(input)}");
 
                     if (CanPlacePatterns(input, patterns, patternIndex + 1, i + currentPattern.Length + 1, remainingOnes))
                         return true;
                     Array.Copy(originalState, input, input.Length);
-                    Debug.WriteLine($"Reverted to previous state after trying '{currentPattern}' at position {i}: {new string(input)}");
+                    //Debug.WriteLine($"Reverted to previous state after trying '{currentPattern}' at position {i}: {new string(input)}");
                 }
             }
             return false;
@@ -637,7 +632,7 @@ namespace nonogram.MVVM.ViewModel
 
         public bool ExecuteHelpOption(int row, int column, string typeOfHelp)
         {
-            Debug.WriteLine($"ExecuteHelpOption is called: {typeOfHelp} at Row: {row}, Column: {column}");
+            //Debug.WriteLine($"ExecuteHelpOption is called: {typeOfHelp} at Row: {row}, Column: {column}");
 
             bool success = false;
             int r, c;
@@ -649,7 +644,7 @@ namespace nonogram.MVVM.ViewModel
             {
                 case "H1":
                     // Logic for H1 help option
-                    Debug.WriteLine($"Executing H1 help option at Row: {row}, Column: {column}");
+                    //Debug.WriteLine($"Executing H1 help option at Row: {row}, Column: {column}");
                     RevealCell(row, column);
                     CheckRow(row);
                     CheckColumn(column);
@@ -658,7 +653,7 @@ namespace nonogram.MVVM.ViewModel
                     break;
                 case "H3":
                     // Logic for H3 help option
-                    Debug.WriteLine($"Executing H3 help option at Row: {row}, Column: {column}");
+                    //Debug.WriteLine($"Executing H3 help option at Row: {row}, Column: {column}");
                     UpdateTempList();
                     CorrectGuessesOrRevealNew(typeOfHelp, 3, TempList);
 
@@ -666,7 +661,7 @@ namespace nonogram.MVVM.ViewModel
                     break;
                 case "H8":
                     // Logic for H8 help option
-                    Debug.WriteLine($"Executing H8 help option at Row: {row}, Column: {column}");
+                    //Debug.WriteLine($"Executing H8 help option at Row: {row}, Column: {column}");
                     UpdateTempList();
                     CorrectGuessesOrRevealNew(typeOfHelp, 8, TempList);
 
@@ -674,7 +669,7 @@ namespace nonogram.MVVM.ViewModel
                     break;
                 case "H13":
                     // Logic for H13 help option
-                    Debug.WriteLine($"Executing H13 help option at Row: {row}, Column: {column}");
+                    //Debug.WriteLine($"Executing H13 help option at Row: {row}, Column: {column}");
                     List<List<int>> diamond = new List<List<int>>
                     {
                         new List<int> { row - 2, column },
@@ -708,7 +703,7 @@ namespace nonogram.MVVM.ViewModel
                     break;
                 case "L1":
                     // Logic for L1 help option
-                    Debug.WriteLine($"Executing L1 help option at Row: {row}, Column: {column}");
+                    //Debug.WriteLine($"Executing L1 help option at Row: {row}, Column: {column}");
                     if (column == -1)
                     {
                         for (c = 0; c < GameGrid.Columns; c++)
@@ -730,7 +725,7 @@ namespace nonogram.MVVM.ViewModel
                     break;
                 case "L3":
                     // Logic for L3 help option
-                    Debug.WriteLine($"Executing L3 help option at Row: {row}, Column: {column}");
+                    //Debug.WriteLine($"Executing L3 help option at Row: {row}, Column: {column}");
 
                     if (column == -1)
                     {
@@ -759,7 +754,7 @@ namespace nonogram.MVVM.ViewModel
                     break;
                 case "Check3H":
                     // Logic for Check3H help option
-                    Debug.WriteLine($"Executing Check3H help option at Row: {row}, Column: {column}");
+                    //Debug.WriteLine($"Executing Check3H help option at Row: {row}, Column: {column}");
                     UpdateTempList();
                     if (!TempList.Any(x => x.Contains('-')))
                     {
@@ -777,7 +772,7 @@ namespace nonogram.MVVM.ViewModel
                     break;
                 case "Erase":
                     // Logic for Erase help option
-                    Debug.WriteLine($"Executing Erase help option at Row: {row}, Column: {column}");
+                    //Debug.WriteLine($"Executing Erase help option at Row: {row}, Column: {column}");
                     UpdateTempList();
                     for (int i = 0; i < TempList.Count; i++)
                     {
@@ -801,13 +796,13 @@ namespace nonogram.MVVM.ViewModel
                     success = true;
                     break;
                 default:
-                    Debug.WriteLine($"Unknown help option: {typeOfHelp}");
+                    //Debug.WriteLine($"Unknown help option: {typeOfHelp}");
                     success = true;
                     break;
             }
 
             CheckIfGameIsWon();
-            Debug.WriteLine($"ExecuteHelpOption success: {success}");
+            //Debug.WriteLine($"ExecuteHelpOption success: {success}");
             return success;
         }
 
@@ -850,7 +845,7 @@ namespace nonogram.MVVM.ViewModel
 
         private void RevealCell(int r, int c)
         {
-            Debug.WriteLine($"RevealCell called. Row: {r}, Column: {c}");
+            //Debug.WriteLine($"RevealCell called. Row: {r}, Column: {c}");
             if (r >= 0 && c >= 0 && r < GameGrid.Rows && c < GameGrid.Columns)
             {
                 char value = GameGrid.ImageCells[r][c];

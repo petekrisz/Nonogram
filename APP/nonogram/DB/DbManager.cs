@@ -2,21 +2,33 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using IniParser;
+using IniParser.Model;
 
 namespace nonogram.DB
 {
     public class DbManager
     {
-        private const string ConnectionStringWithoutDb = "Server=localhost;Port=3306;Uid=root;Pwd=;";
-        private const string ConnectionStringWithDb = "Server=localhost;Port=3306;Database=nonogram;Uid=root;Pwd=;";
+        private string ConnectionStringWithoutDb; // = "Server=localhost;Port=3306;Uid=root;Pwd=;";
+        private string ConnectionStringWithDb; // = "Server=localhost;Port=3306;Database=nonogram;Uid=root;Pwd=;";
         private static bool isDatabaseInitialized = false;
 
         public DbManager()
         {
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile("config.ini");
+
+            string server = data["Database"]["Server"];
+            string port = data["Database"]["Port"];
+            string username = data["Database"]["Username"];
+            string password = data["Database"]["Password"];
+
+            ConnectionStringWithoutDb = $"Server={server};Port={port};Uid={username};Pwd={password};";
+            ConnectionStringWithDb = $"Server={server};Port={port};Database=nonogram;Uid={username};Pwd={password};";
+
             if (!isDatabaseInitialized)
             {
                 InitializeDatabaseAndTables();
@@ -157,6 +169,9 @@ namespace nonogram.DB
             }
         }
 
+        /// <summary>
+        /// Checks status of tables to avoid doubl operations.
+        /// </summary>
         private bool IsTablePopulated(string tableName)
         {
             string query = $"SELECT COUNT(*) FROM {tableName}";
@@ -191,7 +206,7 @@ namespace nonogram.DB
             catch (Exception ex)
             {
                 // Log the error (to a file, database, or console)
-                Console.WriteLine($"Error inserting record into table {tableName}: {ex.Message}");
+                //Console.WriteLine($"Error inserting record into table {tableName}: {ex.Message}");
             }
         }
 

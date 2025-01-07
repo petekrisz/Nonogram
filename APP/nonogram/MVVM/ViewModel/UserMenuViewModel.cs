@@ -85,8 +85,6 @@ namespace nonogram.MVVM.ViewModel
                 mainViewModel.GameViewCommand.Execute(image);
             }
         }
-
-
         private async void DeleteAccount(object parameter)
         {
             var result = MessageBox.Show("Are you sure you want to delete your account? This action cannot be undone.", "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Warning);

@@ -23,11 +23,11 @@ namespace nonogram.Common
                 try
                 {
                     File.Copy(filePath, targetPath, overwrite: true);
-                    Console.WriteLine($"Copied {fileName} to {targetPath}");
+                    //Console.WriteLine($"Copied {fileName} to {targetPath}");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error copying {fileName}: {ex.Message}");
+                    //Console.WriteLine($"Error copying {fileName}: {ex.Message}");
                 }
             }
         }

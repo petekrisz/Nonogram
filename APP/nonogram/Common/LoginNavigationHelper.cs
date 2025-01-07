@@ -18,7 +18,7 @@ namespace nonogram.Common
             var parentWindow = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w is LoginWindow);
             if (parentWindow == null)
             {
-                Debug.WriteLine("Parent window is null.");
+                //Debug.WriteLine("Parent window is null.");
                 return;
             }
 
@@ -26,7 +26,7 @@ namespace nonogram.Common
             var contentControl = parentWindow.FindName("MainContentControl") as ContentControl;
             if (contentControl == null)
             {
-                Debug.WriteLine("ContentControl is null.");
+                //Debug.WriteLine("ContentControl is null.");
                 return;
             }
 
@@ -35,7 +35,7 @@ namespace nonogram.Common
             {
                 DataContext = loginViewModel
             };
-            Debug.WriteLine($"NavigateToLoginWindow: LoginView DataContext: {loginView.DataContext.GetHashCode()}");
+            //Debug.WriteLine($"NavigateToLoginWindow: LoginView DataContext: {loginView.DataContext.GetHashCode()}");
             contentControl.Content = loginView;
         }
 
@@ -44,7 +44,7 @@ namespace nonogram.Common
             var parentWindow = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w is LoginWindow);
             if (parentWindow == null)
             {
-                Debug.WriteLine("Parent window is null.");
+                //Debug.WriteLine("Parent window is null.");
                 return;
             }
 
@@ -52,7 +52,7 @@ namespace nonogram.Common
             var contentControl = parentWindow.FindName("MainContentControl") as ContentControl;
             if (contentControl == null)
             {
-                Debug.WriteLine("ContentControl is null.");
+                //Debug.WriteLine("ContentControl is null.");
                 return;
             }
 
@@ -61,7 +61,7 @@ namespace nonogram.Common
             {
                 DataContext = registerViewModel
             };
-            Debug.WriteLine($"NavigateToRegisterWindow: RegisterView DataContext: {registerView.DataContext.GetHashCode()}");
+            //Debug.WriteLine($"NavigateToRegisterWindow: RegisterView DataContext: {registerView.DataContext.GetHashCode()}");
             contentControl.Content = registerView;
         }
 
@@ -70,7 +70,7 @@ namespace nonogram.Common
             var parentWindow = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w is LoginWindow);
             if (parentWindow == null)
             {
-                Debug.WriteLine("Parent window is null.");
+                //Debug.WriteLine("Parent window is null.");
                 return;
             }
 
@@ -78,7 +78,7 @@ namespace nonogram.Common
             var contentControl = parentWindow.FindName("MainContentControl") as ContentControl;
             if (contentControl == null)
             {
-                Debug.WriteLine("ContentControl is null.");
+                //Debug.WriteLine("ContentControl is null.");
                 return;
             }
 
@@ -87,7 +87,7 @@ namespace nonogram.Common
             {
                 DataContext = forgotPasswordViewModel
             };
-            Debug.WriteLine($"NavigateToForgotPasswordWindow: ForgotPasswordView DataContext: {forgotPasswordView.DataContext.GetHashCode()}");
+            //Debug.WriteLine($"NavigateToForgotPasswordWindow: ForgotPasswordView DataContext: {forgotPasswordView.DataContext.GetHashCode()}");
             contentControl.Content = forgotPasswordView;
         }
     }

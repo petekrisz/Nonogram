@@ -30,7 +30,7 @@ namespace nonogram.MVVM.View
             InitializeComponent();
 
             // Check if the control is loaded and populated
-            Debug.WriteLine("GameView loaded and DataContext set.");
+            //Debug.WriteLine("GameView loaded and DataContext set.");
 
         }
         public void SetViewModel(GameViewModel viewModel)
@@ -86,13 +86,13 @@ namespace nonogram.MVVM.View
 
         private void Cell_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Debug.WriteLine("Cell_MouseLeftButtonDown");
-            Debug.WriteLine($"SelectedHelpOption: {SelectedHelpOption}");
+            //Debug.WriteLine("Cell_MouseLeftButtonDown");
+            //Debug.WriteLine($"SelectedHelpOption: {SelectedHelpOption}");
             if (sender is Border border && border.DataContext is GridElement element && DataContext is GameViewModel viewModel)
             {
                 if (!string.IsNullOrEmpty(SelectedHelpOption))
                 {
-                    Debug.WriteLine($"SelectedHelpOption: {SelectedHelpOption}");
+                    //Debug.WriteLine($"SelectedHelpOption: {SelectedHelpOption}");
                     bool helpExecuted = false;
 
                     if ((SelectedHelpOption == "H1" || SelectedHelpOption == "H13") && IsChildOf(border, ImageCellItemsControl))
@@ -105,12 +105,12 @@ namespace nonogram.MVVM.View
                         // Call the method in GameViewModel with the coordinates of a RowTableElements of ColumnTableElements cell
                         if (IsChildOf(border, RowItemsControl))
                         {
-                            Debug.WriteLine($"RowTableElement clicked at Row: {element.Row}");
+                            //Debug.WriteLine($"RowTableElement clicked at Row: {element.Row}");
                             helpExecuted = viewModel.ExecuteHelpOption(element.Row, -1, SelectedHelpOption);
                         }
                         else if (IsChildOf(border, ColumnItemsControl))
                         {
-                            Debug.WriteLine($"ColumnTableElement clicked at Column: {element.Column}");
+                            //Debug.WriteLine($"ColumnTableElement clicked at Column: {element.Column}");
                             helpExecuted = viewModel.ExecuteHelpOption(-1, element.Column, SelectedHelpOption);
                         }
                     }
@@ -120,7 +120,7 @@ namespace nonogram.MVVM.View
                         // Call a method in HelpTableViewModel to decrease the value
                         if (Application.Current.MainWindow is MainWindow mainWindow && mainWindow.DataContext is MainViewModel mainViewModel)
                         {
-                            Debug.WriteLine($"---> HelpTableVM accessed in GameView: {mainViewModel.HelpTableVM.GetHashCode()}");
+                            //Debug.WriteLine($"---> HelpTableVM accessed in GameView: {mainViewModel.HelpTableVM.GetHashCode()}");
                             mainViewModel.HelpTableVM.DecreaseHelpOptionValue(SelectedHelpOption);
                         }
                     }
@@ -136,8 +136,7 @@ namespace nonogram.MVVM.View
                     // Call CheckRowsAndColumns method
                     viewModel.CheckRowsAndColumns(element.Row, element.Column, element.ClickState);
 
-                    // Debugging log
-                    Debug.WriteLine($"Cell clicked at Row: {element.Row}, Column: {element.Column}, ClickState: {element.ClickState}");
+                    //Debug.WriteLine($"Cell clicked at Row: {element.Row}, Column: {element.Column}, ClickState: {element.ClickState}");
                 }
 
 

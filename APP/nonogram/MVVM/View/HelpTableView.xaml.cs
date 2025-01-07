@@ -55,11 +55,11 @@ namespace nonogram.MVVM.View
 
         private void HelpTableView_Loaded(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine($"---> HelpTableViewModel instance in HelpTableView: {DataContext?.GetHashCode()}");
+            //Debug.WriteLine($"---> HelpTableViewModel instance in HelpTableView: {DataContext?.GetHashCode()}");
 
             foreach (var option in (DataContext as HelpTableViewModel)?.HelpOptions ?? Enumerable.Empty<HelpOption>())
             {
-                Debug.WriteLine($"---> HelpOption in UI: {option.TypeOfHelp} -> {option.Value} (Instance: {option.GetHashCode()})");
+                //Debug.WriteLine($"---> HelpOption in UI: {option.TypeOfHelp} -> {option.Value} (Instance: {option.GetHashCode()})");
             }
         }
     }

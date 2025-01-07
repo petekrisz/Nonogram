@@ -1,9 +1,11 @@
-﻿using nonogram.Common;
+﻿using Mysqlx.Crud;
+using nonogram.Common;
 using nonogram.DB;
 using nonogram.MVVM.View;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Windows;
 using System.Windows.Input;
 
 namespace nonogram.MVVM.ViewModel
@@ -51,7 +53,7 @@ namespace nonogram.MVVM.ViewModel
                         SaveGameState();
                     }
                     _currentViewMain = value;
-                    Debug.WriteLine($"CurrentViewMain set to: {_currentViewMain?.GetType().Name}");
+                    //Debug.WriteLine($"CurrentViewMain set to: {_currentViewMain?.GetType().Name}");
                     OnPropertyChanged(nameof(CurrentViewMain));
 
                     IsHelpEnabled = _currentViewMain is GameView;
@@ -77,7 +79,7 @@ namespace nonogram.MVVM.ViewModel
                 if (_currentViewTitle != value)
                 {
                     _currentViewTitle = value;
-                    Debug.WriteLine($"CurrentViewTitle set to: {_currentViewTitle?.GetType().Name}");
+                    //Debug.WriteLine($"CurrentViewTitle set to: {_currentViewTitle?.GetType().Name}");
                     OnPropertyChanged(nameof(CurrentViewTitle));
                 }
             }
@@ -90,7 +92,7 @@ namespace nonogram.MVVM.ViewModel
             set
             {
                 _currentViewHelp = value;
-                Debug.WriteLine($"CurrentViewHelp set to: {_currentViewHelp?.GetType().Name}");
+                //Debug.WriteLine($"CurrentViewHelp set to: {_currentViewHelp?.GetType().Name}");
                 OnPropertyChanged();
             }
         }
@@ -127,14 +129,14 @@ namespace nonogram.MVVM.ViewModel
 
         public MainViewModel(string userName)
         {
-            Debug.WriteLine($"Initializing MainViewModel with username: {userName}");
+            //Debug.WriteLine($"Initializing MainViewModel with username: {userName}");
 
             LoadUserData(userName);
 
             UserName = userName;
 
             ImageListVM = new ImageListViewModel(userName);
-            Debug.WriteLine($"MainViewModel initialized: ImageListVM instance: {ImageListVM.GetHashCode()}");
+            //Debug.WriteLine($"MainViewModel initialized: ImageListVM instance: {ImageListVM.GetHashCode()}");
             SearchBarVM = new SearchBarViewModel();
 
             TitleBuyVM = new TitleBuyViewModel();
@@ -145,22 +147,22 @@ namespace nonogram.MVVM.ViewModel
             UserMenuVM = new UserMenuViewModel(userName);
             TitleUserMenuVM = new TitleUserMenuViewModel(userName);
 
-            Debug.WriteLine("Subscribing SearchBarVM.SearchTermUpdated to ImageListVM.FilterImages.");
+            //Debug.WriteLine("Subscribing SearchBarVM.SearchTermUpdated to ImageListVM.FilterImages.");
             SearchBarVM.SearchTermUpdated += ImageListVM.FilterImages;
-            Debug.WriteLine("Subscription completed.");
+            //Debug.WriteLine("Subscription completed.");
 
             CurrentViewMain = ImageListVM;
             CurrentViewTitle = SearchBarVM;
             CurrentViewHelp = null;
 
-            Debug.WriteLine($"CurrentViewTitle assigned: {CurrentViewTitle?.GetType().Name}");
+            //Debug.WriteLine($"CurrentViewTitle assigned: {CurrentViewTitle?.GetType().Name}");
 
             UserMenuViewCommand = new RelayCommand<object>(_ =>
             {
                 CurrentViewMain = UserMenuVM;
                 CurrentViewTitle = TitleUserMenuVM;
                 CurrentViewHelp = null;
-                Debug.WriteLine("UserMenuViewCommand executed.");
+                //Debug.WriteLine("UserMenuViewCommand executed.");
             });
 
             ImageListViewCommand = new RelayCommand<object>(_ =>
@@ -168,7 +170,7 @@ namespace nonogram.MVVM.ViewModel
                 CurrentViewMain = ImageListVM;
                 CurrentViewTitle = SearchBarVM;
                 CurrentViewHelp = null;
-                Debug.WriteLine($"ImageListViewCommand executed. Instance: {ImageListVM.GetHashCode()}");
+                //Debug.WriteLine($"ImageListViewCommand executed. Instance: {ImageListVM.GetHashCode()}");
 
             });
             BuyHelpViewCommand = new RelayCommand<object>(_ =>
@@ -176,7 +178,7 @@ namespace nonogram.MVVM.ViewModel
                 CurrentViewMain = BuyHelpVM;
                 CurrentViewTitle = TitleBuyVM;
                 CurrentViewHelp = HelpTableVM;
-                Debug.WriteLine("BuyHelpViewCommand executed.");
+                //Debug.WriteLine("BuyHelpViewCommand executed.");
             });
             GameViewCommand = new RelayCommand<IMAGE>(OpenGameView);
 
@@ -207,7 +209,7 @@ namespace nonogram.MVVM.ViewModel
 
         public void OpenGameView(IMAGE selectedImage)
         {
-            GameVM = new GameViewModel(selectedImage, UserName);
+            GameVM = new GameViewModel(selectedImage, UserName, Application.Current.MainWindow);
             TitleGameVM = new TitleGameViewModel(selectedImage.Title);
             var gameView = new GameView();
             gameView.SetViewModel(GameVM);
@@ -218,7 +220,10 @@ namespace nonogram.MVVM.ViewModel
 
             GameVM.GameWon += (sender, e) =>
             {
-                var wonGameWindow = new WonGameWindow(selectedImage.IMAGEId, UserName);
+                var wonGameWindow = new WonGameWindow(selectedImage.IMAGEId, UserName)
+                {
+                   Owner = Application.Current.MainWindow
+                };
                 wonGameWindow.Show();
             };
         }

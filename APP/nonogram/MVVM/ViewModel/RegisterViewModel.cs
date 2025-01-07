@@ -33,7 +33,7 @@ namespace nonogram.MVVM.ViewModel
             _smtpServer = new SmtpServer("smtp.mailersend.net", 587, "MS_GfqEet@trial-0r83ql3z0om4zw1j.mlsender.net", "rBibxwfIKwMybJBF");
 
             RegisterCommand = new RelayCommand<object>(Register, CanRegister);
-            Debug.WriteLine($"RegisterViewModel: RegisterCommand: {RegisterCommand.GetHashCode()}");
+            //Debug.WriteLine($"RegisterViewModel: RegisterCommand: {RegisterCommand.GetHashCode()}");
             NavigateToLoginCommand = new RelayCommand<object>(_ => LoginNavigationHelper.NavigateToLoginWindow(_loginViewModel));
         }
 
@@ -41,16 +41,16 @@ namespace nonogram.MVVM.ViewModel
         {
             if (_isRegistering)
             {
-                Debug.WriteLine("Register method is already running. Exiting.");
+                //Debug.WriteLine("Register method is already running. Exiting.");
                 return;
             }
 
             _isRegistering = true; // Set the flag to prevent re-entry
-            Debug.WriteLine("Register method started.");
+            //Debug.WriteLine("Register method started.");
 
             try
             {
-                Debug.WriteLine(parameter == null ? "Parameter is null." : $"Parameter type: {parameter.GetType()}");
+                //Debug.WriteLine(parameter == null ? "Parameter is null." : $"Parameter type: {parameter.GetType()}");
                 var registerView = parameter as RegisterView;
                 var userName = registerView.UsernameTextBox.Text;
                 var firstName = registerView.FirstNameTextBox.Text;
@@ -59,7 +59,7 @@ namespace nonogram.MVVM.ViewModel
                 var password_1 = registerView.PasswordBox_1.Password;
                 var password_2 = registerView.PasswordBox_2.Password;
 
-                Debug.WriteLine($"Registering user: {userName}, {firstName}, {lastName}, {email}");
+                //Debug.WriteLine($"Registering user: {userName}, {firstName}, {lastName}, {email}");
 
                 if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) ||
                     string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password_1) || string.IsNullOrWhiteSpace(password_2))
@@ -80,21 +80,21 @@ namespace nonogram.MVVM.ViewModel
                     return;
                 }
 
-                Debug.WriteLine("Checking if username is taken...");
+                //Debug.WriteLine("Checking if username is taken...");
                 if (UsernameValidator.IsUsernameTaken(userName))
                 {
                     MessageBox.Show("This username is already taken. Please choose a different one!", "Registration", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
 
-                Debug.WriteLine("Checking if email is valid...");
+                //Debug.WriteLine("Checking if email is valid...");
                 if (!EmailValidator.IsValidEmail(email))
                 {
                     MessageBox.Show("Please enter a valid email address.");
                     return;
                 }
 
-                Debug.WriteLine("Checking if email is taken...");
+                //Debug.WriteLine("Checking if email is taken...");
                 if (IsEmailTaken(email))
                 {
                     var result = MessageBox.Show("A player is already registered with this e-mail address. Please use a different e-mail address or select the forgot password option. Do you want to use the forgot password option?", "Registration", MessageBoxButton.YesNo, MessageBoxImage.Error);
@@ -113,7 +113,7 @@ namespace nonogram.MVVM.ViewModel
                 string hashedPassword = HashHelper.ComputeSha256Hash(password_1);
                 DateTime timeOfRegistration = DateTime.Now;
 
-                Debug.WriteLine("Inserting user into USER table...");
+                //Debug.WriteLine("Inserting user into USER table...");
                 // Insert user into USER table
                 var dbManager = new DbManager();
                 var parametersUser = new Dictionary<string, object>
@@ -128,7 +128,7 @@ namespace nonogram.MVVM.ViewModel
                     };
                 dbManager.ExecuteNonQuery(queryUser, parametersUser);
 
-                Debug.WriteLine("Inserting user into USERHELP table...");
+                //Debug.WriteLine("Inserting user into USERHELP table...");
                 // Insert user into USERHELP table
                 var parametersUserHelp = new Dictionary<string, object>
                     {
@@ -148,12 +148,12 @@ namespace nonogram.MVVM.ViewModel
                 // Navigate to login window
                 LoginNavigationHelper.NavigateToLoginWindow(_loginViewModel);
 
-                Debug.WriteLine("Registration successful. Back to loginView");
+                //Debug.WriteLine("Registration successful. Back to loginView");
             }
             finally
             {
                 _isRegistering = false; // Reset the flag
-                Debug.WriteLine("Register method finished.");
+                //Debug.WriteLine("Register method finished.");
             }
         }
 
@@ -200,7 +200,7 @@ namespace nonogram.MVVM.ViewModel
     {
         public static bool IsUsernameTaken(string username)
         {
-            Debug.WriteLine($"Checking if username '{username}' is taken...");
+            //Debug.WriteLine($"Checking if username '{username}' is taken...");
             var dbManager = new DbManager();
             const string query = "SELECT COUNT(*) FROM USER WHERE UserName = @UserName";
             var parameters = new Dictionary<string, object>
@@ -209,7 +209,7 @@ namespace nonogram.MVVM.ViewModel
                 };
             var result = dbManager.ExecuteQuery(query, parameters);
             bool isTaken = Convert.ToInt32(result.Rows[0][0]) > 0;
-            Debug.WriteLine($"Username '{username}' is taken: {isTaken}");
+            //Debug.WriteLine($"Username '{username}' is taken: {isTaken}");
             return isTaken;
         }
     }

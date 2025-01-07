@@ -24,7 +24,7 @@ namespace nonogram
                 // Initialize the database
                 var dbManager = new DbManager();
                 dbManager.InitializeDatabaseAndTables();
-                Console.WriteLine("Database initialized successfully.");
+                //Debug.WriteLine("Database initialized successfully.");
             }
             catch (Exception ex)
             {
@@ -42,14 +42,14 @@ namespace nonogram
             loginWindow.MainContentControl.Content = loginView;
             loginWindow.Show();
 
-            Debug.WriteLine(loginViewModel == null ? "--loginViewModel is null" : "--loginViewModel is not null");
-            Debug.WriteLine($"App.xaml.cs: LoginViewModel DataContext: {loginViewModel.GetHashCode()}");
+            //Debug.WriteLine(loginViewModel == null ? "--loginViewModel is null" : "--loginViewModel is not null");
+            //Debug.WriteLine($"App.xaml.cs: LoginViewModel DataContext: {loginViewModel.GetHashCode()}");
 
             loginViewModel.PropertyChanged += (sender, args) =>
             {
                 if (args.PropertyName == nameof(LoginViewModel.IsLoginSuccessful) && loginViewModel.IsLoginSuccessful)
                 {
-                    Debug.WriteLine("LoginVM is not null & Login is successful.");
+                    //Debug.WriteLine("LoginVM is not null & Login is successful.");
                     // Close the login window
                     loginWindow.Close();
 
@@ -58,7 +58,7 @@ namespace nonogram
                     {
                         DataContext = viewModelFactory.CreateMainViewModel(loginViewModel.UserName)
                     };
-                    Debug.WriteLine("MainWindow is about to be shown.");
+                    //Debug.WriteLine("MainWindow is about to be shown.");
                     mainWindow.Show();
                 }
             };

@@ -91,3 +91,6 @@ D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\nonogram.csproj.CoreCompileInputs
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\nonogram.csproj.Up2Date
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\nonogram.exe
 D:\School\NoNo\Nonogram\APP\nonogram\obj\Debug\nonogram.pdb
+D:\School\NoNo\Nonogram\APP\nonogram\bin\Debug\INIFileParser.dll
+D:\School\NoNo\Nonogram\APP\nonogram\bin\Debug\INIFileParser.xml
+D:\School\NoNo\Nonogram\APP\nonogram\bin\Debug\config.ini

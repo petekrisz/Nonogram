@@ -16,7 +16,7 @@ namespace nonogram.Common
 
         public LoginViewModel CreateLoginViewModel()
         {
-            Debug.WriteLine($"CreateLoginViewModel called in ViewModelFactory: {_username}");
+            //Debug.WriteLine($"CreateLoginViewModel called in ViewModelFactory: {_username}");
             return _loginViewModel;
         }
 

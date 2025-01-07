@@ -23,14 +23,14 @@ namespace nonogram.MVVM.View
                 {
                     DataContext = mainViewModel.SearchBarVM ?? throw new InvalidOperationException("SearchBarVM is null in MainViewModel.");
                 }
-                Debug.WriteLine($"SearchBarView DataContext: {DataContext?.GetType().Name ?? "null"}");
+                //Debug.WriteLine($"SearchBarView DataContext: {DataContext?.GetType().Name ?? "null"}");
             }
             else
             {
                 DataContext = new SearchBarViewModel(); // Provide dummy data for design-time
             }
 
-            Debug.WriteLine($"SearchBarView Initialized. DataContext: {DataContext?.GetType().Name ?? "null"}");
+            //Debug.WriteLine($"SearchBarView Initialized. DataContext: {DataContext?.GetType().Name ?? "null"}");
         }
 
         private void SearchBox_KeyDown(object sender, KeyEventArgs e)
@@ -43,24 +43,5 @@ namespace nonogram.MVVM.View
                 }
             }
         }
-
-
-        //private void SearchBox_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    if (e.Key == Key.Enter)
-        //    {
-        //        var textBox = sender as TextBox;
-        //        var searchTerm = textBox?.Text;
-
-        //        Debug.WriteLine($"SearchBox_KeyDown called. SearchTerm: '{searchTerm}'");
-
-        //        //// Manually call FilterImages (ensure you have access to the ImageListViewModel instance)
-        //        //var mainViewModel = Application.Current.MainWindow.DataContext as MainViewModel;
-        //        //mainViewModel?.ImageListVM.FilterImages(searchTerm);
-        //    }
-        //}
-
-
     }
-
 }

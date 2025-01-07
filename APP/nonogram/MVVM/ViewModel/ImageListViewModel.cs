@@ -77,7 +77,7 @@ namespace nonogram.MVVM.ViewModel
                 }
             }
         }
-        public ICommand ImageSelectedCommand { get; set; }
+        //public ICommand ImageSelectedCommand { get; set; }
 
 
         // Parameterless constructor for design-time
@@ -95,7 +95,7 @@ namespace nonogram.MVVM.ViewModel
 
         public void FilterImages(string searchTerm)
         {
-            Debug.WriteLine($"FilterImages called with searchTerm: '{searchTerm}'");
+            //Debug.WriteLine($"FilterImages called with searchTerm: '{searchTerm}'");
 
             ImagesLeft.Clear();
             ImagesRight.Clear();
@@ -186,8 +186,8 @@ namespace nonogram.MVVM.ViewModel
             //ImagesLeft = newImagesLeft;
             //ImagesRight = newImagesRight;
 
-            Debug.WriteLine($"ImagesLeft count: {ImagesLeft.Count}");
-            Debug.WriteLine($"ImagesRight count: {ImagesRight.Count}");
+            //Debug.WriteLine($"ImagesLeft count: {ImagesLeft.Count}");
+            //Debug.WriteLine($"ImagesRight count: {ImagesRight.Count}");
 
             OnPropertyChanged(nameof(ImagesLeft));
             OnPropertyChanged(nameof(ImagesRight));

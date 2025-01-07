@@ -23,11 +23,11 @@ namespace nonogram.MVVM.ViewModel
         private bool _isPasswordChangeVisible = false;
         private string _timerText;
 
-        public string Email
-        {
-            get => _email;
-            set => SetProperty(ref _email, value);
-        }
+        //public string Email
+        //{
+        //    get => _email;
+        //    set => SetProperty(ref _email, value);
+        //}
 
         public bool IsEmailInputVisible
         {
@@ -65,7 +65,7 @@ namespace nonogram.MVVM.ViewModel
             _loginViewModel = loginViewModel;
             _smtpServer = new SmtpServer("smtp.mailersend.net", 587, "MS_GfqEet@trial-0r83ql3z0om4zw1j.mlsender.net", "rBibxwfIKwMybJBF");
             RequestNewPasswordCommand = new RelayCommand<object>(RequestNewPassword);
-            Debug.WriteLine($"ForgotPasswordViewModel: RequestNewPasswordCommand: {RequestNewPasswordCommand.GetHashCode()}");
+            //Debug.WriteLine($"ForgotPasswordViewModel: RequestNewPasswordCommand: {RequestNewPasswordCommand.GetHashCode()}");
             VerifyCodeCommand = new RelayCommand<object>(VerifyCode);
             ChangePasswordCommand = new RelayCommand<object>(ChangePassword);
             NavigateToLoginCommand = new RelayCommand<object>(_ => LoginNavigationHelper.NavigateToLoginWindow(_loginViewModel));
@@ -75,7 +75,7 @@ namespace nonogram.MVVM.ViewModel
         {
             var forgotPasswordView = parameter as ForgotPasswordView;
             var Email = forgotPasswordView.EmailAddress.Text;
-            Debug.WriteLine($"Email: {Email}");
+            //Debug.WriteLine($"Email: {Email}");
 
             if (string.IsNullOrWhiteSpace(Email))
             {
@@ -140,7 +140,7 @@ namespace nonogram.MVVM.ViewModel
             else
             {
                 TimerText = $"{remainingTime.Minutes:D2}:{remainingTime.Seconds:D2}";
-                //Console.WriteLine($"Timer updated: {TimerText}"); // Debug statement
+                //Console.WriteLine($"Timer updated: {TimerText}");
             }
         }
 
@@ -184,7 +184,7 @@ namespace nonogram.MVVM.ViewModel
                 return;
             }
 
-            Debug.WriteLine($"ChangePassword Email: {_email}");
+            //Debug.WriteLine($"ChangePassword Email: {_email}");
 
             var hashedPassword = HashHelper.ComputeSha256Hash(newPassword_1);
             const string query = "UPDATE USER SET Password = @Password WHERE Email = @Email";

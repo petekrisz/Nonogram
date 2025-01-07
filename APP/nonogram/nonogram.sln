@@ -5,6 +5,10 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nonogram", "nonogram.csproj", "{00651C2A-4490-4274-B200-9FB2A3A81E52}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NonoGramInstaller", "..\NonoGramInstaller\NonoGramInstaller.vdproj", "{2FDAEB8B-4FEB-46E2-B97D-8110D448570F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomActions", "..\CustomActions\CustomActions.csproj", "{428709A2-F056-42BA-B173-4202B2272856}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,12 @@ Global
 		{00651C2A-4490-4274-B200-9FB2A3A81E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00651C2A-4490-4274-B200-9FB2A3A81E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00651C2A-4490-4274-B200-9FB2A3A81E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FDAEB8B-4FEB-46E2-B97D-8110D448570F}.Debug|Any CPU.ActiveCfg = Debug
+		{2FDAEB8B-4FEB-46E2-B97D-8110D448570F}.Release|Any CPU.ActiveCfg = Release
+		{428709A2-F056-42BA-B173-4202B2272856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{428709A2-F056-42BA-B173-4202B2272856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{428709A2-F056-42BA-B173-4202B2272856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428709A2-F056-42BA-B173-4202B2272856}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

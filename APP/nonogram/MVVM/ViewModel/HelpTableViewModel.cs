@@ -23,7 +23,6 @@ namespace nonogram.MVVM.ViewModel
             set => SetProperty(ref _username, value);
         }
 
-
         private ObservableCollection<HelpOption> _helpOptions;
         public ObservableCollection<HelpOption> HelpOptions
         {
@@ -31,7 +30,7 @@ namespace nonogram.MVVM.ViewModel
             set => SetProperty(ref _helpOptions, value);
         }
 
-        public ICommand HelpOptionCommand { get; }
+        //public ICommand HelpOptionCommand { get; }
         public ICommand CheckBoxCheckedCommand { get; }
 
         // Parameterless constructor for design-time
@@ -39,7 +38,7 @@ namespace nonogram.MVVM.ViewModel
         public HelpTableViewModel(string username)
         {
             Username = username;
-            Debug.WriteLine($"HelpTableViewModel instance created (HelpTableView.cs): {GetHashCode()}");
+            //Debug.WriteLine($"HelpTableViewModel instance created (HelpTableView.cs): {GetHashCode()}");
 
             CheckBoxCheckedCommand = new RelayCommand<HelpOption>(ExecuteCheckBoxCheckedCommand); CheckBoxCheckedCommand = new RelayCommand<HelpOption>(ExecuteCheckBoxCheckedCommand);
             LoadHelpOptions();
@@ -61,7 +60,7 @@ namespace nonogram.MVVM.ViewModel
         }
         private async Task<bool> ExecuteHelpOptionCommand(string typeOfHelp, HelpOption helpOption)
         {
-            Debug.WriteLine($"Executing HelpOptionCommand: {typeOfHelp}");
+            //Debug.WriteLine($"Executing HelpOptionCommand: {typeOfHelp}");
 
             bool performed = false;
             int initialValue = int.Parse(helpOption.Value);
@@ -143,14 +142,14 @@ namespace nonogram.MVVM.ViewModel
 
         public void DecreaseHelpOptionValue(string typeOfHelp)
         {
-            Debug.WriteLine($"Decreasing {typeOfHelp}");
+            //Debug.WriteLine($"Decreasing {typeOfHelp}");
             var helpOption = HelpOptions.FirstOrDefault(h => h.TypeOfHelp == typeOfHelp);
             if (helpOption != null && int.TryParse(helpOption.Value, out int currentValue) && currentValue > 0)
             {
 
-                Debug.WriteLine($"Before Update: {helpOption.TypeOfHelp} -> {helpOption.Value} (Instance: {helpOption.GetHashCode()})");
+                //Debug.WriteLine($"Before Update: {helpOption.TypeOfHelp} -> {helpOption.Value} (Instance: {helpOption.GetHashCode()})");
                 helpOption.Value = (currentValue - 1).ToString();
-                Debug.WriteLine($"After Update: {helpOption.TypeOfHelp} -> {helpOption.Value} (Instance: {helpOption.GetHashCode()})");
+                //Debug.WriteLine($"After Update: {helpOption.TypeOfHelp} -> {helpOption.Value} (Instance: {helpOption.GetHashCode()})");
 
                 // Update the USERHELP table
                 var dbManager = new DbManager();

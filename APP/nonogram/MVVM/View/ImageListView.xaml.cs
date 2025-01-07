@@ -16,14 +16,13 @@ namespace nonogram.MVVM.View
     /// </summary>
     public partial class ImageListView : UserControl
     {
-
         public ImageListView()
         {
             InitializeComponent();
             Loaded += (s, e) =>
             {
-                Debug.WriteLine($"ImageListView DataContext: {DataContext?.GetType().Name}");
-                Debug.WriteLine($"---> ImageListView.DataContext: {DataContext?.GetHashCode()}");
+                //Debug.WriteLine($"ImageListView DataContext: {DataContext?.GetType().Name}");
+                //Debug.WriteLine($"---> ImageListView.DataContext: {DataContext?.GetHashCode()}");
             };
 
             if (DataContext is ImageListViewModel viewModel)

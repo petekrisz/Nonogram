@@ -1,0 +1,6 @@
+D:\School\NoNo\Nonogram\APP\CustomActions\bin\Debug\CustomActions.dll
+D:\School\NoNo\Nonogram\APP\CustomActions\bin\Debug\CustomActions.pdb
+D:\School\NoNo\Nonogram\APP\CustomActions\obj\Debug\CustomActions.csproj.AssemblyReference.cache
+D:\School\NoNo\Nonogram\APP\CustomActions\obj\Debug\CustomActions.csproj.CoreCompileInputs.cache
+D:\School\NoNo\Nonogram\APP\CustomActions\obj\Debug\CustomActions.dll
+D:\School\NoNo\Nonogram\APP\CustomActions\obj\Debug\CustomActions.pdb

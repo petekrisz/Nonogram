@@ -101,7 +101,7 @@ namespace nonogram.MVVM.ViewModel
                 // Successful login
                 UserName = userRow["UserName"].ToString();
                 IsLoginSuccessful = true;
-                Debug.WriteLine($"Login successful for user: {UserName}");
+                //Debug.WriteLine($"Login successful for user: {UserName}");
 
                 // Close the login window
                 Application.Current.Windows.OfType<LoginWindow>().FirstOrDefault()?.Close();
@@ -111,18 +111,18 @@ namespace nonogram.MVVM.ViewModel
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
                 IsLoginSuccessful = false;
-                Debug.WriteLine("Login failed. Error.");
+                //Debug.WriteLine("Login failed. Error.");
             }
         }
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            var loginView = sender as LoginView;
-            if (loginView != null)
-            {
-                var viewModel = loginView.DataContext as LoginViewModel;
-                viewModel?.LoginCommand.Execute(loginView);
-            }
-        }
+        //private void LoginButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var loginView = sender as LoginView;
+        //    if (loginView != null)
+        //    {
+        //        var viewModel = loginView.DataContext as LoginViewModel;
+        //        viewModel?.LoginCommand.Execute(loginView);
+        //    }
+        //}
 
     }
 }

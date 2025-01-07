@@ -32,7 +32,7 @@ namespace nonogram
         {
             InitializeComponent();
 
-            Debug.WriteLine($"WonGameWindow initialized with imageId: {imageId}");
+            //Debug.WriteLine($"WonGameWindow initialized with imageId: {imageId}");
 
             _firework_g = new BitmapImage(new Uri("pack://application:,,,/Images/firework_icon_gold.png"));
             _firework_l = new BitmapImage(new Uri("pack://application:,,,/Images/firework_icon_light.png"));
@@ -146,7 +146,7 @@ namespace nonogram
 
         private void PerformActionsAndClose()
         {
-            Debug.WriteLine("PerformActionsAndClose called");
+            //Debug.WriteLine("PerformActionsAndClose called");
 
             // Get the MainWindow and its DataContext (MainViewModel)
             if (System.Windows.Application.Current.MainWindow.DataContext is MainViewModel mainViewModel)
@@ -175,7 +175,7 @@ namespace nonogram
 
         private void InsertToUserImageAndUserHelp()
         {
-            Debug.WriteLine("InsertToUserImageAndUserHelp called");
+            //Debug.WriteLine("InsertToUserImageAndUserHelp called");
             var dbManager = new DbManager();
 
 
@@ -193,7 +193,7 @@ namespace nonogram
                     int newScore = currentScore + _score;
                     int newTokens = currentTokens + _token;
 
-                    Debug.WriteLine($"Current score: {currentScore} - {newScore}, Current tokens: {currentTokens} - {newTokens}");
+                    //Debug.WriteLine($"Current score: {currentScore} - {newScore}, Current tokens: {currentTokens} - {newTokens}");
 
                     string updateUserQuery = "UPDATE USER SET Score = @Score, Tokens = @Tokens WHERE UserName = @UserName";
                     var updateUserParameters = new Dictionary<string, object>
@@ -204,7 +204,7 @@ namespace nonogram
                     };
 
                     dbManager.ExecuteNonQuery(updateUserQuery, updateUserParameters);
-                    Debug.WriteLine($"USER table updated successfully. New Score: {newScore}, New Tokens: {newTokens}");
+                    //Debug.WriteLine($"USER table updated successfully. New Score: {newScore}, New Tokens: {newTokens}");
                 }
 
                 // Update USERHELP table
@@ -228,7 +228,7 @@ namespace nonogram
 
                     updateHelpQuery = updateHelpQuery.TrimEnd(',', ' ') + " WHERE UserName = @UserName";
                     dbManager.ExecuteNonQuery(updateHelpQuery, updateHelpValues);
-                    Debug.WriteLine("USERHELP table updated successfully.");
+                    //Debug.WriteLine("USERHELP table updated successfully.");
                 }
 
                 // Check if the combination of UserName and IMAGEId already exists in the USERIMAGE table
@@ -251,7 +251,7 @@ namespace nonogram
                 { "@IMAGEId", _imageId }
             };
                     dbManager.ExecuteNonQuery(updateUserImageQuery, updateUserImageParameters);
-                    Debug.WriteLine("USERIMAGE table updated successfully.");
+                    //Debug.WriteLine("USERIMAGE table updated successfully.");
                 }
                 else
                 {
@@ -264,12 +264,12 @@ namespace nonogram
                 { "Content", "x" }
             };
                     dbManager.ExecuteNonQuery("INSERT INTO USERIMAGE (UserName, IMAGEId, Finished, Content) VALUES (@UserName, @IMAGEId, @Finished, @Content)", userImageValues);
-                    Debug.WriteLine("USERIMAGE table updated successfully.");
+                    //Debug.WriteLine("USERIMAGE table updated successfully.");
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Error inserting data into the database: {ex.Message}");
+                //Debug.WriteLine($"Error inserting data into the database: {ex.Message}");
             }
         }
 

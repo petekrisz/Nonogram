@@ -18,7 +18,7 @@ namespace nonogram.MVVM.ViewModel
                 if (_searchBar != value)
                 {
                     _searchBar = value;
-                    Debug.WriteLine($"SearchBar property updated: {_searchBar}");
+                    //Debug.WriteLine($"SearchBar property updated: {_searchBar}");
                     OnPropertyChanged(nameof(SearchBar));
                 }
             }
@@ -30,7 +30,7 @@ namespace nonogram.MVVM.ViewModel
         {
             SearchCommand = new RelayCommand<object>(_ =>
             {
-                Debug.WriteLine($"SearchCommand executed with SearchBar: {_searchBar}");
+                //Debug.WriteLine($"SearchCommand executed with SearchBar: {_searchBar}");
                 SearchTermUpdated?.Invoke(_searchBar); // Trigger filtering explicitly
             });
         }
