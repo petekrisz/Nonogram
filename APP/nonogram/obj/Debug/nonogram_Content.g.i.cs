@@ -8,6 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("logo.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/machine_icon_gold.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/machine_icon_light.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/movie_icon_gold.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/movie_icon_light.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/object_icon_gold.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/object_icon_light.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/scifi_icon_gold.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/scifi_icon_light.png")]
 
 

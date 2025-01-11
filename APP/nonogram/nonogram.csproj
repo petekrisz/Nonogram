@@ -406,5 +406,15 @@
   <ItemGroup>
     <Resource Include="Images\Done_icon_2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\machine_icon_gold.png" />
+    <Resource Include="Images\machine_icon_light.png" />
+    <Resource Include="Images\movie_icon_gold.png" />
+    <Resource Include="Images\movie_icon_light.png" />
+    <Resource Include="Images\object_icon_gold.png" />
+    <Resource Include="Images\object_icon_light.png" />
+    <Resource Include="Images\scifi_icon_gold.png" />
+    <Resource Include="Images\scifi_icon_light.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

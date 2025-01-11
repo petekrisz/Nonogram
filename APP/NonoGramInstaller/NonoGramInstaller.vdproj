@@ -249,8 +249,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3D33F8B869854D2CB30FD13A740D4F95"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_44188615D79A276B505C1C19C4787E8E"
         "OwnerKey" = "8:_1BA8B5529736487C83FFDF9DEEA343B8"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4BB8D018AE644969B4542EE341669168"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -267,6 +279,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_581297FC54E54C7AAC146729DA3BAB03"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_587D26ACBA734DEE9C2A16FA0CF10544"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -274,6 +292,12 @@
         "Entry"
         {
         "MsmKey" = "8:_5F3441A3D11A494D906BCA990433F6F0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_662A611806F3472D9A5AB581EF6A09C1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -387,6 +411,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_7E1D436C6219474AB563F32D3098A6BD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8171AFF5A4FCA2E06597E4B13C97F56C"
         "OwnerKey" = "8:_1BA8B5529736487C83FFDF9DEEA343B8"
         "MsmSig" = "8:_UNDEFINED"
@@ -459,6 +489,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_96AEA09F02BB42459318A5C116E2C981"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_96DB5325234A4016A496F7887DED715C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -466,6 +502,12 @@
         "Entry"
         {
         "MsmKey" = "8:_A33D6F3A6A98424CBE5B25282077420D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A810C9F6AA9A4DAD805DBB8A86976475"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -532,6 +574,12 @@
         "Entry"
         {
         "MsmKey" = "8:_D5615E00BF9C438988C4BFBB635E9BE8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DB81B9B4CB604BB0AD59A16F9DE3531E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -634,12 +682,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_77875377D8CDFCC16CE24F9E224104DE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_75D4C8824CCA64FE93498B9F4D7AA314"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -695,6 +737,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_0723DB7121E9B48FB5BEE9804D059244"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_77875377D8CDFCC16CE24F9E224104DE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -796,6 +844,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -1288,6 +1344,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3D33F8B869854D2CB30FD13A740D4F95"
+            {
+            "SourcePath" = "8:..\\nonogram\\Images\\movie_icon_gold.png"
+            "TargetName" = "8:movie_icon_gold.png"
+            "Tag" = "8:"
+            "Folder" = "8:_C20F56A7860849E09D3D040A7633BB8B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_44188615D79A276B505C1C19C4787E8E"
             {
             "AssemblyRegister" = "3:1"
@@ -1317,6 +1393,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4BB8D018AE644969B4542EE341669168"
+            {
+            "SourcePath" = "8:..\\nonogram\\Images\\scifi_icon_light.png"
+            "TargetName" = "8:scifi_icon_light.png"
+            "Tag" = "8:"
+            "Folder" = "8:_C20F56A7860849E09D3D040A7633BB8B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_52772D7667CB477D9A14062C39BBC4E3"
@@ -1359,6 +1455,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_581297FC54E54C7AAC146729DA3BAB03"
+            {
+            "SourcePath" = "8:..\\nonogram\\Images\\machine_icon_gold.png"
+            "TargetName" = "8:machine_icon_gold.png"
+            "Tag" = "8:"
+            "Folder" = "8:_C20F56A7860849E09D3D040A7633BB8B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_587D26ACBA734DEE9C2A16FA0CF10544"
             {
             "SourcePath" = "8:..\\nonogram\\Images\\CheckAll_3H_light.png"
@@ -1383,6 +1499,26 @@
             {
             "SourcePath" = "8:..\\nonogram\\Images\\score_icon_gold.png"
             "TargetName" = "8:score_icon_gold.png"
+            "Tag" = "8:"
+            "Folder" = "8:_C20F56A7860849E09D3D040A7633BB8B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_662A611806F3472D9A5AB581EF6A09C1"
+            {
+            "SourcePath" = "8:..\\nonogram\\Images\\object_icon_light.png"
+            "TargetName" = "8:object_icon_light.png"
             "Tag" = "8:"
             "Folder" = "8:_C20F56A7860849E09D3D040A7633BB8B"
             "Condition" = "8:"
@@ -1643,6 +1779,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7E1D436C6219474AB563F32D3098A6BD"
+            {
+            "SourcePath" = "8:..\\nonogram\\Images\\movie_icon_light.png"
+            "TargetName" = "8:movie_icon_light.png"
+            "Tag" = "8:"
+            "Folder" = "8:_C20F56A7860849E09D3D040A7633BB8B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8171AFF5A4FCA2E06597E4B13C97F56C"
             {
             "AssemblyRegister" = "3:1"
@@ -1856,6 +2012,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_96AEA09F02BB42459318A5C116E2C981"
+            {
+            "SourcePath" = "8:..\\nonogram\\Images\\object_icon_gold.png"
+            "TargetName" = "8:object_icon_gold.png"
+            "Tag" = "8:"
+            "Folder" = "8:_C20F56A7860849E09D3D040A7633BB8B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_96DB5325234A4016A496F7887DED715C"
             {
             "SourcePath" = "8:..\\nonogram\\Images\\13HDiamond_gold.png"
@@ -1882,6 +2058,26 @@
             "TargetName" = "8:HELP.csv"
             "Tag" = "8:"
             "Folder" = "8:_1BDF7C1862834D3DB1DA09F92284106B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A810C9F6AA9A4DAD805DBB8A86976475"
+            {
+            "SourcePath" = "8:..\\nonogram\\Images\\scifi_icon_gold.png"
+            "TargetName" = "8:scifi_icon_gold.png"
+            "Tag" = "8:"
+            "Folder" = "8:_C20F56A7860849E09D3D040A7633BB8B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2100,6 +2296,26 @@
             {
             "SourcePath" = "8:..\\nonogram\\Images\\NO_icon_gold.png"
             "TargetName" = "8:NO_icon_gold.png"
+            "Tag" = "8:"
+            "Folder" = "8:_C20F56A7860849E09D3D040A7633BB8B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DB81B9B4CB604BB0AD59A16F9DE3531E"
+            {
+            "SourcePath" = "8:..\\nonogram\\Images\\machine_icon_light.png"
+            "TargetName" = "8:machine_icon_light.png"
             "Tag" = "8:"
             "Folder" = "8:_C20F56A7860849E09D3D040A7633BB8B"
             "Condition" = "8:"

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using IniParser;
 using IniParser.Model;
+using System.Diagnostics;
 
 namespace nonogram.DB
 {
@@ -184,7 +185,7 @@ namespace nonogram.DB
         /// </summary>
         private void InsertRecordFromCsvLine(string tableName, string csvLine)
         {
-            //Debug.WriteLine($"Inserting record into table {tableName} from CSV line: {csvLine}");
+            Debug.WriteLine($"Inserting record into table {tableName} from CSV line: {csvLine}");
             try
             {
                 var className = $"nonogram.DB.{tableName}";
@@ -205,8 +206,8 @@ namespace nonogram.DB
             }
             catch (Exception ex)
             {
-                // Log the error (to a file, database, or console)
-                //Console.WriteLine($"Error inserting record into table {tableName}: {ex.Message}");
+                //Log the error (to a file, database, or console)
+                Console.WriteLine($"Error inserting record into table {tableName}: {ex.Message}");
             }
         }
 
