@@ -13,6 +13,10 @@ namespace nonogram.MVVM.ViewModel
 {
     public class LoginViewModel : ObservableObject
     {
+        public string UN { get; set; }
+        public string PW { get; set; }
+
+
         private string _userName;
         private bool _isLoginSuccessful;
 
@@ -58,8 +62,11 @@ namespace nonogram.MVVM.ViewModel
         private void Login(object parameter)
         {
             var loginView = parameter as LoginView;
-            var username = loginView.username_tb.Text;
-            var password = loginView.password_tb.Password;
+
+            var username = UN ?? loginView?.username_tb.Text;
+            var password = PW ?? loginView?.password_tb.Password;
+            //var username = loginView.username_tb.Text;
+            //var password = loginView.password_tb.Password;
 
             //Validate input
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
@@ -114,15 +121,5 @@ namespace nonogram.MVVM.ViewModel
                 //Debug.WriteLine("Login failed. Error.");
             }
         }
-        //private void LoginButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var loginView = sender as LoginView;
-        //    if (loginView != null)
-        //    {
-        //        var viewModel = loginView.DataContext as LoginViewModel;
-        //        viewModel?.LoginCommand.Execute(loginView);
-        //    }
-        //}
-
     }
 }

@@ -55,7 +55,7 @@ namespace nonogram.MVVM.ViewModel
 
         public int[] RowFinished { get; private set; }
         public int[] ColumnFinished { get; private set; }
-        public List<List<char>> GuessGrid { get; private set; }
+        public List<List<char>> GuessGrid { get; set; }
         public List<List<char>> TempList { get; private set; }
 
 
@@ -190,6 +190,9 @@ namespace nonogram.MVVM.ViewModel
 
         public void CheckRowsAndColumns(int row, int column, int clickState)
         {
+
+            Debug.WriteLine($"CheckRowsAndColumns called with row: {row}, column: {column}, clickState: {clickState}");
+
             // Register the click state into the GuessGrid
             switch (clickState)
             {
@@ -207,8 +210,12 @@ namespace nonogram.MVVM.ViewModel
                     break;
             }
 
+            Debug.WriteLine($"Updated GuessGrid[{row}][{column}] to {GuessGrid[row][column]}");
+
             // Check the row
             CheckRow(row);
+
+            Debug.WriteLine($"Updated GuessGrid[{row}][{column}] to {GuessGrid[row][column]}");
 
             // Check the column
             CheckColumn(column);
@@ -223,11 +230,11 @@ namespace nonogram.MVVM.ViewModel
         private void CheckColumn(int column)
         {
             string guessColumnString = new string(GuessGrid.Select(r => r[column]).ToArray());
-            //Debug.WriteLine($"GuessColumnString: {guessColumnString}");
-            //Debug.WriteLine(GameGrid.ColumnHints[column].ToArray().ToString());
+            Debug.WriteLine($"GuessColumnString: {guessColumnString}");
+            Debug.WriteLine(GameGrid.ColumnHints[column].ToArray().ToString());
 
             string columnString = new string(guessColumnString.Select(c => c == 'x' || c == '?' ? '0' : c).ToArray());
-            //Debug.WriteLine($"ColumnString: {columnString}");
+            Debug.WriteLine($"ColumnString: {columnString}");
 
             List<int> calculateGuess = GameGrid.CalculateConsecutiveCells(columnString);
             if (calculateGuess.SequenceEqual(GameGrid.ColumnHints[column]))
@@ -248,13 +255,13 @@ namespace nonogram.MVVM.ViewModel
                     }
 
                     ColumnFinished[column] = 1;
-                    //Debug.WriteLine($"ColumnFinished {column} 1");
+                    Debug.WriteLine($"ColumnFinished {column} 1");
                 }
             }
             else if (!CheckString(guessColumnString, GameGrid.ColumnHints[column]))
             {
                 ColumnFinished[column] = 0;
-                //Debug.WriteLine($"ColumnFinished {column} 0");
+                Debug.WriteLine($"ColumnFinished {column} 0");
                 foreach (var element in ColumnTableElements.Where(e => e.Column == column))
                 {
                     element.InitialBackground = Brushes.LightCoral;
@@ -263,7 +270,7 @@ namespace nonogram.MVVM.ViewModel
             else
             {
                 ColumnFinished[column] = 0;
-                //Debug.WriteLine($"ColumnFinished {column} 0");
+                Debug.WriteLine($"ColumnFinished {column} 0");
                 foreach (var element in ColumnTableElements.Where(e => e.Column == column))
                 {
                     element.InitialBackground = Brushes.LightGray;
@@ -274,11 +281,11 @@ namespace nonogram.MVVM.ViewModel
         private void CheckRow(int row)
         {
             string guessRowString = new string(GuessGrid[row].ToArray());
-            //Debug.WriteLine($"GuessRowString: {guessRowString}");
-            //Debug.WriteLine(GameGrid.RowHints[row].ToArray().ToString());
+            Debug.WriteLine($"GuessRowString: {guessRowString}");
+            Debug.WriteLine(GameGrid.RowHints[row].ToArray().ToString());
 
             string rowString = new string(guessRowString.Select(c => c == 'x' || c == '?' ? '0' : c).ToArray());
-            //Debug.WriteLine($"RowString: {rowString}");
+            Debug.WriteLine($"RowString: {rowString}");
 
             List<int> calculateGuess = GameGrid.CalculateConsecutiveCells(rowString);
 
@@ -295,12 +302,13 @@ namespace nonogram.MVVM.ViewModel
                     // Update non-`1` cells in the row to `ClickState 2` (x)
                     foreach (var element in ImageCellTableElements.Where(e => e.Row == row && e.ClickState != 1))
                     {
-                        element.ClickState = 2; // 1
+                        element.ClickState = 2; // 0
                         GuessGrid[element.Row][element.Column] = '0'; // Reflect in GuessGrid
+                        Debug.WriteLine($"After finished row GuessGrid[{element.Row}][{element.Column}] updated to 0");
                     }
 
                     RowFinished[row] = 1;
-                    //Debug.WriteLine($"Row {row} finished");
+                    Debug.WriteLine($"Row {row} finished");
                 }
 
 
@@ -308,7 +316,7 @@ namespace nonogram.MVVM.ViewModel
             else if (!CheckString(guessRowString, GameGrid.RowHints[row]))
             {
                 RowFinished[row] = 0;
-                //Debug.WriteLine($"RowFinished {row} 0");
+                Debug.WriteLine($"RowFinished {row} 0");
                 foreach (var element in RowTableElements.Where(e => e.Row == row))
                 {
                     element.InitialBackground = Brushes.LightCoral;
@@ -317,7 +325,7 @@ namespace nonogram.MVVM.ViewModel
             else
             {
                 RowFinished[row] = 0;
-                //Debug.WriteLine($"RowFinished {row} 0");
+                Debug.WriteLine($"RowFinished {row} 0");
                 foreach (var element in RowTableElements.Where(e => e.Row == row))
                 {
                     element.InitialBackground = Brushes.LightGray;
@@ -325,7 +333,7 @@ namespace nonogram.MVVM.ViewModel
             }
         }
 
-        private void CheckIfGameIsWon()
+        public void CheckIfGameIsWon()
         {
             bool gridsMatch = true;
             for (int i = 0; i < GameGrid.Rows; i++)

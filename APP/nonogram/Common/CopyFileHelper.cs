@@ -27,7 +27,7 @@ namespace nonogram.Common
                 }
                 catch (Exception ex)
                 {
-                    //Console.WriteLine($"Error copying {fileName}: {ex.Message}");
+                    Console.WriteLine($"Error copying {fileName}: {ex.Message}");
                 }
             }
         }

@@ -1,0 +1,9 @@
+TypeOfHelp;Price;Weight;HelpLogoG;HelpLogoL
+Check3H;18;0,4;CheckAll_3H_gold.png;CheckAll_3H_light.png
+Erase;15;0,6;EraseW_gold.png;EraseW_light.png
+H1;5;1;1H_gold.png;1H_light.png
+H13;25;0,12;13HDiamond_gold.png;13HDiamond_light.png
+H3;12;0,8;3H_gold.png;3H_light.png
+H8;18;0,3;8H_gold.png;8H_light.png
+L1;25;0,2;1LHint_gold.png;1LHint_light.png
+L3;50;0,07;3LineHint_gold.png;3LineHint_light.png

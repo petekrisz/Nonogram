@@ -173,7 +173,7 @@ namespace nonogram.DB
         /// <summary>
         /// Checks status of tables to avoid doubl operations.
         /// </summary>
-        private bool IsTablePopulated(string tableName)
+        public bool IsTablePopulated(string tableName)
         {
             string query = $"SELECT COUNT(*) FROM {tableName}";
             var result = ExecuteQuery(query);
@@ -185,7 +185,7 @@ namespace nonogram.DB
         /// </summary>
         private void InsertRecordFromCsvLine(string tableName, string csvLine)
         {
-            Debug.WriteLine($"Inserting record into table {tableName} from CSV line: {csvLine}");
+            //Debug.WriteLine($"Inserting record into table {tableName} from CSV line: {csvLine}");
             try
             {
                 var className = $"nonogram.DB.{tableName}";

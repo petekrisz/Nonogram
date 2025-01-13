@@ -84,10 +84,10 @@ namespace nonogram.MVVM.View
             }
         }
 
-        private void Cell_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        public void Cell_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //Debug.WriteLine("Cell_MouseLeftButtonDown");
-            //Debug.WriteLine($"SelectedHelpOption: {SelectedHelpOption}");
+            Debug.WriteLine("Cell_MouseLeftButtonDown");
+            Debug.WriteLine($"SelectedHelpOption: {SelectedHelpOption}");
             if (sender is Border border && border.DataContext is GridElement element && DataContext is GameViewModel viewModel)
             {
                 if (!string.IsNullOrEmpty(SelectedHelpOption))
@@ -130,13 +130,19 @@ namespace nonogram.MVVM.View
                 }
                 else if (IsChildOf(border, ImageCellItemsControl))
                 {
+                    Debug.WriteLine($"ClickState before cycling: {element.ClickState}");
                     // Cycle through the click states
                     element.ClickState = (element.ClickState + 1) % 4;
+                    Debug.WriteLine($"ClickState after cycling: {element.ClickState}");
 
                     // Call CheckRowsAndColumns method
                     viewModel.CheckRowsAndColumns(element.Row, element.Column, element.ClickState);
 
-                    //Debug.WriteLine($"Cell clicked at Row: {element.Row}, Column: {element.Column}, ClickState: {element.ClickState}");
+                    Debug.WriteLine($"Cell clicked at Row: {element.Row}, Column: {element.Column}, ClickState: {element.ClickState}");
+                }
+                else
+                {
+                    Debug.WriteLine("Did not enter IsChildOf check for ImageCellItemsControl");
                 }
 
 
@@ -148,7 +154,7 @@ namespace nonogram.MVVM.View
             }
         }
 
-        private bool IsChildOf(DependencyObject child, DependencyObject parent)
+        public bool IsChildOf(DependencyObject child, DependencyObject parent)
         {
             while (child != null)
             {

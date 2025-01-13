@@ -9,6 +9,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NonoGramInstaller", "..\Non
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomActions", "..\CustomActions\CustomActions.csproj", "{428709A2-F056-42BA-B173-4202B2272856}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nonogram.Tests", "..\nonogram.Tests\nonogram.Tests.csproj", "{447A0625-F33E-4699-B8E9-3F9D9EE1AA8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{428709A2-F056-42BA-B173-4202B2272856}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{428709A2-F056-42BA-B173-4202B2272856}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{428709A2-F056-42BA-B173-4202B2272856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{447A0625-F33E-4699-B8E9-3F9D9EE1AA8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{447A0625-F33E-4699-B8E9-3F9D9EE1AA8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{447A0625-F33E-4699-B8E9-3F9D9EE1AA8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{447A0625-F33E-4699-B8E9-3F9D9EE1AA8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

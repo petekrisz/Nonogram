@@ -13,6 +13,15 @@ namespace nonogram.MVVM.ViewModel
 {
     public class RegisterViewModel : ObservableObject
     {
+        public string UN { get; set; }
+        public string FN { get; set; }
+        public string LN { get; set; }
+        public string PW { get; set; }
+        public string CPW { get; set; }
+        public string EM { get; set; }
+        public bool IRS { get; set; }
+
+
         private bool _isRegistering;
         private bool _isPrivacyChecked; // Flag to prevent re-entry
         public bool IsPrivacyChecked
@@ -41,60 +50,65 @@ namespace nonogram.MVVM.ViewModel
         {
             if (_isRegistering)
             {
-                //Debug.WriteLine("Register method is already running. Exiting.");
+                Debug.WriteLine("Register method is already running. Exiting.");
                 return;
             }
 
             _isRegistering = true; // Set the flag to prevent re-entry
-            //Debug.WriteLine("Register method started.");
+            Debug.WriteLine("Register method started.");
 
             try
             {
-                //Debug.WriteLine(parameter == null ? "Parameter is null." : $"Parameter type: {parameter.GetType()}");
+                Debug.WriteLine(parameter == null ? "Parameter is null." : $"Parameter type: {parameter.GetType()}");
                 var registerView = parameter as RegisterView;
-                var userName = registerView.UsernameTextBox.Text;
-                var firstName = registerView.FirstNameTextBox.Text;
-                var lastName = registerView.LastNameTextBox.Text;
-                var email = registerView.EmailTextBox.Text;
-                var password_1 = registerView.PasswordBox_1.Password;
-                var password_2 = registerView.PasswordBox_2.Password;
+                var userName = UN ?? registerView?.UsernameTextBox.Text;
+                var firstName = FN ?? registerView?.FirstNameTextBox.Text;
+                var lastName = LN ?? registerView?.LastNameTextBox.Text;
+                var email = EM ?? registerView?.EmailTextBox.Text;
+                var password_1 = PW ?? registerView?.PasswordBox_1.Password;
+                var password_2 = CPW ?? registerView?.PasswordBox_2.Password;
 
-                //Debug.WriteLine($"Registering user: {userName}, {firstName}, {lastName}, {email}");
+                Debug.WriteLine($"Registering user: {userName}, {firstName}, {lastName}, {email}");
 
                 if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) ||
                     string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password_1) || string.IsNullOrWhiteSpace(password_2))
                 {
                     MessageBox.Show("Please complete all input fields!", "Registration", MessageBoxButton.OK, MessageBoxImage.Error);
+                    IRS = false;
                     return;
                 }
 
                 if (!PasswordValidator.IsValidPassword(password_1) || !PasswordValidator.IsValidPassword(password_2))
                 {
                     MessageBox.Show("Password must be at least 6 characters long and contain at least one number and one uppercase letter!", "Registration", MessageBoxButton.OK, MessageBoxImage.Error);
+                    IRS = false;
                     return;
                 }
 
                 if (password_1 != password_2)
                 {
                     MessageBox.Show("Entered passwords do not match", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    IRS = false;
                     return;
                 }
 
-                //Debug.WriteLine("Checking if username is taken...");
+                Debug.WriteLine("Checking if username is taken...");
                 if (UsernameValidator.IsUsernameTaken(userName))
                 {
                     MessageBox.Show("This username is already taken. Please choose a different one!", "Registration", MessageBoxButton.OK, MessageBoxImage.Error);
+                    IRS = false;
                     return;
                 }
 
-                //Debug.WriteLine("Checking if email is valid...");
+                Debug.WriteLine("Checking if email is valid...");
                 if (!EmailValidator.IsValidEmail(email))
                 {
                     MessageBox.Show("Please enter a valid email address.");
+                    IRS = false;
                     return;
                 }
 
-                //Debug.WriteLine("Checking if email is taken...");
+                Debug.WriteLine("Checking if email is taken...");
                 if (IsEmailTaken(email))
                 {
                     var result = MessageBox.Show("A player is already registered with this e-mail address. Please use a different e-mail address or select the forgot password option. Do you want to use the forgot password option?", "Registration", MessageBoxButton.YesNo, MessageBoxImage.Error);
@@ -102,6 +116,7 @@ namespace nonogram.MVVM.ViewModel
                     {
                         LoginNavigationHelper.NavigateToLoginWindow(_loginViewModel);
                     }
+                    IRS = false;
                     return;
                 }
 
@@ -113,7 +128,7 @@ namespace nonogram.MVVM.ViewModel
                 string hashedPassword = HashHelper.ComputeSha256Hash(password_1);
                 DateTime timeOfRegistration = DateTime.Now;
 
-                //Debug.WriteLine("Inserting user into USER table...");
+                Debug.WriteLine("Inserting user into USER table...");
                 // Insert user into USER table
                 var dbManager = new DbManager();
                 var parametersUser = new Dictionary<string, object>
@@ -128,7 +143,7 @@ namespace nonogram.MVVM.ViewModel
                     };
                 dbManager.ExecuteNonQuery(queryUser, parametersUser);
 
-                //Debug.WriteLine("Inserting user into USERHELP table...");
+                Debug.WriteLine("Inserting user into USERHELP table...");
                 // Insert user into USERHELP table
                 var parametersUserHelp = new Dictionary<string, object>
                     {
@@ -139,6 +154,7 @@ namespace nonogram.MVVM.ViewModel
                 MessageBox.Show("Registration successful! You have received 50 bonus tokens.", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
                 MessageBox.Show("You will be directed to the Login Window where you can log in with your newly registered account.", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
 
+                IRS = true;
                 // Send welcome email
                 await SendWelcomeEmail(firstName, userName, email);
 
@@ -148,7 +164,7 @@ namespace nonogram.MVVM.ViewModel
                 // Navigate to login window
                 LoginNavigationHelper.NavigateToLoginWindow(_loginViewModel);
 
-                //Debug.WriteLine("Registration successful. Back to loginView");
+                Debug.WriteLine("Registration successful. Back to loginView");
             }
             finally
             {
@@ -159,7 +175,9 @@ namespace nonogram.MVVM.ViewModel
 
         private bool CanRegister(object parameter)
         {
-            return IsPrivacyChecked && !_isRegistering; // Check the flag
+            //   return IsPrivacyChecked && !_isRegistering; // Check the flag
+            Debug.WriteLine("CanRegister method called.");
+            return true; // Allow command execution regardless of input validity
         }
 
         private async Task SendWelcomeEmail(string firstName, string userName, string email)
