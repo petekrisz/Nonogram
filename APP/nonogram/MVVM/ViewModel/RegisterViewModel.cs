@@ -1,4 +1,4 @@
-﻿using nonogram.Common;
+ing﻿using nonogram.Common;
 using nonogram.DB;
 using nonogram.MVVM.View;
 using System;
@@ -39,7 +39,7 @@ namespace nonogram.MVVM.ViewModel
         public RegisterViewModel(LoginViewModel loginViewModel)
         {
             _loginViewModel = loginViewModel;
-            _smtpServer = new SmtpServer("smtp.mailersend.net", 587, "MS_GfqEet@trial-0r83ql3z0om4zw1j.mlsender.net", "rBibxwfIKwMybJBF");
+            _smtpServer = new SmtpServer("smtp.mailersend.net", 587, "something", "something");
 
             RegisterCommand = new RelayCommand<object>(Register, CanRegister);
             //Debug.WriteLine($"RegisterViewModel: RegisterCommand: {RegisterCommand.GetHashCode()}");
